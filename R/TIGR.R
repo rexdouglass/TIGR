@@ -3,6 +3,7 @@ library(googlesheets4)
 library(hablar)
 library(cronR)
 
+sheets_auth(email = "rexdouglass@gmail.com")
 df_wide <- read_sheet("https://docs.google.com/spreadsheets/d/1NjWTKLaBB_CrTZPGhLUHpawj2z250Lub4wmz7Zs0_cE/edit?usp=sharing")
 questions <- sort(names(df_wide)[2:ncol(df_wide)])
 dim(df_wide)
@@ -45,11 +46,19 @@ df_long <- df_wide %>%
 head(df_long)
 
 
-for_viewing <- df_long %>% select(country, location_wiki, date, question_text, answer, url, answer_letter) %>% arrange(country, location_wiki, date, question_text)
-
+for_viewing <- df_long %>% select(country, location_wiki, date, question_text, answer, url, answer_letter) %>% arrange(country, location_wiki, date, question_text) %>%
+                mutate(location_wiki=trimws(location_wiki)) %>% 
+                mutate(location_wiki=str_replace_all(location_wiki," {1,}"," ")) %>%
+                mutate(location_wiki = strsplit(as.character(location_wiki), " ")) %>% 
+                unnest(location_wiki) %>%
+                mutate(location_wiki=trimws(location_wiki))
+library(lubridate)
 for_viewing_wide <- for_viewing %>% 
   mutate(question_answer=paste0(question_text, "-", answer_letter)) %>% filter(!is.na(answer_letter)) %>% 
-  select(country, location_wiki, question_answer, date)  %>%
+  select(country, location_wiki, question_answer, date)  %>% 
+  group_by(country, location_wiki, question_answer) %>%
+  summarize(date=median(ymd(date))) %>%
+  ungroup() %>%
   mutate(date=str_replace_all(date,"2020-","")) %>%
   mutate(location_wiki=str_replace_all(location_wiki,"https://en.wikipedia.org/wiki/|https://en.m.wikipedia.org/wiki/","")) %>%
   
@@ -67,10 +76,11 @@ library(git2r)
 # Configure git.
 git2r::config(user.name = "rexdouglass",user.email = "rexdouglass@gmail.com")
 library(rmarkdown)
-rmarkdown::render("./docs/COVID19_interventions.Rmd")
+rmarkdown::render("./docs/CCIGR_landing_page.Rmd")
 
-add(repo, "./docs/COVID19_interventions.nb.html")
-add(repo, "./docs/COVID19_interventions.Rmd")
+repo <- repository(here::here())
+add(repo, "./docs/CCIGR_landing_page.nb.html")
+add(repo, "./docs/CCIGR_landing_page.Rmd")
 commit(repo, "Commit message")
 
 # Push changes to github.
