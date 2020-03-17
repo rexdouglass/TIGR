@@ -18,7 +18,7 @@ Follow the [twitter discussion](https://twitter.com/RexDouglass/status/123978116
 }
 </style>
 
-```{r, echo=F}
+```{r, echo=F, cache=F, include = FALSE}
 library(tidyverse)
 library(googlesheets4)
 library(knitr)
@@ -26,11 +26,12 @@ library(here)
 path <- paste0(here::here(),"/data_temp/for_viewing_wide.Rds")
 for_viewing_wide <- readRDS(path)
 finf <- file.info(path, extra_cols = FALSE)
+```
+```{r, cache=F}
 print(paste("Last updated ", finf$mtime))
 ```
 
-
-```{r, echo=F}
+```{r, echo=F, cache=F}
 library(DT)
 datatable(for_viewing_wide, rownames = FALSE, options = list(pageLength = 100))
 ```
