@@ -30,6 +30,7 @@ finf <- file.info(path, extra_cols = FALSE)
 ```
 
 ```{r, echo=F, cache=F}
+print("Intended to update once an hour:")
 print(paste("Last updated ", finf$mtime))
 ```
 
