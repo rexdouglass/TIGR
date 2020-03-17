@@ -1,4 +1,10 @@
-# Introduction
+# Crowd-sourced COVID-19 Dataset Tracking Involuntary Government Restrictions (TIGR)
+
+Step 1: See a news article reporting a new government restriction ([google news]((https://news.google.com/search?q=covid&hl=en-US)), reddit(https://www.reddit.com/r/Coronavirus/))
+Step 2: [Submit a report of it to the dataset](https://forms.gle/ESytGHMzUTvNf6RJA)
+Step 3: Share this widely with others
+
+## Introduction 
 
 This is a crowdsourced data collection effort to record new mandatory government restrictions intended to slow the spread of COVID-19. 
 
@@ -36,12 +42,6 @@ We DO NOT want:
 * PRIVATE restrictions (Google requested its employees transition to working remotely)
 
 * CURRENT policies (Don't report that China currently has a ban on flights now, only report if China made the CHANGE on the date you give)
-
-Two good sources of announcements are:
-
-* [Google News](https://news.google.com/search?q=covid&hl=en-US)
-
-* [Reddit](https://www.reddit.com/r/Coronavirus/)
 
 
 Historical reports are welcome! (back to December 1, 2019)
