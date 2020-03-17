@@ -36,5 +36,11 @@ print(paste("Last updated ", finf$mtime))
 
 ```{r, echo=F, cache=F}
 library(DT)
-datatable(for_viewing_wide, rownames = FALSE, options = list(pageLength = 100))
+datatable(for_viewing_wide, rownames = FALSE,
+          options = list(
+            pageLength = 100,
+            columnDefs = list(list(className = 'dt-center', targets = "_all")
+                              )
+            )
+)
 ```
