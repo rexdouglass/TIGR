@@ -1,6 +1,6 @@
 # Crowd-sourced COVID-19 Dataset Tracking Involuntary Government Restrictions (TIGR)
 
-Step 1: See a news article reporting a new government restriction ([google news]((https://news.google.com/search?q=covid&hl=en-US)), reddit(https://www.reddit.com/r/Coronavirus/))
+Step 1: See a news article reporting a new government restriction, [google news](https://news.google.com/search?q=covid&hl=en-US), [reddit](https://www.reddit.com/r/Coronavirus/)
 
 Step 2: [Submit a report of it to the dataset](https://forms.gle/ESytGHMzUTvNf6RJA)
 
