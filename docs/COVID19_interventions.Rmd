@@ -3,12 +3,46 @@ title: "Crowdsourced COVID-19 Mandatory Government Restrictions"
 output: html_notebook
 ---
 
+----------->[Please Submit a Report](https://forms.gle/ESytGHMzUTvNf6RJA){target="_blank"}  <------------
 
-Rex W. Douglass (@RexDouglass)
+This is a crowdsourced data collection effort to record new mandatory government restrictions intended to slow the spread of COVID-19. 
+
+We don't know the answers to two important questions:
+1) How government interventions changes the rate of growth in COVID19 spread within a community
+2) What determines when governments will implement some specific interventions and not others
+
+We WANT reports of restrictions that are
+- By a government
+- Mandatory (legally required)
+- New (a change to the previous rules)
+
+For example:
+On March 12th, Ohio banned gatherings of more than 100 people.
+On March 15th, Saudi Arabia banned flights to and from hotspot countries.
+On March 10, New Rochelle, NY closed schools and businesses other than grocery stores and delis.
+
+We DO NOT want:
+- VOLUNTARY restrictions (CDC recommending canceling gatherings of more than 50 people)
+- PRIVATE restrictions (Google requested its employees transition to working remotely)
+- CURRENT policies (Don't report that China currently has a ban on flights now, only report if China made the CHANGE on the date you give)
+
+Two good sources of announcements are:
+https://news.google.com/search?q=covid&hl=en-US
+https://www.reddit.com/r/Coronavirus/
+
+Historical reports are welcome! (back to December 1, 2019)
+
+Duplicate reports are fine, don't worry if it has already been submitted.
+
+No personal information is requested, and the results will be made public for academic research.
+
+Survey administered by Rex W. Douglass (PhD) (@RexDouglass), who will post results and further details as the project evolves at his twitter handle @RexDouglass . 
 
 Follow the [twitter discussion](https://twitter.com/RexDouglass/status/1239781164392435712){target="_blank"}
 
-[Submit a new report](https://forms.gle/ESytGHMzUTvNf6RJA){target="_blank"}
+
+----------->[Please Submit a Report](https://forms.gle/ESytGHMzUTvNf6RJA){target="_blank"}  <------------
+
 
 <style type="text/css">
 .main-container {
@@ -29,7 +63,7 @@ finf <- file.info(path, extra_cols = FALSE)
 
 ```
 
-Intended to update once an hour:
+Here are the data collected thus far (intended to update once an hour):
 ```{r, echo=F, cache=F}
 print(paste("Last updated ", finf$mtime))
 ```
@@ -44,3 +78,5 @@ datatable(for_viewing_wide, rownames = FALSE,
             )
 )
 ```
+
+----------->[Please Submit a Report](https://forms.gle/ESytGHMzUTvNf6RJA){target="_blank"}  <------------
