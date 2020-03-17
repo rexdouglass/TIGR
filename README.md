@@ -10,7 +10,7 @@ Step 3: Share this widely with others
 
 This is a crowdsourced data collection effort to record new mandatory government restrictions intended to slow the spread of COVID-19. 
 
-[View the Data Collected So Far](https://rexdouglass.github.io/CCIGR/CCIGR_landing_page.nb.html)
+[View the Data Collected So Far](https://rexdouglass.github.io/TIGR/TIGR_landing_page.nb.html)
 
 ----->[Submit a Report of a Government Restriction](https://forms.gle/ESytGHMzUTvNf6RJA) <------------
 
