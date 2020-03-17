@@ -26,8 +26,6 @@ library(here)
 path <- paste0(here::here(),"/data_temp/for_viewing_wide.Rds")
 for_viewing_wide <- readRDS(path)
 finf <- file.info(path, extra_cols = FALSE)
-```
-```{r, cache=F}
 print(paste("Last updated ", finf$mtime))
 ```
 
