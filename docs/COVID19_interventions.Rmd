@@ -6,9 +6,9 @@ output: html_notebook
 
 Rex W. Douglass (@RexDouglass)
 
-Follow the [twitter discussion](https://twitter.com/RexDouglass/status/1239781164392435712)
+Follow the [twitter discussion](https://twitter.com/RexDouglass/status/1239781164392435712){target="_blank"}
 
-[Submit a new report](https://forms.gle/ESytGHMzUTvNf6RJA)
+[Submit a new report](https://forms.gle/ESytGHMzUTvNf6RJA){target="_blank"}
 
 <style type="text/css">
 .main-container {
