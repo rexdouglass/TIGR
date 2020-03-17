@@ -2,6 +2,11 @@
 
 This is a crowdsourced data collection effort to record new mandatory government restrictions intended to slow the spread of COVID-19. 
 
+[View the Data Collected So Far](https://rexdouglass.github.io/CCIGR/CCIGR_landing_page.nb.html)
+
+----->[Submit a Report of a Government Restriction](https://forms.gle/ESytGHMzUTvNf6RJA) <------------
+
+
 We don't know the answers to two important questions:
 
 1) How government interventions changes the rate of growth in COVID19 spread within a community
@@ -46,8 +51,6 @@ Duplicate reports are fine, don't worry if it has already been submitted.
 No personal information is requested, and the results will be made public for academic research.
 
 Survey administered by Rex W. Douglass (PhD) (@RexDouglass), who will post results and further details as the project evolves at his twitter handle @RexDouglass . 
-
-[View The data](https://rexdouglass.github.io/CCIGR/CCIGR_landing_page.nb.html)
 
 ----->[Submit a Report of a Government Restriction](https://forms.gle/ESytGHMzUTvNf6RJA) <------------
 
