@@ -47,7 +47,7 @@ No personal information is requested, and the results will be made public for ac
 
 Survey administered by Rex W. Douglass (PhD) (@RexDouglass), who will post results and further details as the project evolves at his twitter handle @RexDouglass . 
 
-[View The data](https://rexdouglass.github.io/CCIGR/CCIGR_landing_page.nb.html
+[View The data](https://rexdouglass.github.io/CCIGR/CCIGR_landing_page.nb.html)
 
 ----->[Submit a Report of a Government Restriction](https://forms.gle/ESytGHMzUTvNf6RJA) <------------
 
