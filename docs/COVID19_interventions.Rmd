@@ -22,6 +22,10 @@ Follow the [twitter discussion](https://twitter.com/RexDouglass/status/123978116
 library(tidyverse)
 library(googlesheets4)
 library(knitr)
+path <- "./data_temp/for_viewing_wide.Rds"
+for_viewing_wide <- readRDS(path)
+finf <- file.info(path, extra_cols = FALSE)
+print(paste("Last updated ", finf$mtime))
 ```
 
 
