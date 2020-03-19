@@ -6,7 +6,7 @@ On March 12th, Ohio banned gatherings of more than 100 people
 
 On March 15th, Saudi Arabia banned flights to and from hotspot countries
 
-On March 10, New Rochelle, NY closed schools and businesses other than grocery stores
+On January 23, Wuhan, China restricted all nonessential domestic travel.
 
 Any example back to December 1, 2019 welcome!
 
