@@ -43,14 +43,14 @@ and was not ....
 
 Share the project on Twitter https://twitter.com/RexDouglass/status/1240033447948648449
 
-Corresponding author Rex W. Douglass (PhD) (@RexDouglass) 
-
 [View the Data Collected So Far](https://rexdouglass.github.io/TIGR/TIGR_landing_page.nb.html)
 
------>[Submit another Report of a Government Restriction](https://forms.gle/ESytGHMzUTvNf6RJA) <------------
+[Submit another Report](https://forms.gle/ESytGHMzUTvNf6RJA)
 
 
 ## FAQ
+
+Corresponding author Rex W. Douglass (PhD) (@RexDouglass) 
 
 We don't know the answers to two important questions:
 
