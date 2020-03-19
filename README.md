@@ -29,11 +29,11 @@ Any example back to December 1, 2019 welcome!
 
 and was not ....
 
--A recomendation  (CDC recommending canceling gatherings of more than 50 people)
+- A recomendation  (CDC recommending canceling gatherings of more than 50 people)
 
--Private  (Google requested its employees transition to working remotely)
+- Private  (Google requested its employees transition to working remotely)
 
--Pre-existing  (Don't report that China currently has a ban on flights now, only report if China made the CHANGE on the date you give)
+- Pre-existing  (Don't report that China currently has a ban on flights now, only report if China made the CHANGE on the date you give)
 
 
 ## Step 4 [Submit a report of it to the dataset](https://forms.gle/ESytGHMzUTvNf6RJA)
