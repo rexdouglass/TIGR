@@ -70,7 +70,7 @@ for_viewing_wide <- for_viewing %>%
     values_from = date,
     values_fn = list(breaks = paste, sep=";")
   ) %>% arrange(country, location_wiki)
-
+  
 saveRDS(for_viewing_wide, "/media/skynet2/905884f0-7546-4273-9061-12a790830beb/rwd_github_private/TIGR/data_temp/for_viewing_wide.Rds")
   
 #install.packages("git2r")
