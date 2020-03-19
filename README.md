@@ -6,6 +6,8 @@ Step 2: [Submit a report of it to the dataset](https://forms.gle/ESytGHMzUTvNf6R
 
 Step 3: Share this widely with others
 
+[@RexDouglass](https://twitter.com/RexDouglass)
+
 ## Introduction 
 
 This is a crowdsourced data collection effort to record new mandatory government restrictions intended to slow the spread of COVID-19. 
@@ -52,7 +54,7 @@ Duplicate reports are fine, don't worry if it has already been submitted.
 
 No personal information is requested, and the results will be made public for academic research.
 
-Survey administered by Rex W. Douglass (PhD) (@RexDouglass), who will post results and further details as the project evolves  here. 
+Survey administered by Rex W. Douglass (PhD) ([@RexDouglass](https://twitter.com/RexDouglass)), who will post results and further details as the project evolves  here. 
 
 ----->[Submit a Report of a Government Restriction](https://forms.gle/ESytGHMzUTvNf6RJA) <------------
 
