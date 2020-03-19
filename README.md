@@ -62,7 +62,7 @@ Q:Why? A: We don't know the answers to two important questions:
 
 Q: How? A: The data and code are release under [Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
-If you find this data useful or reproduce it in any way, it must be accompanied with the latest citation available here
+If you use this in analysis or reproduce it in any way, it must be accompanied with the latest citation available here
 - Rex W. Douglass. Crowd-sourced COVID-19 Dataset Tracking Involuntary Government Restrictions (TIGR), v1.0 (2020). https://github.com/rexdouglass/TIGR/.
 
 
