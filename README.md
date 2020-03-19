@@ -4,9 +4,7 @@ Step 1: See a news article reporting a new government COVID-19 restriction, i.e.
 
 Step 2: [Submit a report of it to the dataset](https://forms.gle/ESytGHMzUTvNf6RJA)
 
-Step 3: Share this widely with others
-
-[@RexDouglass](https://twitter.com/RexDouglass)
+Step 3: Share this widely with others [@RexDouglass](https://twitter.com/RexDouglass/status/1240033447948648449)
 
 ## Introduction 
 
@@ -54,7 +52,7 @@ Duplicate reports are fine, don't worry if it has already been submitted.
 
 No personal information is requested, and the results will be made public for academic research.
 
-Survey administered by Rex W. Douglass (PhD) ([@RexDouglass](https://twitter.com/RexDouglass)), who will post results and further details as the project evolves  here. 
+Survey administered by Rex W. Douglass (PhD) ([@RexDouglass](https://twitter.com/RexDouglass/status/1240033447948648449)), who will post results and further details as the project evolves  here. 
 
 ----->[Submit a Report of a Government Restriction](https://forms.gle/ESytGHMzUTvNf6RJA) <------------
 
