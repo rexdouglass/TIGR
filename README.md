@@ -8,7 +8,7 @@ On March 15th, Saudi Arabia banned flights to and from hotspot countries
 
 On January 23, Wuhan, China restricted all nonessential domestic travel.
 
-Any example back to December 1, 2019 welcome!
+Any example back to December 1, 2019
 
 ## Step 2: Find an online news article that documents that restriction
 
