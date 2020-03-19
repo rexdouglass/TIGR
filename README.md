@@ -52,7 +52,7 @@ Duplicate reports are fine, don't worry if it has already been submitted.
 
 No personal information is requested, and the results will be made public for academic research.
 
-Survey administered by Rex W. Douglass (PhD) (@RexDouglass), who will post results and further details as the project evolves at his twitter handle @RexDouglass . 
+Survey administered by Rex W. Douglass (PhD) (@RexDouglass), who will post results and further details as the project evolves  here. 
 
 ----->[Submit a Report of a Government Restriction](https://forms.gle/ESytGHMzUTvNf6RJA) <------------
 
