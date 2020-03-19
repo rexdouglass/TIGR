@@ -52,10 +52,17 @@ Share the project on Twitter https://twitter.com/RexDouglass/status/124003344794
 
 Q:Who? A: Corresponding author Rex W. Douglass (PhD) [@RexDouglass](https://twitter.com/RexDouglass/status/1240033447948648449)
 
+Q:Where? A: The Machine Learning for Social Science Lab, Center for Peace and Security Studies, University of California San Diego
+
 Q:Why? A: We don't know the answers to two important questions:
 
 1) How government interventions changes the rate of growth in COVID19 spread within a community
 
 2) What determines when governments will implement some interventions rather than others
 
-Q: How? A: No personal information is requested, and the results will be made public for academic research.
+Q: How? A: The data and code are release under [Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+
+If you find this data useful or reproduce it in any way, it must be accompanied with the latest citation available here
+- Rex W. Douglass. Crowd-sourced COVID-19 Dataset Tracking Involuntary Government Restrictions (TIGR), v1.0 (2020). https://github.com/rexdouglass/TIGR/.
+
+
