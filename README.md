@@ -3,25 +3,36 @@
 Step 1: Think of a restriction you heard a government imposing to try to fight COVID-19, like...
 
 On March 12th, Ohio banned gatherings of more than 100 people
+
 On March 15th, Saudi Arabia banned flights to and from hotspot countries
+
 On March 10, New Rochelle, NY closed schools and businesses other than grocery stores
+
 Any example back to December 1, 2019 welcome!
 
 Step 2: Find an online news article that documents that restriction
 
 [Google News](https://news.google.com/search?q=covid&hl=en-US)
+
 [Reddit](https://www.reddit.com/r/Coronavirus/)
+
 [Wikipedia's citations](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic)
 
 Step 3: Convince yourself that the restriction was
+
 - By a government
+
 - Mandatory (legally required)
+
 - New (a change to the previous rules)
+
 
 and was not ....
 
 -A recomendation  (CDC recommending canceling gatherings of more than 50 people)
+
 -Private  (Google requested its employees transition to working remotely)
+
 -Pre-existing  (Don't report that China currently has a ban on flights now, only report if China made the CHANGE on the date you give)
 
 
