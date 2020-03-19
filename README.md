@@ -50,14 +50,12 @@ Share the project on Twitter https://twitter.com/RexDouglass/status/124003344794
 
 ## FAQ
 
-Corresponding author Rex W. Douglass (PhD) (@RexDouglass) 
+Q:Who? A: Corresponding author Rex W. Douglass (PhD) [@RexDouglass](https://twitter.com/RexDouglass/status/1240033447948648449)
 
-We don't know the answers to two important questions:
+Q:Why? A: We don't know the answers to two important questions:
 
 1) How government interventions changes the rate of growth in COVID19 spread within a community
 
 2) What determines when governments will implement some interventions rather than others
 
-No personal information is requested, and the results will be made public for academic research.
-
-Survey administered by Rex W. Douglass (PhD) ([@RexDouglass](https://twitter.com/RexDouglass/status/1240033447948648449)),
+Q: How? A: No personal information is requested, and the results will be made public for academic research.
