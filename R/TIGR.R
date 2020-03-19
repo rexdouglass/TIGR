@@ -2,29 +2,32 @@ library(tidyverse)
 library(googlesheets4)
 library(hablar)
 library(cronR)
+  
+getwd()
+setwd("/media/skynet2/905884f0-7546-4273-9061-12a790830beb/rwd_github_private/TIGR/")
 
 sheets_auth(email = "rexdouglass@gmail.com")
 df_wide <- read_sheet("https://docs.google.com/spreadsheets/d/1NjWTKLaBB_CrTZPGhLUHpawj2z250Lub4wmz7Zs0_cE/edit?usp=sharing")
 questions <- sort(names(df_wide)[2:ncol(df_wide)])
-dim(df_wide)
+#dim(df_wide)
 df_wide <- df_wide[,sort(names(df_wide))]
 df_wide <- as.data.frame(lapply(df_wide, as.character))
-
-glimpse(df_wide)
+colnames(df_wide) <- colnames(df_wide) %>% str_replace("\\.\\..*$","")
+#glimpse(df_wide)
 
 df_long <- df_wide %>%
   mutate(entry=1:n()) %>%
-  mutate(country=X03..Country.of.the.restriction) %>%
-  mutate(location=X04..If.the.restriction.targets.only.part.of.a.country...what.is.the.name.of.that.part...examples..California.......Hubei.province.......New.Rochelle..New.York......Alameda.County..California...Marin.County..California...) %>%
-  mutate(location_wiki=X05..Does.the.part.of.a.country.you.put.above.in.question.4.have.a.wikipedia.article.about.it...find.and.paste.the.URL.here.) %>%
-  mutate(date=X02..Date.the.restriction.went.into.effect......NOT.the.date.of.the.article......if.multiple.restrictions.with.DIFFERENT.dates.then.submit.different.reports.for.each.date.) %>%
-  mutate(url=X01..URL.of.News.Report.for.Source.of.Information..only.directly.links.to.reputable.news.sources...no.rumors..reddit.pages..or.tweets.) %>%
+  mutate(country=X03) %>%
+  mutate(location=X04) %>%
+  mutate(location_wiki=X05) %>%
+  mutate(date=X02) %>%
+  mutate(url=X01) %>%
   
-  select(-X01..URL.of.News.Report.for.Source.of.Information..only.directly.links.to.reputable.news.sources...no.rumors..reddit.pages..or.tweets.,
-         -X02..Date.the.restriction.went.into.effect......NOT.the.date.of.the.article......if.multiple.restrictions.with.DIFFERENT.dates.then.submit.different.reports.for.each.date.,
-         -X03..Country.of.the.restriction,
-         -X04..If.the.restriction.targets.only.part.of.a.country...what.is.the.name.of.that.part...examples..California.......Hubei.province.......New.Rochelle..New.York......Alameda.County..California...Marin.County..California...,
-         -X05..Does.the.part.of.a.country.you.put.above.in.question.4.have.a.wikipedia.article.about.it...find.and.paste.the.URL.here.
+  select(-X01,
+         -X02,
+         -X03,
+         -X04,
+         -X05
   ) %>%
   
   
@@ -43,12 +46,12 @@ df_long <- df_wide %>%
   mutate(answer_letter=str_replace_all(answer_letter,"\\)","")) 
 
 
-head(df_long)
+#head(df_long)
 
 
 for_viewing <- df_long %>% select(country, location_wiki, date, question_text, answer, url, answer_letter) %>% arrange(country, location_wiki, date, question_text) %>%
                 mutate(location_wiki=trimws(location_wiki)) %>% 
-                mutate(location_wiki=str_replace_all(location_wiki," {1,}"," ")) %>%
+                mutate(location_wiki=str_replace_all(location_wiki," {1,}|\n{1,}"," ")) %>%
                 mutate(location_wiki = strsplit(as.character(location_wiki), " ")) %>% 
                 unnest(location_wiki) %>%
                 mutate(location_wiki=trimws(location_wiki))
@@ -61,26 +64,26 @@ for_viewing_wide <- for_viewing %>%
   ungroup() %>%
   mutate(date=str_replace_all(date,"2020-","")) %>%
   mutate(location_wiki=str_replace_all(location_wiki,"https://en.wikipedia.org/wiki/|https://en.m.wikipedia.org/wiki/","")) %>%
-  
+  arrange(question_answer) %>%
   pivot_wider(
     names_from = question_answer,
     values_from = date,
     values_fn = list(breaks = paste, sep=";")
-  )
+  ) %>% arrange(country, location_wiki)
 
-saveRDS(for_viewing_wide, "./data_temp/for_viewing_wide.Rds")
-
+saveRDS(for_viewing_wide, "/media/skynet2/905884f0-7546-4273-9061-12a790830beb/rwd_github_private/TIGR/data_temp/for_viewing_wide.Rds")
+  
 #install.packages("git2r")
 library(git2r)
 
 # Configure git.
 git2r::config(user.name = "rexdouglass",user.email = "rexdouglass@gmail.com")
 library(rmarkdown)
-rmarkdown::render("./docs/CCIGR_landing_page.Rmd")
+rmarkdown::render("/media/skynet2/905884f0-7546-4273-9061-12a790830beb/rwd_github_private/TIGR/docs/TIGR_landing_page.Rmd")
 
 repo <- repository(here::here())
-add(repo, "./docs/CCIGR_landing_page.nb.html")
-add(repo, "./docs/CCIGR_landing_page.Rmd")
+add(repo, "./docs/TIGR_landing_page.nb.html")
+add(repo, "./docs/TIGR_landing_page.Rmd")
 commit(repo, "Commit message")
 
 # Push changes to github.
@@ -88,6 +91,4 @@ commit(repo, "Commit message")
 secret_credentials=readRDS("/home/skynet2/Downloads/secret_credentials.Rds")
 
 push(repo, credentials=secret_credentials)
-
-
 
