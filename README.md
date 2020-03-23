@@ -53,17 +53,25 @@ Share the project on Twitter https://twitter.com/RexDouglass/status/124003344794
 
 ## FAQ
 
-Q:Who? A: Corresponding author Rex W. Douglass (PhD) [@RexDouglass](https://twitter.com/RexDouglass/status/1240033447948648449)
+Q:Who? 
 
-Q:Where? A: The Machine Learning for Social Science Lab, Center for Peace and Security Studies, University of California San Diego
+A: Corresponding author Rex W. Douglass (PhD) [@RexDouglass](https://twitter.com/RexDouglass/status/1240033447948648449)
 
-Q:Why? A: We don't know the answers to two important questions:
+Q:Where? 
+
+A: The Machine Learning for Social Science Lab, Center for Peace and Security Studies, University of California San Diego
+
+Q:Why? 
+
+A: We don't know the answers to two important questions:
 
 1) How government interventions changes the rate of growth in COVID19 spread within a community
 
 2) What determines when governments will implement some interventions rather than others
 
-Q: How? A: The data and code are released under [Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+Q: How? 
+
+A: The data and code are released under [Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 If you use this in analysis or reproduce it in any way, it must be accompanied with the latest citation available here
 - Rex W. Douglass. Crowd-sourced COVID-19 Dataset Tracking Involuntary Government Restrictions (TIGR), v1.0 (2020). https://github.com/rexdouglass/TIGR/.
@@ -78,7 +86,9 @@ A stable latest version of the data is made available for consumption as a tsv f
 
 Efforts will be made to maintain the relationship between letter scores and original answers. Any drastic changes will be forked as a new 1.? version number.
 
-Q: I found an error! A: Open an issue ticket with the specific location, date, and coding that you find in error and what you think it should be. We'll review the originally submitted report and make the change if needed.
+Q: I found an error! 
+
+A: Open an issue ticket with the specific location, date, and coding that you find in error and what you think it should be. We'll review the originally submitted report and make the change if needed.
 
 We also aggregate over reports so if you find a source that says different, please submit it and we'll estimate a closer answer.
 
