@@ -206,7 +206,7 @@ weights <- weights[r_df$country]
 weights <- 1/(weights/max(weights))
 
 library(spatstat) #install.packages('spatstat')
-r_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% weighted.quantile(w=weights) #weight by country, exclude obs with no population data.
+print(results <- r_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% weighted.quantile(w=weights)) #weight by country, exclude obs with no population data.
 
 ```
 
@@ -214,7 +214,8 @@ r_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% weighted.quantile(w=weights) #we
 Distribution of R0 across locations.
 
 ```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
-r_df %>% filter(!is.na(pop)) %>% ggplot(aes(x=r_ml)) + geom_density() + ggtitle("Distribution R0 estimate by Location")
+r_df %>% filter(!is.na(pop)) %>% ggplot(aes(x=r_ml)) + geom_density() + ggtitle("Distribution R0 estimates Across Countries") +  geom_vline(xintercept = results[3], stat = 'vline', linetype = "dashed") + theme_bw() +
+  scale_x_continuous(breaks=seq(0, 30, by = 1)) + annotate("text", x = 3, y = .45, label = "Median R0=2.56")
 ```
 
 Raw Estimates
