@@ -9,6 +9,11 @@ author: "Rex W. Douglass"
 
 # Introduction
 
+```{r, cache=F, include = T}
+library(here)
+```
+
+
 This document attempts a very crude estimate of COVID-19 R0 using confirmed cases as a proxy for true cases, leveraging data across multiple countries to support a weighted median estimate.
 
 ```{r, echo=F, cache=F, include = T}
@@ -123,11 +128,11 @@ if(fromscratch){
     mutate(population_log= log(population)) %>%
     mutate(state=ifelse(is.na(state),"none",state)) %>% distinct() %>% arrange(country, state) 
   
-  saveRDS(latest_pop_df,"/media/skynet2/905884f0-7546-4273-9061-12a790830beb/rwd_github_private/TIGR/data_temp/latest_pop_df.RDS")
+  saveRDS(latest_pop_df,paste0(here::here(),"/data_in/latest_pop_df.RDS"))
 
 }
 
-latest_pop_df <- readRDS("/media/skynet2/905884f0-7546-4273-9061-12a790830beb/rwd_github_private/TIGR/data_temp/latest_pop_df.RDS")
+latest_pop_df <- readRDS(paste0(here::here(), "/data_in/latest_pop_df.RDS"))
 
 all_long_covariates <- all_long %>% 
                        left_join(latest_pop_df) %>% 
