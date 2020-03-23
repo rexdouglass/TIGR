@@ -153,11 +153,14 @@ A critical assumption is the serial interval of the disease. [Du et al. March 20
 ```{r}
 #https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-12-147
 #The generation time is the time lag between infection in a primary case and a secondary case. The generation time distribution should be obtained from the time lag between all infectee/infector pairs [8]. As it cannot be observed directly, it is often substituted with the serial interval distribution that measures time between symptoms onset. In our software package, the ‘generation.time’ function is used to represent a discretized generation time distribution. Discretization is carried out on the grid [0,0.5), [0.5, 1.5), [1.5, 2.5), etc.… where the unit is a user chosen time interval (hour, day, week…). Several descriptions are supported: “empirical” requiring the full specification of the distribution, or parametric distributions taken among “gamma”, “lognormal” or “weibull”. In the latter case, the mean and standard deviation must be provided in the desired time units.
+library(R0)
 mGT<-generation.time("gamma", 
-                     c(3.96,#Serial interval mean
+                     #Du et al. "The reported serial intervals range from -11 days to 20 days, with a mean of 3.96 days (95% confidence interval: 3.53-4.39), a standard deviation of 4.75 days (95% confidence interval: 4.46-5.07), "
+                     val=c(
+                       3.96,#Serial interval mean
                        4.75 #Serial interval standard deviation
-                       )
-                     ) #mean and sd of the disease?
+                       ) #val	Vector of values used for the empirical distribution, or c(mean, sd) if parametric.
+                     )
 
 ```
 
