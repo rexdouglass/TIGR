@@ -1,5 +1,5 @@
 ---
-title: "R0 Estimates"
+title: "COVID-19 R0 Estimates"
 output:
   html_notebook:
     toc: yes
@@ -68,6 +68,7 @@ Begin study periods on the date of the first reported confirmed COVID-19 case.
 ```{r}
 library(DT)
 all_long %>% dplyr::select(-country_state,-date_asdate) %>%
+  head(1000) %>% #first 1000 rows
 datatable(rownames = FALSE,
           options = list(
             pageLength = 10,
@@ -147,7 +148,7 @@ datatable(rownames = FALSE,
 
 # Estimating R0
 
-Serial interval of 3.96 days with standard deviatoin of 4.75 days, taken from a literature review [Du et al. March 2020](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4)
+Serial interval of 3.96 days with standard deviatoin of 4.75 days, taken from a recent literature review ([Du et al. March 20, 2020](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4)).
 
 ```{r}
 mGT<-generation.time("gamma", 
@@ -187,7 +188,7 @@ for(q in locations %>% unique() ){
     )
     #attributes(estR0)
     estR0
-    r_list[[q]] <- data.frame(country=temp$country[1],state=temp$state[1], r_ml=estR0$R, pop=pop, R2=estR0$Rsquared)
+    r_list[[q]] <- data.frame(country=temp$country[1],state=temp$state[1], r_ml=round(estR0$R,2), pop=pop, R2= round(estR0$Rsquared,2))
   })
 }
 r_df <- bind_rows(r_list)
@@ -196,17 +197,16 @@ r_df <- bind_rows(r_list)
 
 # Summary
 
-Quantiles of R0 across locations downweighting multiple observations from countries that are dissagregated arbitarily by the data source. A median of R0=2.57
+Quantiles of R0 across locations downweighting multiple observations from countries that are dissagregated arbitarily by the data source. A median of R0=2.56 .
 
 ```{r}
-#r_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% summary()
 
 weights <- table(r_df$country)
 weights <- weights[r_df$country]
 weights <- 1/(weights/max(weights))
 
 library(spatstat) #install.packages('spatstat')
-weighted.quantile(r_df$r_ml, w=weights)
+r_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% weighted.quantile(w=weights) #weight by country, exclude obs with no population data.
 
 ```
 
