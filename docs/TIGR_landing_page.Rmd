@@ -82,7 +82,7 @@ finf <- file.info(path, extra_cols = FALSE)
 
 Here are the data collected thus far (intended to update once every 15 minutes):
 ```{r, echo=F, cache=F, include = T}
-print(paste("Last updated ", Sys.Date()))
+print(paste("Last updated ", finf$mtime))
 ```
 
 ```{r, echo=F, cache=F, include = T}
