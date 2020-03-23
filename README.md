@@ -78,6 +78,9 @@ A stable latest version of the data is made available for consumption as a tsv f
 
 Efforts will be made to maintain the relationship between letter scores and original answers. Any drastic changes will be forked as a new 1.? version number.
 
+Q: I found an error! A: Open an issue ticket with the specific location, date, and coding that you find in error and what you think it should be. We'll review the originally submitted report and make the change if needed.
+
+We also aggregate over reports so if you find a source that says different, please submit it and we'll estimate a closer answer.
 
 
 
