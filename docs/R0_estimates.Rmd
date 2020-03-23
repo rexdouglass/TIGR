@@ -148,7 +148,7 @@ datatable(rownames = FALSE,
 
 # Estimating R0
 
-A critical assumption is the serial interval of the disease. [Du et al. March 20, 2020](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4)) report a serial interval of 3.96 days with standard deviation of 4.75 days. Nishiura et al March 4, 2020 find a median of 4.0. [WHO's literature review](https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200219-sitrep-30-covid-19.pdf?sfvrsn=3346b04f_2) reports an incubation period of 5-6 days and serial interval from 4.4 to 7.5 days. Many simulations go with the early January 29, 2020 estimate from [Li et al.](https://www.nejm.org/doi/10.1056/NEJMoa2001316) of a mean serial interval of 7.5 days.
+A critical assumption is the serial interval of the disease. [Du et al. March 20, 2020](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4) report a serial interval of 3.96 days with standard deviation of 4.75 days. Nishiura et al March 4, 2020 find a median of 4.0. [WHO's literature review](https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200219-sitrep-30-covid-19.pdf?sfvrsn=3346b04f_2) reports an incubation period of 5-6 days and serial interval from 4.4 to 7.5 days. Many simulations go with the early January 29, 2020 estimate from [Li et al.](https://www.nejm.org/doi/10.1056/NEJMoa2001316) of a mean serial interval of 7.5 days.
 
 ```{r}
 #https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-12-147
