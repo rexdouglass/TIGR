@@ -206,7 +206,7 @@ for(q in locations %>% unique() ){
     
     r_log_linear=r2R0(f$info$r, si$d(1:100))
     
-    r_log_linear_list[[q]] <- data.frame(country=temp$country[1],state=temp$state[1], r_log_linear=r_log_linear )
+    r_log_linear_list[[q]] <- data.frame(country=temp$country[1],state=temp$state[1], r_log_linear=round(r_log_linear,2 ))
   })
 }
 r_log_linear_df <- bind_rows(r_log_linear_list)
@@ -271,27 +271,49 @@ r_R0_df <- bind_rows(r_R0_list)
 
 # Summary
 
-Quantiles of R0 across locations downweighting multiple observations from countries that are dissagregated arbitarily by the data source. A median of R0=2.56 .
+Simple log linear model
 
 ```{r}
 
-r_estimates_all <- r_log_linear_df %>% full_join(r_R0_df)
+weights <- table(r_log_linear_df$country)
+weights <- weights[r_log_linear_df$country]
+weights <- 1/(weights/max(weights))
+library(spatstat) #install.packages('spatstat')
+print(results_log_linear <- r_log_linear_df %>% filter(!is.na(pop)) %>% pull(r_log_linear) %>% weighted.quantile(w=weights)) #weight by country, exclude obs with no population data.
+
+```
+
+Quantiles of R0 across locations downweighting multiple observations from countries that are dissagregated arbitarily by the data source. A median of R0=2.56 .
+
+```{r}
 
 weights <- table(r_df$country)
 weights <- weights[r_df$country]
 weights <- 1/(weights/max(weights))
 
 library(spatstat) #install.packages('spatstat')
-print(results <- r_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% weighted.quantile(w=weights)) #weight by country, exclude obs with no population data.
+print(results_R0 <- r_R0_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% weighted.quantile(w=weights)) #weight by country, exclude obs with no population data.
 
 ```
-
 
 Distribution of R0 across locations.
 
 ```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
-r_df %>% filter(!is.na(pop)) %>% ggplot(aes(x=r_ml)) + geom_density() + ggtitle("Distribution R0 Estimates Across Countries") +  geom_vline(xintercept = results[3], stat = 'vline', linetype = "dashed") + theme_bw() +
-  scale_x_continuous(breaks=seq(0, 30, by = 1)) + annotate("text", x = 6, y = .5, label = "Median R0=2.56") + xlab("R0 (maximum likelihood estimate)")
+
+r_estimates_all <- r_log_linear_df %>% full_join(r_R0_df)
+
+r_estimates_all %>% 
+        filter(!is.na(pop)) %>% 
+        ggplot() + 
+        geom_density(aes(x=r_log_linear), col="lightblue") + geom_vline(xintercept = results_log_linear[3], stat = 'vline', linetype = "dashed", col="blue") + 
+        geom_density(aes(x=r_ml), col="pink") + geom_vline(xintercept = results_R0[3], stat = 'vline', linetype = "dashed", col="red") + 
+        ggtitle("Distribution R0 Estimates Across Countries") + 
+        theme_bw() +
+        scale_x_continuous(breaks=seq(0, 30, by = 1)) + 
+        annotate("text", x = 7, y = .75, label = "Median R0_log_linear = 1.64", color="blue") +
+        annotate("text", x = 7, y = .5, label = "Median R0_ML = 2.56", color="red") +
+        xlab("R0 (maximum likelihood estimate)")
+
 ```
 
 Raw Estimates
@@ -299,7 +321,7 @@ Raw Estimates
 ```{r}
 
 library(DT)
-r_df %>%
+r_estimates_all %>%
   mutate(r_ml= round(r_ml,2)) %>%
 datatable(rownames = FALSE,
           options = list(
