@@ -159,7 +159,7 @@ mGT<-generation.time("gamma",
                      val=c(
                        3.96,#Serial interval mean
                        4.75 #Serial interval standard deviation
-                       ) #val	Vector of values used for the empirical distribution, or c(mean, sd) if parametric.
+                       ) #"val	Vector of values used for the empirical distribution, or c(mean, sd) if parametric."
                      )
 
 ```
