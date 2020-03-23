@@ -34463,3 +34463,240 @@ output file: TIGR_landing_page.knit.md
 
 Output created: TIGR_landing_page.nb.html
 [c4dbf7a] 2020-03-23: Commit message
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+✔ ggplot2 3.2.1     ✔ purrr   0.3.3
+✔ tibble  2.1.3     ✔ dplyr   0.8.4
+✔ tidyr   1.0.2     ✔ stringr 1.4.0
+✔ readr   1.3.1     ✔ forcats 0.4.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+
+Attaching package: ‘hablar’
+
+The following object is masked from ‘package:dplyr’:
+
+    na_if
+
+[1] "/home/skynet2"
+Reading from 'COVID19 Gov Responses Sheet'
+
+
+Attaching package: ‘lubridate’
+
+The following object is masked from ‘package:base’:
+
+    date
+
+
+Attaching package: ‘git2r’
+
+The following object is masked from ‘package:dplyr’:
+
+    pull
+
+The following objects are masked from ‘package:purrr’:
+
+    is_empty, when
+
+
+
+processing file: TIGR_landing_page.Rmd
+  |                                                                              |                                                                      |   0%  |                                                                              |..........                                                            |  14%
+  ordinary text without R code
+
+  |                                                                              |....................                                                  |  29%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo   : symbol F
+ $ cache  : symbol F
+ $ include: logi FALSE
+
+  |                                                                              |..............................                                        |  43%
+  ordinary text without R code
+
+  |                                                                              |........................................                              |  57%
+label: unnamed-chunk-2 (with options) 
+List of 3
+ $ echo   : symbol F
+ $ cache  : symbol F
+ $ include: symbol T
+
+  |                                                                              |..................................................                    |  71%
+  ordinary text without R code
+
+  |                                                                              |............................................................          |  86%
+label: unnamed-chunk-3 (with options) 
+List of 3
+ $ echo   : symbol F
+ $ cache  : symbol F
+ $ include: symbol T
+
+  |                                                                              |......................................................................| 100%
+  ordinary text without R code
+
+
+output file: TIGR_landing_page.knit.md
+
+/usr/bin/pandoc +RTS -K512m -RTS TIGR_landing_page.utf8.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output TIGR_landing_page.html --smart --email-obfuscation none --self-contained --standalone --section-divs --template /home/skynet2/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown/rmd/h/default.html --no-highlight --variable highlightjs=1 --variable 'theme:bootstrap' --include-in-header /tmp/RtmpgfpPnV/rmarkdown-str1a25689f324f.html --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' --variable code_folding=show --variable source_embed=TIGR_landing_page.Rmd --include-after-body /tmp/RtmpgfpPnV/file1a257d43b394.html --variable code_menu=1 --variable kable-scroll=1 
+
+Output created: TIGR_landing_page.nb.html
+[a9a0805] 2020-03-23: Commit message
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+✔ ggplot2 3.2.1     ✔ purrr   0.3.3
+✔ tibble  2.1.3     ✔ dplyr   0.8.4
+✔ tidyr   1.0.2     ✔ stringr 1.4.0
+✔ readr   1.3.1     ✔ forcats 0.4.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+
+Attaching package: ‘hablar’
+
+The following object is masked from ‘package:dplyr’:
+
+    na_if
+
+[1] "/home/skynet2"
+Reading from 'COVID19 Gov Responses Sheet'
+
+
+Attaching package: ‘lubridate’
+
+The following object is masked from ‘package:base’:
+
+    date
+
+
+Attaching package: ‘git2r’
+
+The following object is masked from ‘package:dplyr’:
+
+    pull
+
+The following objects are masked from ‘package:purrr’:
+
+    is_empty, when
+
+
+
+processing file: TIGR_landing_page.Rmd
+  |                                                                              |                                                                      |   0%  |                                                                              |..........                                                            |  14%
+  ordinary text without R code
+
+  |                                                                              |....................                                                  |  29%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo   : symbol F
+ $ cache  : symbol F
+ $ include: logi FALSE
+
+  |                                                                              |..............................                                        |  43%
+  ordinary text without R code
+
+  |                                                                              |........................................                              |  57%
+label: unnamed-chunk-2 (with options) 
+List of 3
+ $ echo   : symbol F
+ $ cache  : symbol F
+ $ include: symbol T
+
+  |                                                                              |..................................................                    |  71%
+  ordinary text without R code
+
+  |                                                                              |............................................................          |  86%
+label: unnamed-chunk-3 (with options) 
+List of 3
+ $ echo   : symbol F
+ $ cache  : symbol F
+ $ include: symbol T
+
+  |                                                                              |......................................................................| 100%
+  ordinary text without R code
+
+
+output file: TIGR_landing_page.knit.md
+
+/usr/bin/pandoc +RTS -K512m -RTS TIGR_landing_page.utf8.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output TIGR_landing_page.html --smart --email-obfuscation none --self-contained --standalone --section-divs --template /home/skynet2/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown/rmd/h/default.html --no-highlight --variable highlightjs=1 --variable 'theme:bootstrap' --include-in-header /tmp/Rtmpe88Ovo/rmarkdown-str2b1379d28c97.html --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' --variable code_folding=show --variable source_embed=TIGR_landing_page.Rmd --include-after-body /tmp/Rtmpe88Ovo/file2b133551ee3b.html --variable code_menu=1 --variable kable-scroll=1 
+
+Output created: TIGR_landing_page.nb.html
+[032dd83] 2020-03-23: Commit message
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+✔ ggplot2 3.2.1     ✔ purrr   0.3.3
+✔ tibble  2.1.3     ✔ dplyr   0.8.4
+✔ tidyr   1.0.2     ✔ stringr 1.4.0
+✔ readr   1.3.1     ✔ forcats 0.4.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+
+Attaching package: ‘hablar’
+
+The following object is masked from ‘package:dplyr’:
+
+    na_if
+
+[1] "/home/skynet2"
+Reading from 'COVID19 Gov Responses Sheet'
+
+
+Attaching package: ‘lubridate’
+
+The following object is masked from ‘package:base’:
+
+    date
+
+
+Attaching package: ‘git2r’
+
+The following object is masked from ‘package:dplyr’:
+
+    pull
+
+The following objects are masked from ‘package:purrr’:
+
+    is_empty, when
+
+
+
+processing file: TIGR_landing_page.Rmd
+  |                                                                              |                                                                      |   0%  |                                                                              |..........                                                            |  14%
+  ordinary text without R code
+
+  |                                                                              |....................                                                  |  29%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo   : symbol F
+ $ cache  : symbol F
+ $ include: logi FALSE
+
+  |                                                                              |..............................                                        |  43%
+  ordinary text without R code
+
+  |                                                                              |........................................                              |  57%
+label: unnamed-chunk-2 (with options) 
+List of 3
+ $ echo   : symbol F
+ $ cache  : symbol F
+ $ include: symbol T
+
+  |                                                                              |..................................................                    |  71%
+  ordinary text without R code
+
+  |                                                                              |............................................................          |  86%
+label: unnamed-chunk-3 (with options) 
+List of 3
+ $ echo   : symbol F
+ $ cache  : symbol F
+ $ include: symbol T
+
+  |                                                                              |......................................................................| 100%
+  ordinary text without R code
+
+
+output file: TIGR_landing_page.knit.md
+
+/usr/bin/pandoc +RTS -K512m -RTS TIGR_landing_page.utf8.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output TIGR_landing_page.html --smart --email-obfuscation none --self-contained --standalone --section-divs --template /home/skynet2/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown/rmd/h/default.html --no-highlight --variable highlightjs=1 --variable 'theme:bootstrap' --include-in-header /tmp/RtmpbQ8PLc/rmarkdown-str3ed0475560be.html --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' --variable code_folding=show --variable source_embed=TIGR_landing_page.Rmd --include-after-body /tmp/RtmpbQ8PLc/file3ed03c8fdd91.html --variable code_menu=1 --variable kable-scroll=1 
+
+Output created: TIGR_landing_page.nb.html
+[60b96c5] 2020-03-23: Commit message

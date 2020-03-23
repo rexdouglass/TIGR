@@ -148,9 +148,11 @@ datatable(rownames = FALSE,
 
 # Estimating R0
 
-Serial interval of 3.96 days with standard deviatoin of 4.75 days, taken from a recent literature review ([Du et al. March 20, 2020](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4)).
+A critical assumption is the serial interval of the disease. [Du et al. March 20, 2020](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4)) report a serial interval of 3.96 days with standard deviation of 4.75 days. Nishiura et al March 4, 2020 find a median of 4.0. [WHO's literature review](https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200219-sitrep-30-covid-19.pdf?sfvrsn=3346b04f_2) reports an incubation period of 5-6 days and serial interval from 4.4 to 7.5 days. Many simulations go with the early January 29, 2020 estimate from [Li et al.](https://www.nejm.org/doi/10.1056/NEJMoa2001316) of a mean serial interval of 7.5 days.
 
 ```{r}
+#https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-12-147
+#The generation time is the time lag between infection in a primary case and a secondary case. The generation time distribution should be obtained from the time lag between all infectee/infector pairs [8]. As it cannot be observed directly, it is often substituted with the serial interval distribution that measures time between symptoms onset. In our software package, the ‘generation.time’ function is used to represent a discretized generation time distribution. Discretization is carried out on the grid [0,0.5), [0.5, 1.5), [1.5, 2.5), etc.… where the unit is a user chosen time interval (hour, day, week…). Several descriptions are supported: “empirical” requiring the full specification of the distribution, or parametric distributions taken among “gamma”, “lognormal” or “weibull”. In the latter case, the mean and standard deviation must be provided in the desired time units.
 mGT<-generation.time("gamma", 
                      c(3.96,#Serial interval mean
                        4.75 #Serial interval standard deviation
@@ -160,6 +162,8 @@ mGT<-generation.time("gamma",
 ```
 
 R0 estimates generated with the R package [R0](https://cran.r-project.org/web/packages/R0/index.html)
+
+"The R0 package: a toolbox to estimate reproduction numbers for epidemic outbreaks" [Obadia et al. 2012](https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-12-147)
 
 ```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
 
@@ -214,8 +218,8 @@ print(results <- r_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% weighted.quanti
 Distribution of R0 across locations.
 
 ```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
-r_df %>% filter(!is.na(pop)) %>% ggplot(aes(x=r_ml)) + geom_density() + ggtitle("Distribution R0 estimates Across Countries") +  geom_vline(xintercept = results[3], stat = 'vline', linetype = "dashed") + theme_bw() +
-  scale_x_continuous(breaks=seq(0, 30, by = 1)) + annotate("text", x = 3, y = .45, label = "Median R0=2.56")
+r_df %>% filter(!is.na(pop)) %>% ggplot(aes(x=r_ml)) + geom_density() + ggtitle("Distribution R0 Estimates Across Countries") +  geom_vline(xintercept = results[3], stat = 'vline', linetype = "dashed") + theme_bw() +
+  scale_x_continuous(breaks=seq(0, 30, by = 1)) + annotate("text", x = 6, y = .5, label = "Median R0=2.56") + xlab("R0 (maximum likelihood estimate)")
 ```
 
 Raw Estimates
