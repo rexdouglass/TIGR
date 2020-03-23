@@ -22,6 +22,7 @@ Data on confirmed case rate comes from [2019 Novel Coronavirus COVID-19 (2019-nC
 ```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
 
 library(tidyverse)
+library(R0)  # consider moving all library commands to top -- this one was in a loop below
 confirmed <- read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv"))
 deaths <- read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv"))
 recovered <- read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv"))
@@ -179,7 +180,7 @@ for(q in locations %>% unique() ){
   try({
     temp <- all_long_covariates %>% filter(country_state %in% q) %>% filter(!is.na(confirmed))
     temp$confirmed_fd[1]<-temp$confirmed[1]
-    library(R0)
+    
 
     incidents <- as.vector(temp$confirmed_fd )
     pop <- temp$population[1]
