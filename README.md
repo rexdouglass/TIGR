@@ -63,7 +63,7 @@ Q:Why? A: We don't know the answers to two important questions:
 
 2) What determines when governments will implement some interventions rather than others
 
-Q: How? A: The data and code are release under [Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+Q: How? A: The data and code are released under [Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
 If you use this in analysis or reproduce it in any way, it must be accompanied with the latest citation available here
 - Rex W. Douglass. Crowd-sourced COVID-19 Dataset Tracking Involuntary Government Restrictions (TIGR), v1.0 (2020). https://github.com/rexdouglass/TIGR/.
