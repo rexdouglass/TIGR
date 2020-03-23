@@ -72,6 +72,13 @@ for_viewing_wide <- for_viewing %>%
   ) %>% arrange(country, location_wiki)
   
 saveRDS(for_viewing_wide, "/media/skynet2/905884f0-7546-4273-9061-12a790830beb/rwd_github_private/TIGR/data_temp/for_viewing_wide.Rds")
+
+for_consumption_long <- for_viewing_wide %>% 
+                        pivot_longer(-c(country,location_wiki),
+                                     names_to = "question_answer", values_to = "date") %>% na.omit() %>% 
+                        separate(question_answer, c("question","answer"), sep="-", remove=T) %>% 
+                        arrange(country,location_wiki, question, answer)
+write_tsv(for_consumption_long,"/media/skynet2/905884f0-7546-4273-9061-12a790830beb/rwd_github_private/TIGR/data_out/TIGR_version1_latest.tsv")
   
 #install.packages("git2r")
 library(git2r)
@@ -84,6 +91,7 @@ rmarkdown::render("/media/skynet2/905884f0-7546-4273-9061-12a790830beb/rwd_githu
 repo <- repository(here::here())
 add(repo, "./docs/TIGR_landing_page.nb.html")
 add(repo, "./docs/TIGR_landing_page.Rmd")
+add(repo, "./TIGR_version1_latest.tsv")
 commit(repo, "Commit message")
 
 # Push changes to github.

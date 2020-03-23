@@ -1,0 +1,314 @@
+country	location_wiki	question	answer	date
+China	Hubei	Personal Mobility	a	02-13
+China	Wuhan	Domestic Ground Travel	b	01-23
+China	Wuhan	Suspension of Government Services	c	01-23
+Germany	Bavaria	Personal Mobility	b	03-20
+Germany	Bavaria	Restaurants	c	03-20
+Germany	Berlin	Entertainment Industry	c	03-14
+Germany	Berlin	Gatherings	d	03-14
+Germany	Berlin	Suspension of Government Services	a	03-16
+Germany	Berlin	Suspension of Government Services	b	03-14
+Germany	Germany	Domestic Flights	c	03-16
+Germany	Germany	Domestic Ground Travel	b	03-16
+Germany	Germany	Entertainment Industry	c	03-16
+Germany	Germany	Personal Mobility	a	03-16
+Germany	Germany	Suspension of Government Services	a	03-16
+Germany	Hamburg	Entertainment Industry	c	03-15
+Germany	Hamburg	Suspension of Government Services	a	03-16
+Germany	Hamburg	Suspension of Government Services	b	03-15
+Germany	Hesse	Entertainment Industry	c	03-18
+Germany	Hesse	Restaurants	a	03-18
+Germany	Hesse	Suspension of Government Services	b	03-18
+Germany	Mecklenburg-vorpommern	Suspension of Government Services	a	03-14
+Germany	Schleswig-holstein	Suspension of Government Services	a	03-16
+Indonesia	Makassar	Gatherings	a	03-18
+Italy	Bertonico	Domestic Ground Travel	a	02-22
+Italy	Bertonico	Entertainment Industry	c	02-22
+Italy	Bertonico	Gatherings	e	02-22
+Italy	Bertonico	Personal Mobility	b	02-22
+Italy	Bertonico	Restaurants	d	02-22
+Italy	Casalpusterlengo	Domestic Ground Travel	a	02-22
+Italy	Casalpusterlengo	Entertainment Industry	c	02-22
+Italy	Casalpusterlengo	Gatherings	e	02-22
+Italy	Casalpusterlengo	Personal Mobility	b	02-22
+Italy	Casalpusterlengo	Restaurants	d	02-22
+Italy	Castelgerundo	Domestic Ground Travel	a	02-22
+Italy	Castelgerundo	Entertainment Industry	c	02-22
+Italy	Castelgerundo	Gatherings	e	02-22
+Italy	Castelgerundo	Personal Mobility	b	02-22
+Italy	Castelgerundo	Restaurants	d	02-22
+Italy	Castiglione_d%27Adda	Domestic Ground Travel	a	02-22
+Italy	Castiglione_d%27Adda	Entertainment Industry	c	02-22
+Italy	Castiglione_d%27Adda	Gatherings	e	02-22
+Italy	Castiglione_d%27Adda	Personal Mobility	b	02-22
+Italy	Castiglione_d%27Adda	Restaurants	d	02-22
+Italy	Codogno	Domestic Ground Travel	a	02-22
+Italy	Codogno	Entertainment Industry	c	02-22
+Italy	Codogno	Gatherings	e	02-22
+Italy	Codogno	Personal Mobility	b	02-22
+Italy	Codogno	Restaurants	d	02-22
+Italy	Fombio	Domestic Ground Travel	a	02-22
+Italy	Fombio	Entertainment Industry	c	02-22
+Italy	Fombio	Gatherings	e	02-22
+Italy	Fombio	Personal Mobility	b	02-22
+Italy	Fombio	Restaurants	d	02-22
+Italy	Maleo,_Lombardy	Domestic Ground Travel	a	02-22
+Italy	Maleo,_Lombardy	Entertainment Industry	c	02-22
+Italy	Maleo,_Lombardy	Gatherings	e	02-22
+Italy	Maleo,_Lombardy	Personal Mobility	b	02-22
+Italy	Maleo,_Lombardy	Restaurants	d	02-22
+Italy	Metropolitan_City_of_Milan	Domestic Ground Travel	a	03-08
+Italy	Metropolitan_City_of_Milan	Entertainment Industry	c	03-08
+Italy	Metropolitan_City_of_Milan	Gatherings	d	03-08
+Italy	Metropolitan_City_of_Milan	Restaurants	a	03-08
+Italy	Metropolitan_City_of_Milan	Suspension of Government Services	a	03-08
+Italy	Metropolitan_City_of_Venice	Domestic Ground Travel	a	03-08
+Italy	Metropolitan_City_of_Venice	Entertainment Industry	c	03-08
+Italy	Metropolitan_City_of_Venice	Gatherings	d	03-08
+Italy	Metropolitan_City_of_Venice	Restaurants	a	03-08
+Italy	Metropolitan_City_of_Venice	Suspension of Government Services	a	03-08
+Italy	Province_of_Alessandria	Domestic Ground Travel	a	03-08
+Italy	Province_of_Alessandria	Entertainment Industry	c	03-08
+Italy	Province_of_Alessandria	Gatherings	d	03-08
+Italy	Province_of_Alessandria	Restaurants	a	03-08
+Italy	Province_of_Alessandria	Suspension of Government Services	a	03-08
+Italy	Province_of_Asti	Domestic Ground Travel	a	03-08
+Italy	Province_of_Asti	Entertainment Industry	c	03-08
+Italy	Province_of_Asti	Gatherings	d	03-08
+Italy	Province_of_Asti	Restaurants	a	03-08
+Italy	Province_of_Asti	Suspension of Government Services	a	03-08
+Italy	Province_of_Bergamo	Domestic Ground Travel	a	03-08
+Italy	Province_of_Bergamo	Entertainment Industry	c	03-08
+Italy	Province_of_Bergamo	Gatherings	d	03-08
+Italy	Province_of_Bergamo	Restaurants	a	03-08
+Italy	Province_of_Bergamo	Suspension of Government Services	a	03-08
+Italy	Province_of_Brescia	Domestic Ground Travel	a	03-08
+Italy	Province_of_Brescia	Entertainment Industry	c	03-08
+Italy	Province_of_Brescia	Gatherings	d	03-08
+Italy	Province_of_Brescia	Restaurants	a	03-08
+Italy	Province_of_Brescia	Suspension of Government Services	a	03-08
+Italy	Province_of_Como	Domestic Ground Travel	a	03-08
+Italy	Province_of_Como	Entertainment Industry	c	03-08
+Italy	Province_of_Como	Gatherings	d	03-08
+Italy	Province_of_Como	Restaurants	a	03-08
+Italy	Province_of_Como	Suspension of Government Services	a	03-08
+Italy	Province_of_Cremona	Domestic Ground Travel	a	03-08
+Italy	Province_of_Cremona	Entertainment Industry	c	03-08
+Italy	Province_of_Cremona	Gatherings	d	03-08
+Italy	Province_of_Cremona	Restaurants	a	03-08
+Italy	Province_of_Cremona	Suspension of Government Services	a	03-08
+Italy	Province_of_Lecco	Domestic Ground Travel	a	03-08
+Italy	Province_of_Lecco	Entertainment Industry	c	03-08
+Italy	Province_of_Lecco	Gatherings	d	03-08
+Italy	Province_of_Lecco	Restaurants	a	03-08
+Italy	Province_of_Lecco	Suspension of Government Services	a	03-08
+Italy	Province_of_Lodi	Domestic Ground Travel	a	03-08
+Italy	Province_of_Lodi	Entertainment Industry	c	03-08
+Italy	Province_of_Lodi	Gatherings	d	03-08
+Italy	Province_of_Lodi	Restaurants	a	03-08
+Italy	Province_of_Lodi	Suspension of Government Services	a	03-08
+Italy	Province_of_Mantua	Domestic Ground Travel	a	03-08
+Italy	Province_of_Mantua	Entertainment Industry	c	03-08
+Italy	Province_of_Mantua	Gatherings	d	03-08
+Italy	Province_of_Mantua	Restaurants	a	03-08
+Italy	Province_of_Mantua	Suspension of Government Services	a	03-08
+Italy	Province_of_Modena	Domestic Ground Travel	a	03-08
+Italy	Province_of_Modena	Entertainment Industry	c	03-08
+Italy	Province_of_Modena	Gatherings	d	03-08
+Italy	Province_of_Modena	Restaurants	a	03-08
+Italy	Province_of_Modena	Suspension of Government Services	a	03-08
+Italy	Province_of_Monza_and_Brianza	Domestic Ground Travel	a	03-08
+Italy	Province_of_Monza_and_Brianza	Entertainment Industry	c	03-08
+Italy	Province_of_Monza_and_Brianza	Gatherings	d	03-08
+Italy	Province_of_Monza_and_Brianza	Restaurants	a	03-08
+Italy	Province_of_Monza_and_Brianza	Suspension of Government Services	a	03-08
+Italy	Province_of_Novara	Domestic Ground Travel	a	03-08
+Italy	Province_of_Novara	Entertainment Industry	c	03-08
+Italy	Province_of_Novara	Gatherings	d	03-08
+Italy	Province_of_Novara	Restaurants	a	03-08
+Italy	Province_of_Novara	Suspension of Government Services	a	03-08
+Italy	Province_of_Padua	Domestic Ground Travel	a	03-08
+Italy	Province_of_Padua	Entertainment Industry	c	03-08
+Italy	Province_of_Padua	Gatherings	d	03-08
+Italy	Province_of_Padua	Restaurants	a	03-08
+Italy	Province_of_Padua	Suspension of Government Services	a	03-08
+Italy	Province_of_Parma	Domestic Ground Travel	a	03-08
+Italy	Province_of_Parma	Entertainment Industry	c	03-08
+Italy	Province_of_Parma	Gatherings	d	03-08
+Italy	Province_of_Parma	Restaurants	a	03-08
+Italy	Province_of_Parma	Suspension of Government Services	a	03-08
+Italy	Province_of_Pavia	Domestic Ground Travel	a	03-08
+Italy	Province_of_Pavia	Entertainment Industry	c	03-08
+Italy	Province_of_Pavia	Gatherings	d	03-08
+Italy	Province_of_Pavia	Restaurants	a	03-08
+Italy	Province_of_Pavia	Suspension of Government Services	a	03-08
+Italy	Province_of_Pesaro_and_Urbino	Domestic Ground Travel	a	03-08
+Italy	Province_of_Pesaro_and_Urbino	Entertainment Industry	c	03-08
+Italy	Province_of_Pesaro_and_Urbino	Gatherings	d	03-08
+Italy	Province_of_Pesaro_and_Urbino	Restaurants	a	03-08
+Italy	Province_of_Pesaro_and_Urbino	Suspension of Government Services	a	03-08
+Italy	Province_of_Piacenza	Domestic Ground Travel	a	03-08
+Italy	Province_of_Piacenza	Entertainment Industry	c	03-08
+Italy	Province_of_Piacenza	Gatherings	d	03-08
+Italy	Province_of_Piacenza	Restaurants	a	03-08
+Italy	Province_of_Piacenza	Suspension of Government Services	a	03-08
+Italy	Province_of_Reggio_Emilia	Domestic Ground Travel	a	03-08
+Italy	Province_of_Reggio_Emilia	Entertainment Industry	c	03-08
+Italy	Province_of_Reggio_Emilia	Gatherings	d	03-08
+Italy	Province_of_Reggio_Emilia	Restaurants	a	03-08
+Italy	Province_of_Reggio_Emilia	Suspension of Government Services	a	03-08
+Italy	Province_of_Rimini	Domestic Ground Travel	a	03-08
+Italy	Province_of_Rimini	Entertainment Industry	c	03-08
+Italy	Province_of_Rimini	Gatherings	d	03-08
+Italy	Province_of_Rimini	Restaurants	a	03-08
+Italy	Province_of_Rimini	Suspension of Government Services	a	03-08
+Italy	Province_of_Sondrio	Domestic Ground Travel	a	03-08
+Italy	Province_of_Sondrio	Entertainment Industry	c	03-08
+Italy	Province_of_Sondrio	Gatherings	d	03-08
+Italy	Province_of_Sondrio	Restaurants	a	03-08
+Italy	Province_of_Sondrio	Suspension of Government Services	a	03-08
+Italy	Province_of_Treviso	Domestic Ground Travel	a	03-08
+Italy	Province_of_Treviso	Entertainment Industry	c	03-08
+Italy	Province_of_Treviso	Gatherings	d	03-08
+Italy	Province_of_Treviso	Restaurants	a	03-08
+Italy	Province_of_Treviso	Suspension of Government Services	a	03-08
+Italy	Province_of_Varese	Domestic Ground Travel	a	03-08
+Italy	Province_of_Varese	Entertainment Industry	c	03-08
+Italy	Province_of_Varese	Gatherings	d	03-08
+Italy	Province_of_Varese	Restaurants	a	03-08
+Italy	Province_of_Varese	Suspension of Government Services	a	03-08
+Italy	Province_of_Verbano-Cusio-Ossola	Domestic Ground Travel	a	03-08
+Italy	Province_of_Verbano-Cusio-Ossola	Entertainment Industry	c	03-08
+Italy	Province_of_Verbano-Cusio-Ossola	Gatherings	d	03-08
+Italy	Province_of_Verbano-Cusio-Ossola	Restaurants	a	03-08
+Italy	Province_of_Verbano-Cusio-Ossola	Suspension of Government Services	a	03-08
+Italy	Province_of_Vercelli	Domestic Ground Travel	a	03-08
+Italy	Province_of_Vercelli	Entertainment Industry	c	03-08
+Italy	Province_of_Vercelli	Gatherings	d	03-08
+Italy	Province_of_Vercelli	Restaurants	a	03-08
+Italy	Province_of_Vercelli	Suspension of Government Services	a	03-08
+Italy	San_Fiorano	Domestic Ground Travel	a	02-22
+Italy	San_Fiorano	Entertainment Industry	c	02-22
+Italy	San_Fiorano	Gatherings	e	02-22
+Italy	San_Fiorano	Personal Mobility	b	02-22
+Italy	San_Fiorano	Restaurants	d	02-22
+Italy	Somaglia	Domestic Ground Travel	a	02-22
+Italy	Somaglia	Entertainment Industry	c	02-22
+Italy	Somaglia	Gatherings	e	02-22
+Italy	Somaglia	Personal Mobility	b	02-22
+Italy	Somaglia	Restaurants	d	02-22
+Italy	Terranova_dei_Passerini	Domestic Ground Travel	a	02-22
+Italy	Terranova_dei_Passerini	Entertainment Industry	c	02-22
+Italy	Terranova_dei_Passerini	Gatherings	e	02-22
+Italy	Terranova_dei_Passerini	Personal Mobility	b	02-22
+Italy	Terranova_dei_Passerini	Restaurants	d	02-22
+Italy	V%C3%B2	Domestic Ground Travel	a	02-22
+Italy	V%C3%B2	Entertainment Industry	c	02-22
+Italy	V%C3%B2	Gatherings	e	02-22
+Italy	V%C3%B2	Personal Mobility	b	02-22
+Italy	V%C3%B2	Restaurants	d	02-22
+Philippines	Manila	Domestic Flights	a	03-15
+Philippines	Manila	Domestic Ground Travel	a	03-15
+Philippines	Manila	Entertainment Industry	c	03-15
+Philippines	Manila	Gatherings	e	03-15
+Philippines	Manila	International Flights	b	03-15
+Philippines	Manila	Mandatory Testing	a	03-15
+Philippines	Manila	Personal Mobility	b	03-15
+Philippines	Manila	Suspension of Government Services	a	03-15
+Philippines	Metro	Domestic Flights	a	03-15
+Philippines	Metro	Domestic Ground Travel	a	03-15
+Philippines	Metro	Entertainment Industry	c	03-15
+Philippines	Metro	Gatherings	e	03-15
+Philippines	Metro	International Flights	b	03-15
+Philippines	Metro	Mandatory Testing	a	03-15
+Philippines	Metro	Personal Mobility	b	03-15
+Philippines	Metro	Suspension of Government Services	a	03-15
+Puerto_Rico	Puerto_Rico	Personal Mobility	b	03-17
+United_States	Alameda_County,_California	Entertainment Industry	c	03-16
+United_States	Alameda_County,_California	Gatherings	e	03-16
+United_States	Alameda_County,_California	Personal Mobility	b	03-16
+United_States	Alameda_County,_California	Restaurants	c	03-16
+United_States	Austin,_Texas	Entertainment Industry	c	03-17
+United_States	Austin,_Texas	Gatherings	e	03-17
+United_States	Austin,_Texas	Restaurants	c	03-17
+United_States	Boston	Restaurants	c	03-17
+United_States	California	Entertainment Industry	c	03-19
+United_States	California	Gatherings	f	03-19
+United_States	California	Personal Mobility	a	03-19
+United_States	California	Restaurants	c	03-19
+United_States	Colorado	Entertainment Industry	c	03-17
+United_States	Colorado	Restaurants	c	03-17
+United_States	Connecticut	Entertainment Industry	c	03-16
+United_States	Connecticut	Gatherings	d	03-16
+United_States	Contra_Costa_County,_California	Entertainment Industry	c	03-16
+United_States	Contra_Costa_County,_California	Gatherings	e	03-16
+United_States	Contra_Costa_County,_California	Personal Mobility	b	03-16
+United_States	Contra_Costa_County,_California	Restaurants	c	03-16
+United_States	County	Entertainment Industry	c	03-19
+United_States	County	Gatherings	e	03-19
+United_States	Dallas	Entertainment Industry	c	03-17
+United_States	Dallas	Gatherings	c	03-17
+United_States	Dallas	Restaurants	c	03-17
+United_States	Diego	Entertainment Industry	c	03-19
+United_States	Diego	Gatherings	e	03-19
+United_States	Florida	Entertainment Industry	c	03-17
+United_States	Florida	Gatherings	e	03-17
+United_States	Florida	Restaurants	b	03-17
+United_States	Houston	Entertainment Industry	c	03-17
+United_States	Houston	Restaurants	c	03-17
+United_States	Maine	Restaurants	c	05-18
+United_States	Marin_County,_California	Entertainment Industry	c	03-16
+United_States	Marin_County,_California	Gatherings	e	03-16
+United_States	Marin_County,_California	Personal Mobility	b	03-16
+United_States	Marin_County,_California	Restaurants	c	03-16
+United_States	Miami	Entertainment Industry	a	03-17
+United_States	Miami	Restaurants	b	03-17
+United_States	Miami_Beach%2C_Florida	Restaurants	d	03-17
+United_States	Michigan	Gatherings	c	03-12
+United_States	Michigan	Restaurants	c	03-16
+United_States	Minnesota	Entertainment Industry	c	03-17
+United_States	Minnesota	Restaurants	c	03-17
+United_States	Minnesota	Suspension of Government Services	a	03-18
+United_States	New_Jersey	Entertainment Industry	c	03-16
+United_States	New_Jersey	Gatherings	d	03-16
+United_States	New_York_(state)	Entertainment Industry	c	03-16
+United_States	New_York_(state)	Gatherings	d	03-16
+United_States	Orange_County,_California	Entertainment Industry	c	03-31
+United_States	Orange_County,_California	Gatherings	e	03-31
+United_States	Orange_County,_California	Restaurants	c	03-31
+United_States	Orlando%2C_Florida	Restaurants	b	03-17
+United_States	Pennsylvania	Entertainment Industry	a	03-21
+United_States	Pennsylvania	Personal Mobility	a	03-19
+United_States	Pennsylvania	Restaurants	a	03-21
+United_States	Reno,_Nevada	Entertainment Industry	c	03-17
+United_States	Reno,_Nevada	Restaurants	c	03-17
+United_States	San	Entertainment Industry	c	03-19
+United_States	San	Gatherings	e	03-19
+United_States	San_Antonio	Gatherings	d	03-17
+United_States	San_Diego	Entertainment Industry	c	03-16
+United_States	San_Diego	International Flights	a	03-16
+United_States	San_Diego_County,_California	Gatherings	d	03-17
+United_States	San_Diego_County,_California	Gatherings	e	03-17
+United_States	San_Diego_County,_California	Restaurants	c	03-17
+United_States	San_Francisco	Entertainment Industry	c	03-16
+United_States	San_Francisco	Gatherings	e	03-16
+United_States	San_Francisco	Personal Mobility	b	03-16
+United_States	San_Francisco	Restaurants	c	03-16
+United_States	San_Francisco_Bay_Area	Domestic Ground Travel	b	03-17
+United_States	San_Francisco_Bay_Area	Entertainment Industry	c	03-17
+United_States	San_Francisco_Bay_Area	Gatherings	e	03-17
+United_States	San_Francisco_Bay_Area	Personal Mobility	b	03-17
+United_States	San_Francisco_Bay_Area	Restaurants	c	03-17
+United_States	San_Mateo_County,_California	Entertainment Industry	c	03-16
+United_States	San_Mateo_County,_California	Gatherings	e	03-16
+United_States	San_Mateo_County,_California	Personal Mobility	b	03-16
+United_States	San_Mateo_County,_California	Restaurants	c	03-16
+United_States	Santa_Clara_County,_California	Entertainment Industry	c	03-16
+United_States	Santa_Clara_County,_California	Gatherings	e	03-16
+United_States	Santa_Clara_County,_California	Personal Mobility	b	03-16
+United_States	Santa_Clara_County,_California	Restaurants	c	03-16
+United_States	Texas	Entertainment Industry	b	03-19
+United_States	Texas	Gatherings	e	03-19
+United_States	Texas	Restaurants	c	03-19
+United_States	Texas	Suspension of Government Services	a	03-19
+United_States	Williamson_County,_Texas	Restaurants	c	03-18
