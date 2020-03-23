@@ -70,7 +70,9 @@ If you use this in analysis or reproduce it in any way, it must be accompanied w
 
 Q: What?
 
-The data are location, restriction, date tripplies submitted by volenteers. Each has a source URL submitted through the Google Form survey. The schema/codebook for the data is taken directly from the Google Form, which changes slightly to fix spellings, add options, or respond to coder feedback.
+The data are location, restriction, date tripplies submitted by volenteers. Each has a source URL submitted through the Google Form survey. 
+
+The schema/codebook for the data is taken directly from the Google Form, which changes slightly to fix spellings, add options, or respond to coder feedback.
 
 A stable latest version of the data is made available for consumption as a tsv file [here](https://raw.githubusercontent.com/rexdouglass/TIGR/master/data_out/TIGR_version1_latest.tsv)
 
