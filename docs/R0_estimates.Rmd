@@ -1,15 +1,23 @@
 ---
 title: "R0 Estimates"
-output: html_notebook
+output:
+  html_notebook:
+    toc: yes
+date: "3/23/2020"
+author: "Rex W. Douglass"
 ---
-
-Rex W. Douglass
 
 # Introduction
 
+This document attempts a very crude estimate of COVID-19 R0 using confirmed cases as a proxy for true cases, leveraging data across multiple countries to support a weighted median estimate.
+
+```{r, echo=F, cache=F, include = T}
+print(paste("Last updated ", Sys.Date()))
+```
+
+## Data on Count of Confirmed COVID-19 Cases
+
 Data on confirmed case rate comes from [2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19).
-
-
 
 ```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
 
@@ -68,6 +76,8 @@ datatable(rownames = FALSE,
             )
 )
 ```
+
+## Population Data
 
 Pull population data comes from wikidata.
 
@@ -135,29 +145,24 @@ datatable(rownames = FALSE,
 ```
 
 
-R0 estimates generated with the R package [R0](https://cran.r-project.org/web/packages/R0/index.html)
+# Estimating R0
 
-
-3.96 days (95% CI 3.53–4.39 days), SD 4.75 days (95% CI 4.46–5.07 days);
-https://wwwnc.cdc.gov/eid/article/26/6/20-0357_article
-
-https://www.ncbi.nlm.nih.gov/pubmed/32145466
-4.0 days (95% credible interval [CrI]: 3.1, 4.9). Limiting our data to only the most certain pairs, the median serial interval was estimated at 4.6 days (95% CrI: 3.5, 5.9).
-
-https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4
-The reported serial intervals range from -11 days to 20 days, with a mean of 3.96 days (95% confidence interval: 3.53-4.39), a standard deviation of 4.75 days (95% confidence interval: 4.46-5.07), and 12.6% of reports indicating pre-symptomatic transmission.
+Serial interval of 3.96 days with standard deviatoin of 4.75 days, taken from a literature review [Du et al. March 2020](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4)
 
 ```{r}
-
 mGT<-generation.time("gamma", 
-                     c(3.96, 
-                       4.75
+                     c(3.96,#Serial interval mean
+                       4.75 #Serial interval standard deviation
                        )
                      ) #mean and sd of the disease?
 
 ```
 
+R0 estimates generated with the R package [R0](https://cran.r-project.org/web/packages/R0/index.html)
+
 ```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
+
+#Note many of these will throw errors for lack of data
 
 locations <- all_long_covariates$country_state
 r_list <- list()
@@ -191,10 +196,10 @@ r_df <- bind_rows(r_list)
 
 # Summary
 
-Quantiles of R0 across locations. First raw, and then downweighting multiple observations from countries that are dissagregated arbitarily by the data source.
+Quantiles of R0 across locations downweighting multiple observations from countries that are dissagregated arbitarily by the data source. A median of R0=2.57
 
 ```{r}
-r_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% summary()
+#r_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% summary()
 
 weights <- table(r_df$country)
 weights <- weights[r_df$country]
@@ -218,7 +223,6 @@ Raw Estimates
 
 library(DT)
 r_df %>%
-  mutate(country_state=str_replace(country_state,"___none","")) %>% 
   mutate(r_ml= round(r_ml,2)) %>%
 datatable(rownames = FALSE,
           options = list(

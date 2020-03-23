@@ -43,10 +43,13 @@ and was not ....
 
 Share the project on Twitter https://twitter.com/RexDouglass/status/1240033447948648449
 
-[View the Data Collected So Far](https://rexdouglass.github.io/TIGR/TIGR_landing_page.nb.html)
-
 [Submit another Report](https://forms.gle/ESytGHMzUTvNf6RJA)
 
+## Additional Resources
+
+[View the Data Collected So Far](https://rexdouglass.github.io/TIGR/TIGR_landing_page.nb.html)
+
+[View Cross National Estimates of COVID-10 R0](https://rexdouglass.github.io/TIGR/TIGR_landing_page.nb.html)
 
 ## FAQ
 
