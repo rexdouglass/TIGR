@@ -160,7 +160,7 @@ Experimenting with alternate estimation using epitrix  packages.
 
 https://www.repidemicsconsortium.org/epitrix/
 
-```{r}
+```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
 
 library(epitrix) #install.packages("epitrix")
 
@@ -278,7 +278,7 @@ r_R0_df <- bind_rows(r_R0_list)
 
 Simple log linear model
 
-```{r}
+```{r, echo=T, message=FALSE, results = T, warning=FALSE}
 
 weights <- table(r_log_linear_df$country)
 weights <- weights[r_log_linear_df$country]
@@ -290,10 +290,10 @@ print(results_log_linear <- r_log_linear_df %>% filter(!is.na(pop)) %>% pull(r_l
 
 Quantiles of R0 across locations downweighting multiple observations from countries that are dissagregated arbitarily by the data source. A median of R0=2.56 .
 
-```{r}
+```{r, echo=T, message=FALSE, results = T, warning=FALSE}
 
-weights <- table(r_df$country)
-weights <- weights[r_df$country]
+weights <- table(r_R0_df$country)
+weights <- weights[r_R0_df$country]
 weights <- 1/(weights/max(weights))
 
 library(spatstat) #install.packages('spatstat')
