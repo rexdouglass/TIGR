@@ -68,4 +68,14 @@ Q: How? A: The data and code are release under [Creative Commons Attribution-Sha
 If you use this in analysis or reproduce it in any way, it must be accompanied with the latest citation available here
 - Rex W. Douglass. Crowd-sourced COVID-19 Dataset Tracking Involuntary Government Restrictions (TIGR), v1.0 (2020). https://github.com/rexdouglass/TIGR/.
 
+Q: What?
+
+The data are location, restriction, date tripplies submitted by volenteers. Each has a source URL submitted through the Google Form survey. The schema/codebook for the data is taken directly from the Google Form, which changes slightly to fix spellings, add options, or respond to coder feedback.
+
+A stable latest version of the data is made available for consumption as a tsv file [here](https://raw.githubusercontent.com/rexdouglass/TIGR/master/data_out/TIGR_version1_latest.tsv)
+
+Efforts will be made to maintain the relationship between letter scores and original answers. Any drastic changes will be forked as a new 1.? version number.
+
+
+
 
