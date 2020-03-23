@@ -148,6 +148,72 @@ datatable(rownames = FALSE,
 
 # Estimating R0
 
+## Estimating with a log linear model
+
+Experimenting with alternate estimation using epitrix  packages.
+
+https://www.repidemicsconsortium.org/epitrix/
+
+```{r}
+
+library(epitrix) #install.packages("epitrix")
+
+mu <- 3.96 #15.3 # mean in days days
+sigma <- 4.75 #9.3 # standard deviation in days
+cv <- sigma/mu # coefficient of variation
+cv
+
+param <- gamma_mucv2shapescale(mu, cv) # convertion to Gamma parameters
+param
+
+si <- distcrete::distcrete("gamma", interval = 1,
+               shape = param$shape,
+               scale = param$scale, w = 0)
+si
+
+set.seed(1)
+x <- si$r(500)
+head(x, 10)
+
+hist(x, col = "grey", border = "white",
+     xlab = "Days between primary and secondary onset",
+     main = "Simulated serial intervals")
+
+si_fit <- fit_disc_gamma(x)
+si_fit
+
+library(outbreaks) #install.packages('outbreaks')
+library(incidence) #install.packages('incidence')
+
+locations <- all_long_covariates$country_state
+r_log_linear_list <- list()
+for(q in locations %>% unique() ){
+  print(q)
+  try({
+    temp <- all_long_covariates %>% filter(country_state %in% q) %>% filter(!is.na(confirmed) )
+    temp$confirmed_fd[1]<-temp$confirmed[1]
+
+    incidents <- lapply(temp$days_since_1_confirmed[temp$confirmed_fd>0], FUN=function(x) { rep(temp$days_since_1_confirmed[x],temp$confirmed_fd[x]) } ) #print(x) ;
+    incidents <- unlist( incidents )
+    i <- incidence(incidents)
+    i
+
+    peak <- which(cummean(i$counts)==max(cummean(i$counts)))
+    
+    f <- fit(i[1:peak])  #fit the curve to the peak mean incidents
+    plot(i, fit = f, color = "#9fc2fc")
+    
+    r_log_linear=r2R0(f$info$r, si$d(1:100))
+    
+    r_log_linear_list[[q]] <- data.frame(country=temp$country[1],state=temp$state[1], r_log_linear=r_log_linear )
+  })
+}
+r_log_linear_df <- bind_rows(r_log_linear_list)
+
+```
+
+## Estimating with the R0 package
+
 A critical assumption is the serial interval of the disease. [Du et al. March 20, 2020](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4) report a serial interval of 3.96 days with standard deviation of 4.75 days. Nishiura et al March 4, 2020 find a median of 4.0. [WHO's literature review](https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200219-sitrep-30-covid-19.pdf?sfvrsn=3346b04f_2) reports an incubation period of 5-6 days and serial interval from 4.4 to 7.5 days. Many simulations go with the early January 29, 2020 estimate from [Li et al.](https://www.nejm.org/doi/10.1056/NEJMoa2001316) of a mean serial interval of 7.5 days.
 
 ```{r}
@@ -173,7 +239,7 @@ R0 estimates generated with the R package [R0](https://cran.r-project.org/web/pa
 #Note many of these will throw errors for lack of data
 
 locations <- all_long_covariates$country_state
-r_list <- list()
+r_R0_list <- list()
 for(q in locations %>% unique() ){
   print(q)
   try({
@@ -195,10 +261,10 @@ for(q in locations %>% unique() ){
     )
     #attributes(estR0)
     estR0
-    r_list[[q]] <- data.frame(country=temp$country[1],state=temp$state[1], r_ml=round(estR0$R,2), pop=pop, R2= round(estR0$Rsquared,2))
+    r_R0_list[[q]] <- data.frame(country=temp$country[1],state=temp$state[1], r_ml=round(estR0$R,2), pop=pop, R2= round(estR0$Rsquared,2))
   })
 }
-r_df <- bind_rows(r_list)
+r_R0_df <- bind_rows(r_R0_list)
 
 ```
 
@@ -207,6 +273,8 @@ r_df <- bind_rows(r_list)
 Quantiles of R0 across locations downweighting multiple observations from countries that are dissagregated arbitarily by the data source. A median of R0=2.56 .
 
 ```{r}
+
+r_estimates_all <- r_log_linear_df %>% full_join(r_R0_df)
 
 weights <- table(r_df$country)
 weights <- weights[r_df$country]

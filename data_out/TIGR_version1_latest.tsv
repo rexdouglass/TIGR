@@ -224,6 +224,7 @@ Philippines	Metro	Mandatory Testing	a	03-15
 Philippines	Metro	Personal Mobility	b	03-15
 Philippines	Metro	Suspension of Government Services	a	03-15
 Puerto_Rico	Puerto_Rico	Personal Mobility	b	03-17
+United_Kingdom	United_Kingdom	Personal Mobility	b	03-23
 United_States	Alameda_County,_California	Entertainment Industry	c	03-16
 United_States	Alameda_County,_California	Gatherings	e	03-16
 United_States	Alameda_County,_California	Personal Mobility	b	03-16
@@ -256,6 +257,8 @@ United_States	Florida	Gatherings	e	03-17
 United_States	Florida	Restaurants	b	03-17
 United_States	Houston	Entertainment Industry	c	03-17
 United_States	Houston	Restaurants	c	03-17
+United_States	Los_Angeles	Suspension of Government Services	b	03-23
+United_States	Los_Angeles	Testing Availability	a	03-23
 United_States	Maine	Restaurants	c	03-18
 United_States	Marin_County,_California	Entertainment Industry	c	03-16
 United_States	Marin_County,_California	Gatherings	e	03-16
@@ -311,4 +314,6 @@ United_States	Texas	Entertainment Industry	b	03-19
 United_States	Texas	Gatherings	e	03-19
 United_States	Texas	Restaurants	c	03-19
 United_States	Texas	Suspension of Government Services	a	03-19
+United_States	Travis_County,_Texas	Gatherings	f	03-24
+United_States	Travis_County,_Texas	Personal Mobility	b	03-24
 United_States	Williamson_County,_Texas	Restaurants	c	03-18
