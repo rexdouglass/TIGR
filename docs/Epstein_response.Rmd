@@ -102,7 +102,7 @@ The struggle is how to think about and do science alongside actors who generate 
 
 We can frame Epstein's argument as a concrete research design. The outcome we want to know is number of deaths from COVID-19 in the United States, say by September 1. The two counter-factual worlds we are comparing are the one where the U.S. applies universal shelter at home versus the world in which the U.S. applies selective shelter at home (say ages 60 and up). Neither world is observed (yet), and so these are necessarily forecasts that we have to base on some deductive theoretical understanding of disease spread, and some inductive empirical understanding of recent COVID-19 spread already observed. I'll lay out both threads of inquiry while comparing what Epstein (2020) chose to do instead.
 
-To be concrete, here are confirmed COVID-19 cases and deaths (our outcome) in the U.S. thus far [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19).
+To be concrete, here are confirmed COVID-19 cases and deaths (our outcome) in the U.S. thus far from [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19).
 
 ```{r, echo=F, message=FALSE, results = F, warning=FALSE}
 
@@ -206,7 +206,18 @@ patchwork + plot_annotation(
 ```
 Just eyeballing these forecasts in light of the actual data trajectory should immediately give you pause. For the United States, it would require a very soon departure from the current exponential trend which isn't visible yet in either the confirmed or death trends. For the world, growth starts off exponential, levels off, and then goes exponential again as it reaches a new part of the world. For Epstein's 50k estimate to be true, the trend in Europe and the U.S. would have to start leveling off now, and there would have to not be an exponential growth when the disease fully hits Latin America, Africa, and South East Asia. To paraphrase a lesson I first learned from Chris Achen, you should not be speaking on data that you have not spent a long time getting to know intimately and personally. 
 
-# Lesson 5: Evaluate the fit of your model to your insample data
+# Lesson 6: Dissagregate Your Data
+
+The point about some countries having flattented off while others are either still in exponential growth or about to enter into exponential growth is made by desegregating cases.
+
+```{r}
+
+all_long %>% ggplot() %>% geom_point(aes(x=days_since_1_confirmed, y=confirmed ))
+
+```
+
+
+
 
 We can actually fit a simple logistic growth model to the data we have for the U.S. so far and set the total expected number to his forcasts ([We et al. 2020](https://arxiv.org/abs/2003.05681)).
 
