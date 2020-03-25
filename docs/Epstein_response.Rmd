@@ -1,0 +1,260 @@
+---
+title: "How to be Curious instead of Contrarian about COVID-19: Data Science Lessons in Response to 'Coronavirus Perspective' (Epstein 2020)"
+output:
+  html_notebook:
+    toc: yes
+date: "3/24/2020"
+author: "Rex W. Douglass"
+---
+
+
+```{r, echo=F, message=FALSE, results = FALSE, warning=FALSE}
+
+library(tidyverse)
+library(R0)  # consider moving all library commands to top -- this one was in a loop below
+confirmed <- read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv"))
+deaths <- read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv"))
+recovered <- read_csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv"))
+
+confirmed_long <- pivot_longer(confirmed, names_to = "date", cols = ends_with("20"), values_to = "confirmed")
+deaths_long <- pivot_longer(deaths, names_to = "date", cols = ends_with("20"), values_to = "deaths")
+recovered_long <- pivot_longer(recovered, names_to = "date", cols = ends_with("20"), values_to = "recovered")
+
+
+library(lubridate)
+all_long <- deaths_long %>% 
+            full_join(confirmed_long) %>% 
+            full_join(recovered_long) %>%
+            filter(confirmed>0) %>% 
+          
+            mutate(date_asdate = mdy(str_replace(date,"20$","2020"))) %>% 
+            rename(country=`Country/Region`, state=`Province/State`) %>%
+            #filter(!state %in% c("From Diamond Princess","Diamond Princess")) %>%
+            group_by(country, date_asdate) %>%
+            summarize(deaths=sum(deaths), confirmed=sum(confirmed)) %>%
+  
+            arrange(country, date_asdate) %>%
+              group_by(country) %>%
+              mutate(days_since_1_confirmed=cumsum(confirmed>0)) %>%
+              mutate(confirmed_fd=confirmed-lag(confirmed)) %>%
+            ungroup() %>%
+            filter(days_since_1_confirmed>0) %>%
+            group_by(country) %>%
+              mutate(confirmed_max=max(confirmed)) %>%
+            ungroup() 
+            
+padded <- all_long %>%
+          tidyr::expand(country, days_since_1_confirmed=1:100) 
+
+all_long <- padded %>% 
+            left_join(all_long) %>% 
+            arrange(country,  days_since_1_confirmed)
+
+world_long <- deaths_long %>% 
+              full_join(confirmed_long) %>% 
+              full_join(recovered_long) %>%
+              filter(confirmed>0) %>% 
+            
+              mutate(date_asdate = mdy(str_replace(date,"20$","2020"))) %>% 
+              rename(country=`Country/Region`, state=`Province/State`) %>%
+              #filter(!state %in% c("From Diamond Princess","Diamond Princess")) %>%
+              group_by(date_asdate) %>%
+              summarize(deaths=sum(deaths), confirmed=sum(confirmed)) %>%
+    
+              mutate(days_since_1_confirmed=cumsum(confirmed>0)) %>%
+              mutate(confirmed_fd=confirmed-lag(confirmed)) %>%
+
+              filter(days_since_1_confirmed>0) %>%
+              right_join(padded %>%  dplyr::select(days_since_1_confirmed) %>% distinct() ) %>%
+              arrange(days_since_1_confirmed)
+
+
+
+```
+
+# Introduction
+
+How should non-epidemiologists publicly discuss COVID-19 data and models? Right now, when leaders and citizens are especially sensitive to signals on public health, what is our intellectual responsibility to produce or defer to the analysis of more expert speakers? I argue that our responsibility during crisis is the same as it was prior, to do good work, to the best of our abilities, with the scientific principles of curiosity and honesty. Alternative shorthands like 'staying in your lane' are a poor decision rule for sorting good work from bad, and they ignore the actual very messy process underlying scientific inquiry. Lane-keeping is a poor way to learn and become a better consumer of expert findings, and gate-keeping is a missed opportunity to provide the public goods of feedback and review. To demonstrate the point, this note provides a detailed review of a recent piece "[Coronavirus Perspective](https://www.hoover.org/research/coronavirus-isnt-pandemic)" (Epstein 2020). By applying and illustrating data science principles point for point to this non-epidimiological take on epidimiological questions, the reader will take away not why they should avoid working on new topics but takeaway lessons the difference in the power of critiques based on being 'out of one's lane' versus specific critiques of bad, god awful, work.
+
+# Epstein (2020)
+
+Epstein (2020) argues that the U.S. ought to shift from a loose shelter in place style quarantine to a more limited shelter in place for just vulnerable populations. He provides two primary rationales. First, the number of cases and number of deaths both in the U.S. and worldwide are likely to be small. Second, mortality for under 60 is relatively low. Together, the two ideas suggest that restrictions on all groups is overkill and perhaps some compromise weaker position is preferred.
+
+# Lesson 1: Actually care about the answer to a question
+
+Epstein (2020) frames itself as being contrarian rather than curious about the true state of the world.
+
+> Perhaps my analysis is all wrong, even deeply flawed. But the stakes are too high to continue on the current course without reexamining the data and the erroneous models that are predicting doom.
+
+> Much of the current analysis does not explain how and why rates of infection and death will spike, so I think that it is important to offer a dissenting voice.
+
+> These are deeply contrarian estimates.
+
+Contrarianism is not a search for truth, it's a search for political influence in a market that rewards diversity of opinion for diversity's sake. 
+
+Science is about being curious about the true state of the world, and through application of evidence and methods, forming newer more true beliefs than we held the day before. 
+
+Science is not the pursuit of eyeballs, clicks, 'mind-share', or whatever self promoting b.s. marketing term we're throwing around this quarter.
+
+The struggle is how to think about and do science alongside actors who generate controversy for self interest using a lot of the same language as science. The only real solution, is to learn how to tell good from bad work no matter the wrapping. Learn how to be curious, not contrarian.
+
+# Lesson 2: Put the question first, and propose a research design around it
+
+We can frame Epstein's argument as a concrete research design. The outcome we want to know is number of deaths from COVID-19 in the United States, say by September 1. The two counter-factual worlds we are comparing are the one where the U.S. applies universal shelter at home versus the world in which the U.S. applies selective shelter at home (say ages 60 and up). Neither world is observed (yet), and so these are necessarily forecasts that we have to base on some deductive theoretical understanding of disease spread, and some inductive empirical understanding of recent COVID-19 spread already observed. I'll lay out both threads of inquiry while comparing what Epstein (2020) chose to do instead.
+
+To be concrete, here are confirmed COVID-19 cases and deaths (our outcome) in the U.S. thus far [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19).
+
+```{r, echo=F, message=FALSE, results = F, warning=FALSE}
+
+us_long <- all_long %>% filter(country %in% "US") 
+
+library(ggplot2)
+
+p1 <- us_long %>% ggplot() + geom_point(aes(x=date_asdate, y=confirmed), color="red")  + xlab("Date") + theme_bw()
+p2 <- us_long %>% ggplot() + geom_point(aes(x=date_asdate, y=deaths)) + xlab("Date") + theme_bw()
+```
+
+```{r, echo=F, message=FALSE, results = T, warning=FALSE}
+library(patchwork) ; #install.packages("patchwork")
+patchwork <- (p1 + p2) 
+patchwork + plot_annotation(
+  title = 'United States Covid-19 Cases and Deaths'#,
+  #subtitle = 'These 3 plots will reveal yet-untold secrets about our beloved data-set',
+  #caption = ''
+)
+```
+To make this easier to compare across time and across countries, let's log transform the outcome and change date to number of days since first reported case.
+
+```{r, echo=F, message=FALSE, results = F, warning=FALSE}
+
+library(ggplot2)
+library(cowplot)
+p1 <- us_long %>% ggplot() + geom_point(aes(x=days_since_1_confirmed, y=confirmed), color="red")  + xlab("Days Since First Confirmed") + theme_bw() + scale_y_log10()
+p2 <- us_long %>% ggplot() + geom_point(aes(x=days_since_1_confirmed, y=deaths)) + xlab("Days Since First Confirmed") + theme_bw()  + scale_y_log10()
+
+```
+
+```{r, echo=F, message=FALSE, results = T, warning=FALSE}
+library(patchwork) ; #install.packages("patchwork")
+patchwork <- (p1 + p2) 
+patchwork + plot_annotation(
+  title = 'United States Covid-19 Cases and Deaths',
+  subtitle = 'Log scale, and days since first confirmed case'#,
+  #caption = ''
+)
+
+```
+
+# Lesson 3: When your prediction fails, use it as opportunity to review your model and its assumptions
+
+
+In the first draft of the piece dated and posted March 16, 2020 Epstein ([2020a](https://web.archive.org/web/20200319165522/https://www.hoover.org/research/coronavirus-isnt-pandemic)) predicts the following about future counts of deaths:
+
+> From this available data, it seems more probable than not that the total number of cases world-wide will peak out at well under 1 million, with the total number of deaths at under 50,000 (up about eightfold). In the United States, if the total death toll increases at about the same rate, the current 67 deaths should reach about 5000 (or twn percent of my estimated world total, which may also turn out to be low). [See correction & addendum at the end of this essay.]
+
+When the fatality number passed 500, Epstein ([2020b](https://webcache.googleusercontent.com/search?q=cache:-qQ7VMpqFRUJ:https://www.hoover.org/research/coronavirus-isnt-pandemic+&cd=1&hl=en&ct=clnk&gl=us)) updated the text of the article to read 5,000 and added a footnote.
+
+> From this available data, it seems more probable than not that the total number of cases world-wide will peak out at well under 1 million, with the total number of deaths at under 50,000 (up about eightfold). In the United States, if the total death toll increases at about the same rate, the current 67 deaths should reach about 5000 (or twn percent of my estimated world total, which may also turn out to be low). [See correction & addendum at the end of this essay.]
+
+> Correction & Addendum, added March 24, 2020: That estimate is ten times greater than the 500 number I erroneously put in the initial draft of the essay, and it, too, could prove somewhat optimistic. But any possible error rate in this revised projection should be kept in perspective. The current U.S. death toll stands at 592 as of noon on March 24, 2020, out of about 47,000 cases. So my adjusted figure, however tweaked, remains both far lower, and I believe far more accurate, than the common claim that there could be a million dead in the U.S. from well over 150 million coronavirus cases before the epidemic runs its course.
+
+This update is disingenuous. It alters the prediction but does not bother to alter the logic which led to the calculation. Multiplying the then global death count by 8 would lead to a global prediction of 50,000 and so multiplying the then U.S. death count of 67 by 8 would be 536, hence the forecast of 500. Likewise the 50,000 global total is left unchanged.  Simply adding zeros to the prediction every time it is proven wrong doesn't alter the underlying model given in the same sentence. 
+
+When you feel comfortable enough to share your predictions publicly, create a concrete record and stick by it. You can always make new predictions based on new models, but don't go back an erase the past. The temptation to try to gaslight others (and yourself) that you were really right the entire time is too great.^[And hilarious.]
+
+# Lesson 4: Examine your predictions out of domain
+
+We can visually examine this prediction in light of the data up to now, first by extending the time period out to 100 days and second adding global counts 
+
+```{r, echo=F, message=FALSE, results = F, warning=FALSE}
+
+
+library(ggplot2)
+library(cowplot)
+p1 <- us_long %>% ggplot() +
+          geom_point(aes(x=days_since_1_confirmed, y=confirmed), color="red") + 
+          geom_point(aes(x=days_since_1_confirmed, y=deaths), color="black") + 
+          xlab("Days Since First Confirmed") + 
+          theme_bw()  + scale_y_log10()  + xlim(0,100) +
+          geom_hline(yintercept = 500, stat = 'hline', linetype = "dashed", col="black") +
+          geom_hline(yintercept = 5000, stat = 'hline', linetype = "dashed", col="black") +
+          ggtitle("United States") + 
+          annotate("text", x = 80, y = 700, label = "March 16 Prediction", color="black", size=2.5)  + 
+          annotate("text", x = 80, y = 7000, label = "March 24 Prediction", color="black", size=2.5)
+
+p2 <- world_long %>% ggplot() +
+          geom_point(aes(x=days_since_1_confirmed, y=confirmed), color="red") + 
+          geom_point(aes(x=days_since_1_confirmed, y=deaths), color="black") + 
+          xlab("Days Since First Confirmed") + theme_bw() + scale_y_log10() + xlim(0,100) +
+          geom_hline(yintercept = 50000, stat = 'hline', linetype = "dashed", col="black") +
+          ggtitle("World") + 
+          annotate("text", x = 80, y = 65000, label = "March 16 Prediction", color="black", size=2.5) 
+
+
+```
+
+```{r, echo=F, message=FALSE, results = T, warning=FALSE}
+
+library(patchwork) ; #install.packages("patchwork")
+patchwork <- (p1 + p2) 
+patchwork + plot_annotation(
+  title = 'United States and Global Covid-19 Deaths',
+  subtitle = "Epstein's Predicted Maximum Total Deaths (March 16 and then updated on March 24)",
+  #caption = ''
+)
+
+```
+Just eyeballing these forecasts in light of the actual data trajectory should immediately give you pause. For the United States, it would require a very soon departure from the current exponential trend which isn't visible yet in either the confirmed or death trends. For the world, growth starts off exponential, levels off, and then goes exponential again as it reaches a new part of the world. For Epstein's 50k estimate to be true, the trend in Europe and the U.S. would have to start leveling off now, and there would have to not be an exponential growth when the disease fully hits Latin America, Africa, and South East Asia. To paraphrase a lesson I first learned from Chris Achen, you should not be speaking on data that you have not spent a long time getting to know intimately and personally. 
+
+# Lesson 5: Evaluate the fit of your model to your insample data
+
+We can actually fit a simple logistic growth model to the data we have for the U.S. so far and set the total expected number to his forcasts ([We et al. 2020](https://arxiv.org/abs/2003.05681)).
+
+
+Rex fit the log growth model here and see if it's a good fit when the cap is set at the first prediction and then the second.
+
+# Lesson 6, don't talk out of your ass
+
+# Lesson ? Don't form strong priors based on weak theory
+
+> The theoretical answer to the question of how deadly the virus will turn out lies in part in a strong analytical relationship between the rate of spread and the strength of the virus. Start with the simple assumption that there is some variance in the rate of seriousness of any virus, just as there is in any trait for any species. In the formative stage of any disease, people are typically unaware of the danger. Hence, they take either minimal or no precautions to protect themselves from the virus. In those settings, the virus—which in this instance travels through droplets of moisture from sneezing and bodily contact—will reach its next victim before it kills its host. Hence the powerful viruses will remain dominant only so long as the rate of propagation is rapid. But once people are aware of the disease, they will start to make powerful adaptive responses, including washing their hands and keeping their distance from people known or likely to be carrying the infection. Various institutional measures, both private and public, have also slowed down the transmission rate.
+
+In a truly surprising thought experiment, Epstein (2020) conjectures that natural selection will make COVID-19 less deadly over time.
+
+> At some tipping point, the most virulent viruses will be more likely to kill their hosts before the virus can spread. In contrast, the milder versions of the virus will wreak less damage to their host and thus will survive over the longer time span needed to spread from one person to another. Hence the rate of transmission will trend downward, as will the severity of the virus. It is a form of natural selection.
+
+Covid
+
+
+
+
+
+What theoretical understanding do we have on the spread of infectious diseases within a population? The absolute simplest model considers just two variables, number of confirmed cases (Y) and time (t). 
+
+
+there will not be a spike in deaths in the U.S. like the one seen in Italy.
+COVID-19 deaths in the U.S. 
+
+
+[Park et al. 2020](https://www.medrxiv.org/content/10.1101/2020.01.30.20019877v4)
+
+
+
+
+
+The lane-keeping model, as the stakes rise speakers should restrict their focus more narrowly to their subject of expertise, 
+
+I argue that 
+I argue that the problem doesn't lie with non-experts weighing into issues outside of their 'lane.' The problem is bad work. Work that
+
+Bad work is bad work, no matter if it's by an expert or amateur or if it's time of crisis or calm. 
+Our intellectual responsibility is to 
+
+The problem lies exactly where it always lies, with bad incurious work. 
+Our intellectual responsibility is to curiosity and honesty, 
+
+To illustrate the point
+
+```{r}
+```
+

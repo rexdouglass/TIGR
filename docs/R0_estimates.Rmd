@@ -310,8 +310,10 @@ r_estimates_all <- r_log_linear_df %>% full_join(r_R0_df)
 r_estimates_all %>% 
         filter(!is.na(pop)) %>% 
         ggplot() + 
-        geom_density(aes(x=r_log_linear), col="lightblue") + geom_vline(xintercept = results_log_linear[3], stat = 'vline', linetype = "dashed", col="blue") + 
-        geom_density(aes(x=r_ml), col="pink") + geom_vline(xintercept = results_R0[3], stat = 'vline', linetype = "dashed", col="red") + 
+        geom_density(aes(x=r_log_linear), col="lightblue") +
+        geom_vline(xintercept = results_log_linear[3], stat = 'vline', linetype = "dashed", col="blue") + 
+        geom_density(aes(x=r_ml), col="pink") +
+        geom_vline(xintercept = results_R0[3], stat = 'vline', linetype = "dashed", col="red") + 
         ggtitle("Distribution R0 Estimates Across Countries") + 
         theme_bw() +
         scale_x_continuous(breaks=seq(0, 30, by = 1)) + 

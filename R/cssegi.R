@@ -1086,3 +1086,60 @@ library(tibbletime)
 rolling_mean <- rollify(mean, window = 5)
 all_long_100 <- all_long_100 %>% arrange(country_state,date_asdate) %>% group_by(country_state) %>% mutate(confirmed_mean_5= exp(rolling_mean(confirmed_log)))  %>% ungroup()
 
+
+
+
+
+```{r}
+
+library(growthrates)
+grow_logistic_yshift <- function(time, parms) {
+  with(as.list(parms), {
+    y <- (K * y0) / (y0 + (K - y0) * exp(-mumax * time)) + y_shift
+    as.matrix(data.frame(time = time, y = y))
+  })
+}
+
+#https://cran.r-project.org/web/packages/growthrates/vignettes/User_models.html
+#time <- 1:10
+#out <- grow_logistic_yshift(time, parms = list(y0 = 1, mumax = 0.5, K = 10, y_shift = 2))
+#plot(time, out[, "y"], type = "b")
+
+grow_logistic_yshift <- growthmodel(grow_logistic_yshift, c("y0", "mumax", "K", "y_shift"))
+fit <- fit_growthmodel(grow_logistic_yshift,
+                       p = c(y0 = 1, mumax = 0.1,  K=5000, y_shift = 1),
+                       time = us_long$days_since_1_confirmed,
+                       y = us_long$deaths)
+plot(fit)
+us_long$y_hat_deaths <- predict(fit,time=us_long$days_since_1_confirmed)[,'y']
+
+fit <- fit_growthmodel(grow_logistic_yshift,
+                       p = c(y0 = 1, mumax = 0.1, K=5000, y_shift = 1),
+                       which=c("y0", "mumax", "y_shift"),
+                       time = us_long$days_since_1_confirmed, y = us_long$deaths)
+plot(fit)
+
+
+```
+
+
+
+```{r, echo=F, message=FALSE, results = F, warning=FALSE}
+
+library(ggplot2)
+library(cowplot)
+p1 <- us_long %>% ggplot() +
+  geom_point(aes(x=days_since_1_confirmed, y=deaths), color="red") + 
+  geom_line(aes(x=days_since_1_confirmed, y=y_hat_deaths), color="red") +
+  
+  geom_point(aes(x=days_since_1_confirmed, y=deaths), color="black") + 
+  xlab("Days Since First Confirmed") + 
+  theme_bw()  + scale_y_log10()  + xlim(0,100) +
+  geom_hline(yintercept = 500, stat = 'hline', linetype = "dashed", col="black") +
+  geom_hline(yintercept = 5000, stat = 'hline', linetype = "dashed", col="black") +
+  ggtitle("United States") + 
+  annotate("text", x = 80, y = 700, label = "March 16 Prediction", color="black", size=2.5)  + 
+  annotate("text", x = 80, y = 7000, label = "March 24 Prediction", color="black", size=2.5)
+
+```
+

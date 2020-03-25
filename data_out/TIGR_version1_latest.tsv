@@ -1,4 +1,6 @@
 country	location_wiki	question	answer	date
+Argentina	Michigan	Gatherings	f	03-24
+Argentina	Michigan	Personal Mobility	b	03-24
 China	Hubei	Personal Mobility	a	02-13
 China	Wuhan	Domestic Ground Travel	b	01-23
 China	Wuhan	Suspension of Government Services	c	01-23
@@ -21,6 +23,9 @@ Germany	Hesse	Restaurants	a	03-18
 Germany	Hesse	Suspension of Government Services	b	03-18
 Germany	Mecklenburg-vorpommern	Suspension of Government Services	a	03-14
 Germany	Schleswig-holstein	Suspension of Government Services	a	03-16
+India	Delhi	Entertainment Industry	c	03-24
+India	Delhi	Personal Mobility	b	03-24
+India	Delhi	Suspension of Government Services	c	03-24
 Indonesia	Makassar	Gatherings	a	03-18
 Italy	Bertonico	Domestic Ground Travel	a	02-22
 Italy	Bertonico	Entertainment Industry	c	02-22
@@ -207,6 +212,8 @@ Italy	V%C3%B2	Entertainment Industry	c	02-22
 Italy	V%C3%B2	Gatherings	e	02-22
 Italy	V%C3%B2	Personal Mobility	b	02-22
 Italy	V%C3%B2	Restaurants	d	02-22
+Nigeria	Abuja	International Flights	c	03-23
+Nigeria	Lagos	International Flights	c	03-23
 Philippines	Manila	Domestic Flights	a	03-15
 Philippines	Manila	Domestic Ground Travel	a	03-15
 Philippines	Manila	Entertainment Industry	c	03-15
@@ -231,6 +238,7 @@ United_States	Alameda_County,_California	Personal Mobility	b	03-16
 United_States	Alameda_County,_California	Restaurants	c	03-16
 United_States	Austin,_Texas	Entertainment Industry	c	03-17
 United_States	Austin,_Texas	Gatherings	e	03-17
+United_States	Austin,_Texas	Personal Mobility	b	03-25
 United_States	Austin,_Texas	Restaurants	c	03-17
 United_States	Boston	Restaurants	c	03-17
 United_States	California	Entertainment Industry	c	03-19
@@ -250,6 +258,8 @@ United_States	County	Gatherings	e	03-19
 United_States	Dallas	Entertainment Industry	c	03-17
 United_States	Dallas	Gatherings	c	03-17
 United_States	Dallas	Restaurants	c	03-17
+United_States	Dallas_County,_Texas	Gatherings	f	03-23
+United_States	Dallas_County,_Texas	Personal Mobility	b	03-23
 United_States	Delaware	Personal Mobility	a	02-24
 United_States	Diego	Entertainment Industry	c	03-19
 United_States	Diego	Gatherings	e	03-19
@@ -258,6 +268,8 @@ United_States	Florida	Gatherings	e	03-17
 United_States	Florida	Restaurants	b	03-17
 United_States	Houston	Entertainment Industry	c	03-17
 United_States	Houston	Restaurants	c	03-17
+United_States	Indiana	Gatherings	f	03-24
+United_States	Indiana	Personal Mobility	b	03-24
 United_States	Los_Angeles	Suspension of Government Services	b	03-23
 United_States	Los_Angeles	Testing Availability	a	03-23
 United_States	Maine	Restaurants	c	03-18
@@ -268,7 +280,11 @@ United_States	Marin_County,_California	Restaurants	c	03-16
 United_States	Miami	Entertainment Industry	a	03-17
 United_States	Miami	Restaurants	b	03-17
 United_States	Miami_Beach%2C_Florida	Restaurants	d	03-17
+United_States	Michigan	Entertainment Industry	c	03-17
 United_States	Michigan	Gatherings	c	03-12
+United_States	Michigan	Gatherings	d	03-17
+United_States	Michigan	Gatherings	f	03-24
+United_States	Michigan	Personal Mobility	b	03-24
 United_States	Michigan	Restaurants	c	03-16
 United_States	Minnesota	Entertainment Industry	c	03-17
 United_States	Minnesota	Restaurants	c	03-17
@@ -280,6 +296,8 @@ United_States	New_York_(state)	Gatherings	d	03-16
 United_States	Orange_County,_California	Entertainment Industry	c	03-18
 United_States	Orange_County,_California	Gatherings	e	03-18
 United_States	Orange_County,_California	Restaurants	c	03-18
+United_States	Oregon	Gatherings	f	03-24
+United_States	Oregon	Personal Mobility	b	03-24
 United_States	Orlando%2C_Florida	Restaurants	b	03-17
 United_States	Pennsylvania	Entertainment Industry	a	03-21
 United_States	Pennsylvania	Personal Mobility	a	03-19
@@ -317,4 +335,6 @@ United_States	Texas	Restaurants	c	03-19
 United_States	Texas	Suspension of Government Services	a	03-19
 United_States	Travis_County,_Texas	Gatherings	f	03-24
 United_States	Travis_County,_Texas	Personal Mobility	b	03-24
+United_States	West_Virginia	Gatherings	f	03-24
+United_States	West_Virginia	Personal Mobility	b	03-24
 United_States	Williamson_County,_Texas	Restaurants	c	03-18
