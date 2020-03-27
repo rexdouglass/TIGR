@@ -1,5 +1,5 @@
 ---
-title: "How to be Curious instead of Contrarian about COVID-19: Eight Data Science Lessons from 'Coronavirus Perspective' (Epstein 2020)"
+title: "How to be Curious Instead of Contrarian About COVID-19: Eight Data Science Lessons From 'Coronavirus Perspective' (Epstein 2020)"
 output:
   html_notebook:
     toc: yes
@@ -217,13 +217,13 @@ world_long <- padded %>% left_join(all_long) %>%
 
 # Introduction 
 
-How should non-epidemiologists publicly discuss COVID-19 data and models? When leaders and citizens are especially sensitive to signals on public health, what is our intellectual responsibility to produce or defer to the analysis of more expert speakers? I argue that our responsibility during crisis is the same as it was before, to do good work, to the best of our abilities, with the scientific principles of curiosity and honesty. Alternative shorthands like 'staying in your lane' are a poor decision rule for sorting good work from bad, and they ignore the very messy process that underlies real-world scientific inquiry. Lane-keeping is a poor way to learn and become a better consumer of expert findings, and gate-keeping is a missed opportunity to provide the public goods of feedback and review. To demonstrate the point, this note provides a detailed review of a recent piece "[Coronavirus Perspective](https://web.archive.org/web/20200319165522/https://www.hoover.org/research/coronavirus-isnt-pandemic)" (Epstein 2020a). By applying and illustrating data science principles point for point to this non-epidemiological take on epidemiological questions, it his hoped that the reader will take away not why they should avoid working on new topics but rather how they should approach those topics in an honest, curious, and rigurous way. 
+How should non-epidemiologists publicly discuss COVID-19 data and models? When leaders and citizens are especially sensitive to signals on public health, what is our intellectual responsibility to defer to the analysis of more expert speakers? I argue that our responsibility during crisis is the same as it was before, to do good work, to the best of our abilities, with the scientific principles of curiosity and honesty. Alternative shorthands like 'staying in your lane' are a poor decision rule for sorting good work from bad, and they ignore the very messy process that underlies real-world scientific inquiry. Lane-keeping is a poor way to learn and become a better consumer of expert findings, and gate-keeping is a missed opportunity to provide the public goods of feedback and review. To demonstrate the point, this note provides a detailed review of a recent piece "[Coronavirus Perspective](https://web.archive.org/web/20200319165522/https://www.hoover.org/research/coronavirus-isnt-pandemic)" (Epstein 2020a). By applying and illustrating data science principles point for point to this non-epidemiological take on epidemiological questions, it his hoped that the reader will take away not why they should avoid working on new topics but rather how they should approach those topics in an honest, curious, and rigorous way. 
 
 # Epstein (2020)
 
-Epstein ([2020a](https://web.archive.org/web/20200319165522/https://www.hoover.org/research/coronavirus-isnt-pandemic)) argues that the U.S. ought to shift from a loose shelter in place style quarantine to a more limited shelter in place for just vulnerable populations. He provides two primary rationales. First, the number of cases and number of deaths both in the U.S. and worldwide are likely to be small. Second, mortality for under 60 is relatively low. Together, the two ideas suggest that restrictions on all groups is overkill and perhaps some compromise weaker position is preferred. He reiterates this position in a number of [interviews](https://reason.com/video/dont-expect-millions-to-die-from-coronavirus-says-richard-epstein/). In a follow up piece Epstein ([2020b](https://web.archive.org/web/20200319165522/https://www.hoover.org/research/coronavirus-isnt-pandemic)) doubles down on the core argument that the direct health costs of the disease will be moderate and a weakened response should be preferred, "allowing the virus to run its course—is a better path forward for the economy." After the U.K. briefly flirted with this approach before rejecting it, the option is being circulated publicly at the federal level in the U.S. and this text specifically is reportedly [popular among some U.S. policy makers](https://www.washingtonpost.com/politics/trump-signals-growing-weariness-with-social-distancing-and-other-steps-advocated-by-health-officials/2020/03/23/0920ea0a-6cfc-11ea-a3ec-70d7479d83f0_story.html) and refered to as a [competing projection](https://thefederalist.com/2020/03/19/will-the-costs-of-a-great-depression-outweigh-the-risks-of-coronavirus/). For that reason it serves a prime case for consideration on how to think about non-epidemiologists talking about scientific question that are decidedly out of their lane.
+Epstein ([2020a](https://web.archive.org/web/20200319165522/https://www.hoover.org/research/coronavirus-isnt-pandemic)) argues that the U.S. ought to shift from a loose shelter in place style quarantine to a more limited shelter in place for just vulnerable populations. He provides two primary rationales. First, the number of cases and number of deaths both in the U.S. and worldwide are likely to be small. Second, mortality for under 60 is relatively low. Together, the two ideas suggest that restrictions on all groups is overkill and some compromise weaker position is preferred. He reiterates this position in a number of [interviews](https://reason.com/video/dont-expect-millions-to-die-from-coronavirus-says-richard-epstein/). In a follow up piece Epstein ([2020b](https://web.archive.org/web/20200319165522/https://www.hoover.org/research/coronavirus-isnt-pandemic)) doubles down on the core argument that the direct health costs of the disease will be moderate and a weakened response should be preferred, "allowing the virus to run its course—is a better path forward for the economy." After the U.K. briefly flirted with this approach before rejecting it, the option is being circulated publicly at the federal level in the U.S. and this text specifically is reportedly [popular among some U.S. policy makers](https://www.washingtonpost.com/politics/trump-signals-growing-weariness-with-social-distancing-and-other-steps-advocated-by-health-officials/2020/03/23/0920ea0a-6cfc-11ea-a3ec-70d7479d83f0_story.html) and refered to as a [competing projection](https://thefederalist.com/2020/03/19/will-the-costs-of-a-great-depression-outweigh-the-risks-of-coronavirus/). For that reason it serves a prime case for consideration on how to think about non-epidemiologists talking about scientific question that are decidedly out of their lane.
 
-# Lesson 1: Actually care about the answer to a question
+# Lesson 1: Actually Care About the Answer to a Question
 
 Epstein ([2020a](https://web.archive.org/web/20200319165522/https://www.hoover.org/research/coronavirus-isnt-pandemic)) frames itself as being contrarian rather than curious about the true state of the world.
 
@@ -233,15 +233,15 @@ Epstein ([2020a](https://web.archive.org/web/20200319165522/https://www.hoover.o
 
 > Perhaps my analysis is all wrong, even deeply flawed. But the stakes are too high to continue on the current course without reexamining the data and the erroneous models that are predicting doom.
 
-Science is about being curious about the true state of the world, and through application of evidence and methods, forming new more true beliefs than we held the day before.  Contrarianism is not a search for truth, it's a search for political influence in a market that rewards diversity of opinion for diversity's sake. 
+Science is about being curious about the true state of the world, and through application of evidence and methods, forming new more true beliefs than we held the day before.  Contrarianism is not a search for truth, it's a search for political influence in a market that rewards diversity of opinion for diversity's sake. Performative controversy, fake horse races, hypotheses that don't follow from theory, no examination of model fit or out of sample performance, and so on, are immediate red flags the author doesn't actually care what the right answer is.
 
-As a consumer of analysis, the second I can tell the author doesn't actually care about the answer to the underlying question, they're dead to me. Performative controversy, fake horse races, hypotheses that don't follow from theory, no examination of model fit or out of sample performance, and so on are immediate red flags the author doesn't actually care what the right answer is and so neither should you. 
+As a consumer of analysis, the second I can tell the author doesn't actually care about the answer to the underlying question, they're dead to me. 
 
-As a producer of analysis, the struggle is how to think about and do science alongside actors who generate controversy for self interest using a lot of the same language as science. The only real solution is to learn how to tell good work from bad work no matter the wrapping. 
+As a producer of analysis, the struggle is how to think about and do science alongside actors who generate controversy out of self-interest using a lot of the same language as science. The only real solution is to learn how to tell good work from bad work no matter the wrapping. 
 
-# Lesson 2: Pose a question and propose a research design that can answer it
+# Lesson 2: Pose a Question and Propose a Research Design that Can Answer It
 
-We can frame Epstein's argument as a concrete research question: what will number of deaths from COVID-19 in the United States be by say September 1. To be concrete, here are our outcomes, confirmed COVID-19 confirmed cases and deaths compiled by [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19).
+We can frame Epstein's argument as a concrete research question: What will number of deaths from COVID-19 in the United States be by say September 1? To be concrete, here are our outcomes, confirmed COVID-19 confirmed cases (red) and deaths (black) compiled by [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19).
 
 ```{r, echo=F, message=FALSE, results = F, warning=FALSE}
 
@@ -256,19 +256,29 @@ p2 <- countries_long %>% filter(country %in% "US") %>%
       annotate("text", x = ymd("2020-09-01")-4, y = 700, label = "Value at this date is what we want to know", color="black", size=2.5, angle=90) +
       scale_x_date(labels = date_format("%m-%d"), breaks='months')
 
+p_combined <- countries_long %>% filter(country %in% "US") %>%
+      filter(days_since_100_confirmed>0)  %>% 
+      ggplot() + 
+      geom_point(aes(x=date_asdate, y=confirmed), color="red") + 
+      geom_point(aes(x=date_asdate, y=deaths), color="black") +
+      xlab("Date") + theme_bw() + scale_y_continuous(labels =  comma_format()) +
+      geom_vline(xintercept=ymd("2020-09-01") , linetype = "dashed", col="black") +
+      annotate("text", x = ymd("2020-09-01")-4, y = 40000, label = "Value at this date is what we want to know", color="black", size=5, angle=90) +
+      scale_x_date(labels = date_format("%m-%d"), breaks='months') + ylab("Count")
+
 
 ```
 
-```{r, echo=F, message=FALSE, results = T, warning=FALSE, fig.width=12, fig.height=6}
+```{r, echo=F, message=FALSE, results = T, warning=FALSE, fig.width=6, fig.height=6, fig.align="center"}
 library(patchwork) ; #install.packages("patchwork")
-patchwork <- (p1 + p2) 
+patchwork <- p_combined #(p1 + p2) 
 patchwork + plot_annotation(
   title = 'United States Covid-19 Cases and Deaths'#,
   #subtitle = 'These 3 plots will reveal yet-untold secrets about our beloved data-set',
   #caption = ''
 )
 ```
-To make this easier to compare across time and across countries, let's log transform the outcome and change date to number of days since the 100th reported case. This puts our forcasting horizon at about 180 days from the start of the U.S. episode and still about a 160 days from now. 
+To make this easier to compare across time and across countries, let's log transform the outcome and change date to number of days since the 100th reported case. This puts our forcasting horizon at about 180 days from the start of the U.S. episode.
 
 ```{r, echo=F, message=FALSE, results = F, warning=FALSE}
 
@@ -279,11 +289,26 @@ p2 <- countries_long %>% filter(country %in% "US") %>% filter(days_since_100_con
       geom_vline(xintercept=180 , linetype = "dashed", col="black") +
       annotate("text", x = 180-5, y = 200, label = "Value at this date is what we want to know", color="black", size=2.5, angle=90)
 
+
+p_combined <- countries_long %>% filter(country %in% "US") %>%
+              filter(days_since_100_confirmed>0)  %>% 
+              ggplot() + 
+              geom_point(aes(x=days_since_100_confirmed, y=confirmed), color="red") + 
+              geom_point(aes(x=days_since_100_confirmed, y=deaths), color="black") +
+              xlab("Days Since 100 Confirmed") +
+              geom_vline(xintercept=180 , linetype = "dashed", col="black") +
+              annotate("text", x = 180-5, y = 1000, label = "Value at this date is what we want to know", color="black", size=5, angle=90) +
+              #scale_x_date(labels = date_format("%m-%d"), breaks='months') + 
+              ylab("Count") + 
+              scale_y_log10(labels = comma_format()) + theme_bw()
+
+
+
 ```
 
-```{r, echo=F, message=FALSE, results = T, warning=FALSE, fig.width=12, fig.height=6}
+```{r, echo=F, message=FALSE, results = T, warning=FALSE, fig.width=6, fig.height=6, fig.align="center"}
 library(patchwork) ; #install.packages("patchwork")
-patchwork <- (p1 + p2) 
+patchwork <- p_combined # (p1 + p2) 
 patchwork + plot_annotation(
   title = 'United States Covid-19 Cases and Deaths',
   subtitle = 'Log scale, and days since 100 confirmed cases'#,
@@ -291,7 +316,6 @@ patchwork + plot_annotation(
 )
 
 ```
-
 Two immediate things to take away are first, we are interested specifically in deaths and are forced to understand spread of all cases incidentally as a means to understand deaths. The second is that our forecasting horizon is **far**. A lot can happen between now and then, and experts have [wildly varying expectations](https://fivethirtyeight.com/features/experts-say-the-coronavirus-outlook-has-worsened-but-the-trajectory-is-still-unclear/) about what will actually happen in this window. Even though there is a great deal of expert certainty about the underlying mechanics, what will happen or more precisely what we will choose to let happen, are unknowns.
 
 # Lesson 3: Use failures of your predictions to revise your model
@@ -760,7 +784,11 @@ Don't do this. It's not honestly conveying uncertainty, it's attempting to cover
 
 # Conclusion
 
-The challenge in reviewing pieces like these lies in their incurious and insincere construction. This review took a substantial amount of time, and in the meantime the original piece was poorly revised, several interviews and a podcast were released, and a second post trying to cover for the first went live.^[And the schema for the underlying COVID-19 data changed breaking a lot of code.] More will no doubt soon continue to move the goal posts and argument.  It is an [order of magnitude less effort](https://en.wikipedia.org/wiki/Gish_gallop) to spam poorly constructed hypotheticals than it is to deconstruct them. In a world where actual life or death policy analysis is being treated like a high school debate round, the only strategic move is to step back, slow down, and draw methodological lessons for our students and colleagues that will apply to a broad set current and future analysis.
+The challenge in reviewing analysis like these lies in their incurious and insincere construction. They're not an earnest search for scientific truth in themselves, they're at best a Socratic call for others to point out mistakes and explain the state of the art. Epstein [explicitly frames](https://www.youtube.com/watch?v=bCnT2owc1Z8) his approach to inquiry as the construction argument over instead of rigorous study.
+
+> I don't care who's a professional or not you don't win an argument by showing you got a PhD you win an argument by entering into a public debate with people who disagree.
+
+That is not a viable or preferred way to collectively learn about COVID-19. It is an [order of magnitude less effort](https://en.wikipedia.org/wiki/Gish_gallop) to spam poorly constructed hypotheticals than it is to deconstruct them. This review took a substantial amount of time, and in the meantime the original piece was poorly revised, several interviews and a podcast were released, and a second post trying to cover for the first went live.^[And the schema for the underlying COVID-19 data changed breaking a lot of code.] More will no doubt soon continue to move the goal posts and argument. In a world where actual life or death policy analysis is being treated like a high school debate round, the only strategic move is to step back, slow down, and draw methodological lessons for our students and colleagues that will apply to a broad set current and future analysis.
 
 Epstein (2020a,2020a2,2020b) and analysis like it shouldn't be rejected because the author is out of their lane. It should be rejected because it's bad work. I'm not a epidemiologist either, but even as just as a social scientist I can show lots of different specific ways that the analysis fails to meet basic standards of scientific inference. An epidemiologist would have even more detailed empirically relevant issues to point out. In this current time of crisis, we should resist the urge to gate-keep and instead encourage honesty, curiosity, high standards, and good work. Even blatantly incurious and bad work can serve as a pedagogical tool to train young researchers what not to do. We need to take these opportunities to learn so that we are all smarter and better prepared for the next crisis.
 
