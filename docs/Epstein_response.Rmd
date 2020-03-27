@@ -318,7 +318,7 @@ patchwork + plot_annotation(
 ```
 Two immediate things to take away are first, we are interested specifically in deaths and are forced to understand spread of all cases incidentally as a means to understand deaths. The second is that our forecasting horizon is **far**. A lot can happen between now and then, and experts have [wildly varying expectations](https://fivethirtyeight.com/features/experts-say-the-coronavirus-outlook-has-worsened-but-the-trajectory-is-still-unclear/) about what will actually happen in this window. Even though there is a great deal of expert certainty about the underlying mechanics, what will happen or more precisely what we will choose to let happen, are unknowns.
 
-# Lesson 3: Use failures of your predictions to revise your model
+# Lesson 3: Use Failures of Your Predictions to Revise your Model
 
 In the first draft of the piece dated and posted March 16, 2020 Epstein ([2020a](https://web.archive.org/web/20200319165522/https://www.hoover.org/research/coronavirus-isnt-pandemic)) predicts the following about future counts of deaths:
 
@@ -416,9 +416,9 @@ plot(fit)
 
 ```
 
-# Lesson 4: Form meaningful prior beliefs with a thorough literature review
+# Lesson 4: Form Meaningful Prior Beliefs with a Thorough Literature Review
 
-Thanks to the growing revolution in Open Science and preprint outlets like medrxiv.org and arxiv.org, the barrier to performing a decent review of recent COVID-19 research is membership in an academic institution with Google Scholar access, like Starbucks, South West Airlines, or your bathroom.
+Thanks to the growing revolution in Open Science and preprint outlets like medrxiv.org and arxiv.org, the barrier to performing a decent review of recent COVID-19 research is membership in an academic institution with Google Scholar access, like Starbucks, Southwest Airlines, or your bathroom.
 
 **Don't use straw men to represent the state of the art**
 
