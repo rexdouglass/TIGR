@@ -453,13 +453,13 @@ This is in turn because, the mechanism by which COVID-19 kills includes pneumoni
 
 Damage to the lungs necessitates oxygen, ventilation, and even intabation which places an enormous strain on healthcare resources. 
 
-Hospitilization rates of quarter of known cases in early U.S. CDC data of [25%](https://www.independent.co.uk/news/world/americas/coronavirus-new-york-hospital-cases-today-map-decrease-covid-19-a9425111.html), and currently [12% in New York](https://www.independent.co.uk/news/world/americas/coronavirus-new-york-hospital-cases-today-map-decrease-covid-19-a9425111.html)
+Hospitilization rates were a quarter of known cases in early U.S. CDC data of [25%](https://www.independent.co.uk/news/world/americas/coronavirus-new-york-hospital-cases-today-map-decrease-covid-19-a9425111.html), and are currently [12% in New York](https://www.independent.co.uk/news/world/americas/coronavirus-new-york-hospital-cases-today-map-decrease-covid-19-a9425111.html)
 
 A proper literature review would find [growing](https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30068-1/fulltext#fig1) , [evidence](https://www.medrxiv.org/content/10.1101/2020.02.26.20028472v3) for a relationship between available health resources and mortality. Including that Italy took the start of the disease [quite seriously](https://jamanetwork.com/journals/jama/fullarticle/2763188).
 
 [Early U.S. data](https://www.cdc.gov/mmwr/volumes/69/wr/mm6912e2.htm) show older than 65 accounted for 80% of deaths but only accounted for 45% of hospitalizations and 53% of ICU admissions. 
 
-All together, this would point out that the proposed policy of sheltering in place only older Americans  wouldn't even remove half of the current burden on the healthcare system, much less when most adults under 60 are contracting the disease together at about the same time.
+All together, this would point out that the proposed policy of sheltering in place only older Americans  wouldn't even remove half of the current burden on the healthcare system, much less when most adults under 60 are contracting the disease together 10% of them are all headed to the hospital at roughly the same time.
 
 # Lesson 5: Don't form strong prior beliefs based on cherry picked data
 
@@ -669,7 +669,7 @@ Natural selection will breed weaker COVID-19 (*WEAKENING*)
 
 > Given that the coronavirus can spread through droplets and contact, the consequences of selection should manifest themselves more quickly than they did for AIDS.
 
-Natural selection will remove weaker humans (*SUSCEPTIBLE_POP*)
+Natural selection will remove weaker humans (*SUSCEPTIBLE*)
 
 > Nor does the model recognize that if the most vulnerable people are hit first, subsequent iterations will be slower because the remaining pool of individuals is more resistant to infection.
 
@@ -685,7 +685,7 @@ We can formalize REMED as a series of equations
 
 The rate of deaths at time t is a function of the distance before or after when China's inflection took place, the degree of societal adaptation, how much the disease has evolved to become less deadly, the number of suceptible people still left in the population, and the season.
 
-$\partial DEATHS_t =F(CHINA_INFLECTION, ADAPTATION,WEAKENING,SUSCEPTIBLE_POP,SEASONALITY, Time)$
+$\partial DEATHS_t =F(CHINAINFLECTION, ADAPTATION,WEAKENING,SUSCEPTIBLE,SEASONALITY, Time)$
 
 The total number of expected DEATHS however is just a function policy chosen, smoking population, pollution, and whether or not you're Italy.
 
@@ -720,7 +720,7 @@ x %>%
 
 A number of problems should become immediately apparent. First, the number of observations with known deaths is just 2, China and Italy. But the number of explanations we hope to test with them is 4. We don't have enough degrees of freedom to mathematically demonstrate a relationship between total deaths and every one of these explanations.
 
-Second, we don't have any variation on the dependent variable, both Italy and China have a high death tolls. The sample does not include any examples of low death toll countries for us to infer from.
+Second, we don't have any variation on the dependent variable, both Italy and China have a high death tolls.^[What counts as low is a moving target because the original piece predicted only 500 for the U.S. and said it wasn't likely to reach the high numebr of China's because China had more smokers. Now Italy's high death count is the new high. But he forcasts 5,000 for the U.S. would would then be the new high. But this is contrast to the NYT estimate of a million, so maybe these are all really low. The joys of vague theory. ¯\_(ツ)_/¯] The sample does not include any examples of low death toll countries for us to infer from.
 
 Third, we don't have variation on the independent variable of interest, policy, either. All three of these countries have shelter in place style policies of one form or another. What variation there is, both China's and Italy's are more extreme the U.S. so far.
 
@@ -730,7 +730,7 @@ Looking at those cases, we might desire to consider other measurements suggested
 
 This would still not establish the causal relationships desired, but it would at least but mathematically possible to make the implied comparisons. As it stands now, the inferences are nonsensical.
 
-# Lesson 8 Convey uncertainty with specificity not doublespeak
+# Lesson 8: Convey uncertainty with specificity not doublespeak
 
 The piece presents itself as if its communicating confidence and uncertainty, e.g. using the words likely/unlikely/probable 8 times. There are mathematical ways of explicitly communicating uncertainty, and where that uncertainty lies in measurement, parameter, or prediction. There are even qualitative ways of communicating uncertainty to a qualitative audience, e.g. the CIA's [desperate mapping](https://www.cia.gov/library/center-for-the-study-of-intelligence/csi-publications/books-and-monographs/sherman-kent-and-the-board-of-national-estimates-collected-essays/6words.html) from probabilities to adjectives for lay policymakers. 
 
