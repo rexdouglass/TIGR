@@ -7,6 +7,16 @@ date:
 author: 
 affiliation: Director, Machine Learning for Social Science Lab, Center for Peace and Security Studies, University of California San Diego
 ---
+
+<style type="text/css">
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    border-left: 5px solid #eee;
+}
+</style>
+
 **Rex W. Douglass PhD** ^[If you found this note useful, please consider donating a few minutes to contribute examples of government COVID-19 quarentine measures to the [TIGR Project](https://github.com/rexdouglass/TIGR)]
 
 [[@RexDouglass]](https://twitter.com/RexDouglass)
@@ -737,11 +747,6 @@ The piece presents itself as if its communicating confidence and uncertainty, e.
 There is also a wrong way to convey uncertainty which is to pepper your language with contradictory hedging and doublespeak that generates uncertainty in the reader's mind about what you actually mean. 
 
 For example:
-
-> The most dramatic news of the day has been the sudden spike in the number of Italian cases, totaling 24,747 with 1,809 deaths, which may grow to exceed the 3,099 in China.
-> In dealing with this point, it is critical to note that the rapid decline in the incidence of new cases and death in China suggests that cases in Italy will not continue to rise exponentially over the next several weeks.
-
-Italy's death toll might surpass China soon but China also proves it should stop soon.
 
 > That estimate is ten times greater than the 500 number I erroneously put in the initial draft of the essay, and it, too, could prove somewhat optimistic. 
 
