@@ -7,10 +7,12 @@ date:
 author: 
 affiliation: Director, Machine Learning for Social Science Lab, Center for Peace and Security Studies, University of California San Diego
 ---
-**Rex W. Douglass PhD**^[If you found this note useful, please consider donating a few minutes to contribute examples of government COVID-19 quarentine measures to the [TIGR Project](https://github.com/rexdouglass/TIGR)]
-**3/24/2020**^[Acknowledgments: I thank a good chunk of the NYU Law Class of 2013 for suggesting the subject of this review.]
+**Rex W. Douglass PhD** ^[If you found this note useful, please consider donating a few minutes to contribute examples of government COVID-19 quarentine measures to the [TIGR Project](https://github.com/rexdouglass/TIGR)]
 
-(Twitter: [@RexDouglass](https://twitter.com/RexDouglass))
+[[@RexDouglass]](https://twitter.com/RexDouglass)
+
+**3/24/2020** ^[Acknowledgments: I thank a good chunk of the NYU Law Class of 2013 for suggesting the subject of this review.]
+
 
 [ROUGH DRAFT, PLEASE DO NOT CIRCULATE. COMMENTS WELCOME!]
 
