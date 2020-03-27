@@ -3,15 +3,17 @@ title: "How to be Curious instead of Contrarian about COVID-19: Eight Data Scien
 output:
   html_notebook:
     toc: yes
-date: "3/24/2020"
-author: "Rex W. Douglass PhD"
+date: 
+author: 
 affiliation: Director, Machine Learning for Social Science Lab, Center for Peace and Security Studies, University of California San Diego
 ---
+**Rex W. Douglass PhD**^[If you found this note useful, please consider donating a few minutes to contribute examples of government COVID-19 quarentine measures to the [TIGR Project](https://github.com/rexdouglass/TIGR)]
+**3/24/2020**^[Acknowledgments: I thank a good chunk of the NYU Law Class of 2013 for suggesting the subject of this review.]
+
+(Twitter: [@RexDouglass](https://twitter.com/RexDouglass))
 
 [ROUGH DRAFT, PLEASE DO NOT CIRCULATE. COMMENTS WELCOME!]
 
- ^[Acknowledgments: I thank a good chunk of the NYU Law Class of 2013 for suggesting the subject of this review.]
- 
 ```{r, echo=F, message=FALSE, results = FALSE, warning=FALSE}
 
 library(tidyverse)
@@ -754,3 +756,7 @@ Don't do this. It's not honestly conveying uncertainty, it's attempting to cover
 The challenge in reviewing pieces like these lies in their incurious and insincere construction. This review took a substantial amount of time, and in the meantime the original piece was poorly revised, several interviews and a podcast were released, and a second post trying to cover for the first went live.^[And the schema for the underlying COVID-19 data changed breaking a lot of code.] More will no doubt soon continue to move the goal posts and argument.  It is an [order of magnitude less effort](https://en.wikipedia.org/wiki/Gish_gallop) to spam poorly constructed hypotheticals than it is to deconstruct them. In a world where actual life or death policy analysis is being treated like a high school debate round, the only strategic move is to step back, slow down, and draw methodological lessons for our students and colleagues that will apply to a broad set current and future analysis.
 
 Epstein (2020a,2020a2,2020b) and analysis like it shouldn't be rejected because the author is out of their lane. It should be rejected because it's bad work. I'm not a epidemiologist either, but even as just as a social scientist I can show lots of different specific ways that the analysis fails to meet basic standards of scientific inference. An epidemiologist would have even more detailed empirically relevant issues to point out. In this current time of crisis, we should resist the urge to gate-keep and instead encourage honesty, curiosity, high standards, and good work. Even blatantly incurious and bad work can serve as a pedagogical tool to train young researchers what not to do. We need to take these opportunities to learn so that we are all smarter and better prepared for the next crisis.
+
+
+
+
