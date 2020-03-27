@@ -1090,37 +1090,6 @@ all_long_100 <- all_long_100 %>% arrange(country_state,date_asdate) %>% group_by
 
 
 
-```{r}
-
-library(growthrates)
-grow_logistic_yshift <- function(time, parms) {
-  with(as.list(parms), {
-    y <- (K * y0) / (y0 + (K - y0) * exp(-mumax * time)) + y_shift
-    as.matrix(data.frame(time = time, y = y))
-  })
-}
-
-#https://cran.r-project.org/web/packages/growthrates/vignettes/User_models.html
-#time <- 1:10
-#out <- grow_logistic_yshift(time, parms = list(y0 = 1, mumax = 0.5, K = 10, y_shift = 2))
-#plot(time, out[, "y"], type = "b")
-
-grow_logistic_yshift <- growthmodel(grow_logistic_yshift, c("y0", "mumax", "K", "y_shift"))
-fit <- fit_growthmodel(grow_logistic_yshift,
-                       p = c(y0 = 1, mumax = 0.1,  K=5000, y_shift = 1),
-                       time = us_long$days_since_1_confirmed,
-                       y = us_long$deaths)
-plot(fit)
-us_long$y_hat_deaths <- predict(fit,time=us_long$days_since_1_confirmed)[,'y']
-
-fit <- fit_growthmodel(grow_logistic_yshift,
-                       p = c(y0 = 1, mumax = 0.1, K=5000, y_shift = 1),
-                       which=c("y0", "mumax", "y_shift"),
-                       time = us_long$days_since_1_confirmed, y = us_long$deaths)
-plot(fit)
-
-
-```
 
 
 
@@ -1142,4 +1111,7 @@ p1 <- us_long %>% ggplot() +
   annotate("text", x = 80, y = 7000, label = "March 24 Prediction", color="black", size=2.5)
 
 ```
+
+
+[Park et al. 2020](https://www.medrxiv.org/content/10.1101/2020.01.30.20019877v4)
 

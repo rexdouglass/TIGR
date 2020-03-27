@@ -1,0 +1,554 @@
+
+**Don't look at just correlation, look at magnitude**
+
+https://neherlab.org/covid19/
+
+## Quantities of Interest
+
+**Serial Interval and Incubation Period**
+
+Further review would point out that asymptomatic cases, as many as 80%, actually facilitates the spread of the disease, ensuring that it reaches that smaller percentage of the population that will have severe outcomes.
+
+
+**R0**
+
+Together they lead to estimates of R0, the number of persons on average that each infected person is likely to then infect, of between 2 and 3, which is [comparable to SARS](https://www.diva-portal.org/smash/get/diva2:1396034/FULLTEXT01), and higher than the 1918 influenza pandemic virus of [1.8](http://www.cidrap.umn.edu/news-perspective/2020/01/data-suggest-ncov-more-infectious-1918-flu-what-does-mean), 
+
+**Smoking**
+
+Re smoking
+https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(20)30117-X/fulltext
+
+
+In [an interview](https://reason.com/video/dont-expect-millions-to-die-from-coronavirus-says-richard-epstein/)
+
+> You don't win an argument by having a phd you win an argument through public debate.
+
+
+Thinking ahead, the reader might ask if the model requires knowing the total count of cases beforehand, what good is it for forecasting? Correct. We can only really start to apply this model once the data have begun to plateau. And because COVID-19 is so recent, very few countries have actually plateaued.
+
+That makes testing several parts of the REMED model extremely difficult, and the cases we can test on aren't representative of the cases we want to forecast for.
+
+As a second best option, we can look at the period up until the inflection point and estimate the rate of growth of cases. Here we're going to switch over to R0 as it will be more useful in later analysis.
+
+
+
+This is an R0 cite
+[Park et al. 2020](https://www.medrxiv.org/content/10.1101/2020.01.30.20019877v4)
+
+
+
+
+# Lesson 8: Test as many parts of your theory against real data as you can
+
+
+**Formalizing the REMED model**
+
+We can express REMED as explicit equations with a simple growth model ([Richards 1959](https://academic-oup-com.eres.qnl.qa/jxb/article/10/2/290/528209?searchresult=1)) which has been applied succesfully on cumulative case counts in China [Wu et al. 2020](https://arxiv.org/abs/2003.05681). 
+
+The formula for the generalized Richards model (GRM) is
+
+$\frac{dC(t)}{dt}=r[C(t)]^p(1-(\frac{C(t)}{K})^\alpha)$
+
+Which we can rewrite into slightly easier to read words
+
+$\frac{\partial CumulativeCases_t}{\partial t}=GrowthRate[CumulativeCases_t]^p(1-(\frac{CumulativeCases_t}{FinalNumberOfCases})^\alpha)$
+
+Which we can explain plainly in english, as the number of COVID-19 cases will increase over time in a country. That rate will start slow and gradually speed up. Midway through the episode, it will reach extremely fast infecting the vast majority of people, before slowing down again and then leveling off. That period in the middle is called an inflection point. And the plateau is close to the final number of expected cases forever until a new episode starts. We can describe an entire COVID-19 outbreak episode by just a couple of facts, what the total count was, when the worst of it happened, and a couple details about how quickly it ramped up.
+
+Which can draw even more simply as a picture, fitting a curve to China's COVID-19 cases.
+
+
+
+
+Test preparedness with days of preparation available
+
+Test smoking and pollution
+
+R0 varying across U.S. states as a function of their lockdowns
+
+
+
+
+
+
+# Lesson 9: Perform and Evaluate Counterfactuals Correctly
+
+Many persons 50 to 60 still have children living at home, and many estimtes use 65 as a bin so lets set the threshold at 65 and above. 
+
+The U.S. has about 330 million people. About 15% of the population is 65% or older, or about 50 million Americans. The represent about [6%](https://www.bls.gov/cps/cpsaat18b.htm)) of the U.S. workforce . They are over-represented in relevant fields like healthcare where as much as [30%](https://www.fsmb.org/siteassets/advocacy/publications/2016census.pdf) of actively licensed U.S. Physicians are 60 or above.
+
+About [5 million]((https://www.jchs.harvard.edu/sites/default/files/Harvard_JCHS_Housing_Americas_Older_Adults_2018_1.pdf)) of them live in multigenerational homes with younger family members. Another [1.5](https://health.usnews.com/health-news/best-nursing-homes/articles/nursing-home-facts-and-statistics) million live in nursing homes or assisted living facilities.
+
+Between 83 and [95%](https://ftp.cdc.gov/pub/Health_Statistics/NCHS/NHIS/SHS/2018_SHS_Table_A-18.pdf) of them made a least one doctors visit in the last 6 months. Most, 82%(https://www.ncbi.nlm.nih.gov/books/NBK215400/), have at least one chronic disease requiring ongoing care such as hypertension, arthritis, and heart disease. For many, doctor and hospital visits won't be optional. They make emergency room visits at higher rates than younger Americans, at [5.2 million for injuries and 15.5 million for disease in 2013](https://www.cdc.gov/nchs/products/databriefs/db272.htm)
+
+
+
+
+
+At this point we've ehausted what can be done inductively based on COVID-19 cases so far. To go further, we have to deductively construct counterfactuals around the two possible policies.
+
+Strawmen
+
+> Right now, the overwhelming consensus, based upon the most recent reports, is that the rate of infection will continue to increase so that the most severe interventions are needed to control what will under the worst of circumstances turn into a high rate of death.
+
+Fake rebel. [Epidemiologists are highly uncertain](https://fivethirtyeight.com/features/infectious-disease-experts-dont-know-how-bad-the-coronavirus-is-going-to-get-either/) about what is going to ultimatley happen in the U.S., precisely in part because we have a hand on the wheel and might choose to steer directly into the ditch.
+
+Abdul Latif Jameel Institute for Disease and Emergency Analytics (J-IDEA)
+https://twitter.com/Imperial_JIDEA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
+http://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/news--wuhan-coronavirus/
+
+COVID-19: extending or relaxing distancing control measures
+https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(20)30072-4/fulltext
+
+https://www.healthaffairs.org/do/10.1377/hblog20200317.457910/full/
+
+
+
+
+
+```{r}
+
+library(ggplot2)
+library(cowplot)
+
+china_df <- countries_long %>%
+            filter(country %in% "China") %>%
+            #mutate(prediction_start= date_asdate=="2020-03-16") %>%
+            #mutate(prediction_end= date_asdate=="2020-04-7") %>% 
+            filter(days_since_1_confirmed>1)
+
+library(growthrates)
+grow_logistic_yshift <- function(time, parms) {
+  with(as.list(parms), {
+    y <- (K * y0) / (y0 + (K - y0) * exp(-mumax * time)) + y_shift
+    as.matrix(data.frame(time = time, y = y))
+  })
+}
+grow_logistic_yshift <- growthmodel(grow_logistic_yshift, c("y0", "mumax", "K", "y_shift"))
+fit <- fit_growthmodel(grow_logistic_yshift,
+                       p = c(y0 = 1, mumax = 0.1,  K=5000, y_shift = 1),
+                       time = china_df %>% filter(days_since_1_confirmed>1 & !is.na(deaths)) %>% pull(days_since_1_confirmed),
+                       y = china_df %>% filter(days_since_1_confirmed>1 & !is.na(deaths)) %>% pull(deaths) )
+
+
+#logisticModelSS_confirmed <- nls(confirmed~SSlogis(days_since_1_confirmed, Asym, xmid, scal), data=italy_df)
+#summary(logisticModelSS)
+#coef(logisticModelSS)
+#plot(logisticModelSS)
+library(growthrates)
+grow_logistic_yshift <- function(time, parms) {
+  with(as.list(parms), {
+    y <- (K * y0) / (y0 + (K - y0) * exp(-mumax * time)) + y_shift
+    as.matrix(data.frame(time = time, y = y))
+  })
+}
+#https://cran.r-project.org/web/packages/growthrates/vignettes/User_models.html
+#time <- 1:10
+#out <- grow_logistic_yshift(time, parms = list(y0 = 1, mumax = 0.5, K = 10, y_shift = 2))
+#plot(time, out[, "y"], type = "b")
+grow_logistic_yshift <- growthmodel(grow_logistic_yshift, c("y0", "mumax", "K", "y_shift"))
+fit_confirmed <- fit_growthmodel(grow_logistic_yshift,
+                       p = c(y0 = 1, mumax = 0.1,  K=81439, y_shift = 1),
+                       time = china_df %>% filter(days_since_1_confirmed>1 & !is.na(confirmed)) %>% pull(days_since_1_confirmed),
+                       y = china_df %>% filter(days_since_1_confirmed>1 & !is.na(confirmed)) %>% pull(confirmed) )
+#plot(fit_confirmed)
+china_df$y_hat_confirmed <- predict(fit_confirmed,time=china_df$days_since_100_confirmed)[,'y']
+plot(china_df$days_since_1_confirmed, china_df$confirmed)
+points(china_df$days_since_1_confirmed, china_df$y_hat_confirmed)
+
+
+fit_deaths <- fit_growthmodel(grow_logistic_yshift,
+                       p = c(y0 = 1, mumax = 0.1,  K=5000, y_shift = 1),
+                       time = china_df %>% filter(days_since_100_confirmed>1) %>% pull(days_since_100_confirmed),
+                       y = china_df %>% filter(days_since_100_confirmed>1) %>% pull(deaths) )
+#plot(fit_deaths)
+china_df$y_hat_deaths <- predict(fit_deaths,time=china_df$days_since_100_confirmed)[,'y']
+
+
+p_china <- china_df %>%
+            ggplot() +
+                geom_point(aes(x=days_since_100_confirmed, y=confirmed), color="red") + 
+                geom_line(aes(x=days_since_100_confirmed+1, y=y_hat_confirmed), color="red") + 
+                #geom_smooth(aes(x=days_since_100_confirmed, y=confirmed), method = lm, se = FALSE, linetype = "dashed", color="red" )  +
+  
+                geom_point(aes(x=days_since_100_confirmed, y=deaths), color="black") + 
+                geom_line(aes(x=days_since_100_confirmed, y=y_hat_deaths), color="black") + 
+                #geom_smooth(aes(x=days_since_100_confirmed, y=deaths), method = lm, se = FALSE, linetype = "dashed", color="black" ) +
+
+                xlab("Days Since 100 Confirmed") + 
+                theme_bw() +
+                scale_y_log10(labels = comma)  +
+                xlim(0,60) +
+                #geom_vline(xintercept = 23, stat = 'vline', linetype = "dashed", col="black") +
+                #annotate("text", x = 24, y = 100, label = "March 16 Prediction", color="black", size=2.5, angle = 270) +
+                #geom_vline(xintercept = 44, stat = 'vline', linetype = "dashed", col="black") +
+                #annotate("text", x = 45, y = 100, label = "Several Weeks Later", color="black", size=2.5, angle = 270) +
+                ggtitle("China") + 
+                ylab("Count")
+
+```
+
+```{r, echo=F, message=FALSE, results = T, warning=FALSE}
+
+library(patchwork) ; #install.packages("patchwork")
+patchwork <- (p_italy ) 
+patchwork + plot_annotation(
+  title = 'Italy Covid-19 Confirmed and Deaths',
+  subtitle = "",
+  #caption = ''
+)
+
+```
+
+
+
+
+
+```{r, eval=F,echo=F, message=FALSE, results = FALSE, warning=FALSE}
+
+library(tibbletime)
+mean_roll <- rollify(mean, window = 5)
+
+temp_fun <- function(x) { 
+             try({
+              t=1:length(x)
+              lm1 <- lm(x ~ t )
+              return(lm1$coefficients[2])
+             })
+             return(NA)
+}
+temp_fun(all_long$deaths[1:10])
+
+lm_roll <- rollify(temp_fun , window = 5 )
+#test <- lm_roll(all_long$deaths[1:1000])
+
+
+mean_rolling <- function(x,window=5){
+  if(length(x)>=5){
+    try({
+      return(c(NA,NA,rollapplyr(x, window, mean), NA,NA))
+    })
+  }
+  return(rep(NA,length(x)))
+}
+
+
+library(ggplot2)
+library(cowplot)
+temp <- all_long %>%
+        filter(country %in% c("Italy"  ,"China" ) ) %>% 
+        filter(days_since_50_deaths > 0) %>%
+        arrange(country, date_asdate) %>%
+        group_by(country) %>%
+          mutate(deaths_rolling_lm = lm_roll( log(deaths+1) )) %>%
+        ungroup() %>%
+        mutate(deaths_rolling_lm_percent = round(  (exp(deaths_rolling_lm)-1)*100, 2 ) ) 
+  
+temp$deaths_rolling_lm
+temp$deaths_rolling_lm_percent
+
+
+p1 <- temp %>%
+      ggplot() +
+  
+      geom_line(aes(x=days_since_50_deaths, y=deaths, color=deaths_rolling_lm_percent, fill=country) ) + 
+      scale_colour_gradient(low = "red", high = "yellow", na.value = NA) +
+      scale_y_log10(labels = comma) 
+
+
+
+      geom_smooth(data= all_long %>% 
+                  dplyr::filter( 
+                  (country == "China" &  days_since_50_deaths<18) | country=="Italy" ) , 
+                  aes(x=days_since_50_deaths, y=deaths, color=country),
+                  method = lm, se = FALSE, linetype = "dashed" ) + 
+      gghighlight(
+                   #country %in% c("Washington, US","New York, US", "US","Italy","China") ,
+                    label_params =
+                      list(
+                         size = 3,
+                         segment.alpha=0
+                     )
+                    ) +
+      xlab("Days Since 50 Death") + 
+      theme_bw()  +
+      scale_y_log10(labels = comma, lim=c(50,15000)) ## + 
+      #xlim(1,100) +
+      #geom_hline(yintercept = 500, stat = 'hline', linetype = "dashed", col="black") +
+      #geom_hline(yintercept = 5000, stat = 'hline', linetype = "dashed", col="black") +
+      #ggtitle("United States") + 
+      #annotate("text", x = 80, y = 700, label = "March 16 Prediction", color="black", size=2.5)  + 
+      #annotate("text", x = 80, y = 7000, label = "March 24 Prediction", color="black", size=2.5)
+
+```
+
+```{r, echo=F, message=FALSE, results =F, warning=FALSE}
+p1
+```
+
+
+
+
+
+
+
+
+
+```{r, echo=F, message=FALSE, results =T, warning=FALSE}
+
+
+p2 <- slopes %>% ggplot(aes(x=estimate)) + geom_density() +
+  geom_vline(xintercept=slopes %>% filter(country=="US") %>% pull(estimate) ) + 
+  annotate("text", x = slopes %>% filter(country=="US") %>% pull(estimate), y = 2.5, label = "U.S.", color="black", size=2.5) +
+  geom_vline(xintercept=slopes %>% filter(country=="China") %>% pull(estimate) ) + 
+  annotate("text", x = slopes %>% filter(country=="China") %>% pull(estimate), y = 2.5, label = "China", color="black", size=2.5) +
+  geom_vline(xintercept=slopes %>% filter(country=="Italy") %>% pull(estimate) ) + 
+  annotate("text", x = slopes %>% filter(country=="Italy") %>% pull(estimate), y = 2.5, label = "Italy", color="black", size=2.5) +
+  xlab("Growth Rates in Deaths over first 30 days") + theme_bw() 
+
+
+#p1 <-  ggplot(data=us_long %>% filter(days_since_1_confirmed<15) %>% filter(days_since_1_confirmed>0) )  + 
+#       geom_point(aes(x=days_since_1_confirmed, y=deaths, color=state )) + 
+#       geom_smooth(data=us_long %>% filter(days_since_1_confirmed>0) %>% filter(days_since_1_confirmed<15) , aes(x=days_since_1_confirmed, y=deaths, color=state) , method = lm, se = FALSE) + 
+#       gghighlight(state %in% c("Washington") ,
+#                    label_params =
+#                     list(
+#                      size = 3,
+#                      segment.alpha=0)
+#                   ) +
+#       #scale_x_continuous(breaks=seq(0, 61, by = 5)) + 
+#       scale_y_log10(labels = comma_format()) + 
+#       xlab("Days Since 1 Confirmed") + 
+#       ylab("Number of Deaths") + 
+#       guides(color=FALSE) + theme_bw()
+
+
+```
+
+
+```{r, eval=F, echo=F, message=FALSE, results =F, warning=FALSE}
+
+#https://stackoverflow.com/questions/14563989/force-r-to-stop-plotting-abbreviated-axis-labels-e-g-1e00-in-ggplot2
+#https://cran.r-project.org/web/packages/gghighlight/vignettes/gghighlight.html
+require(scales)
+library(gghighlight); #install.packages('gghighlight')
+options(gghighlight_max_labels=1000)
+
+all_long$size <- c(0,3)
+p1 <-  ggplot(data=all_long %>% filter(days_since_100_confirmed>0) ) + 
+       geom_point(aes(x=days_since_100_confirmed, y=deaths_fd, color=country )) + 
+       geom_smooth(data=all_long %>% filter(days_since_100_confirmed>0) %>% filter(days_since_100_confirmed<25) , aes(x=days_since_100_confirmed, y=deaths_fd, color=country) , method = lm, se = FALSE) + 
+       gghighlight(country %in% c("US","China","Italy") ,
+                    label_params =
+                     list(
+                      size = 3,
+                      segment.alpha=0)
+                   ) +
+       scale_x_continuous(breaks=seq(0, 61, by = 5)) + 
+       scale_y_log10(labels = comma_format()) + 
+       xlab("Days Since 100 Confirmed") + 
+       ylab("Number of Deaths") + 
+       guides(color=FALSE) + theme_bw()
+
+
+```
+
+```{r,eval=F, echo=F, message=FALSE, results =T, warning=FALSE}
+
+library(patchwork) ; #install.packages("patchwork")
+patchwork <- (p1 / p2) 
+patchwork + plot_annotation(
+  title = 'United States and Global Covid-19 Deaths'#,
+  #subtitle = ""#,
+  #caption = ''
+)
+```
+
+
+```{r, eval=F, echo=F, message=FALSE, results = FALSE, warning=FALSE}
+
+fromscratch=F
+if(fromscratch){
+  #We need to grab populations
+  places <- all_long %>% dplyr::select(country) %>% distinct() %>% mutate(search=country)
+  library(WikidataR)
+  wiki_searches <- list()
+  for(q in places$search){
+    print(q)
+    try({
+      #wiki <- find_item("Ramsey County")
+      wiki <- find_item(q)
+      temp <- as.data.frame(wiki[[1]])
+      temp$search <- q
+      wiki_searches[[q]] <- temp
+    })
+  }
+  wiki_searches_df <- bind_rows(wiki_searches)
+  
+  item_df <- list()
+  for(q in wiki_searches_df$id){
+    print(q)
+    try({
+      item_df[[q]] <- get_item(id = q)
+    })
+  }
+  wiki <- find_item("New York")
+  
+  latest_pop_list <- list()
+  for(q in names(item_df)){
+    print(q)
+    try({
+      latest_pop_list[[q]] <- data.frame(wikidata_id=q, P1082= rev(item_df[[q]][[1]]$claims$P1082$mainsnak$datavalue$value$amount)[1])
+    })
+  }
+  latest_pop_df <- places %>% left_join(wiki_searches_df %>% dplyr::select(search,wikidata_id=id), by=c('search'='search')) %>% left_join( bind_rows(latest_pop_list) ) %>% 
+    mutate(population= str_replace(P1082,"\\+","") %>% as.numeric()    ) %>%
+    mutate(population_log= log(population)) %>%
+    mutate(state=ifelse(is.na(state),"none",state)) %>% distinct() %>% arrange(country, state) 
+  
+  saveRDS(latest_pop_df,paste0(here::here(),"/data_in/latest_pop_countries_df.RDS"))
+
+}
+
+latest_pop_countries_df <- readRDS(paste0(here::here(), "/data_in/latest_pop_countries_df.RDS"))
+
+all_long_covariates <- all_long %>% 
+                       left_join(latest_pop_df) %>% 
+                       arrange(country, state, days_since_1_confirmed) 
+```
+
+
+```{r, echo=F, message=FALSE, results =F, warning=FALSE}
+#https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-12-147
+#The generation time is the time lag between infection in a primary case and a secondary case. The generation time distribution should be obtained from the time lag between all infectee/infector pairs [8]. As it cannot be observed directly, it is often substituted with the serial interval distribution that measures time between symptoms onset. In our software package, the ‘generation.time’ function is used to represent a discretized generation time distribution. Discretization is carried out on the grid [0,0.5), [0.5, 1.5), [1.5, 2.5), etc.… where the unit is a user chosen time interval (hour, day, week…). Several descriptions are supported: “empirical” requiring the full specification of the distribution, or parametric distributions taken among “gamma”, “lognormal” or “weibull”. In the latter case, the mean and standard deviation must be provided in the desired time units.
+library(R0)
+mGT<-generation.time("gamma", 
+                     #Du et al. "The reported serial intervals range from -11 days to 20 days, with a mean of 3.96 days (95% confidence interval: 3.53-4.39), a standard deviation of 4.75 days (95% confidence interval: 4.46-5.07), "
+                     val=c(
+                       3.96,#Serial interval mean
+                       4.75 #Serial interval standard deviation
+                       ) #"val	Vector of values used for the empirical distribution, or c(mean, sd) if parametric."
+                     )
+
+```
+
+
+```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
+
+#R0 estimates generated with the R package [R0](https://cran.r-project.org/web/packages/R0/index.html)
+
+#"The R0 package: a toolbox to estimate reproduction numbers for epidemic outbreaks" [Obadia et al. 2012](https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-12-147)
+
+
+#Note many of these will throw errors for lack of data
+
+locations <- all_long_covariates$country_state
+r_R0_list <- list()
+for(q in locations %>% unique() ){
+  print(q)
+  try({
+    temp <- all_long_covariates %>% filter(country_state %in% q) %>% filter(!is.na(confirmed))
+    temp$confirmed_fd[1]<-temp$confirmed[1]
+    
+
+    incidents <- as.vector(temp$confirmed_fd )
+    pop <- temp$population[1]
+
+    estR0<-est.R0.ML(
+          epid=incidents, 
+          GT=mGT, 
+          begin=1,
+          #end=length(incidents), 
+          methods="ML", #c("EG", "ML", "TD", "AR", "SB"),
+          pop.size=pop, #Population size in which the incident cases were observed. See more details in est.R0.AR documentation
+          impute.values=F #incidents[1]>10 #if the data start with more than 10 confirmed cases immediately then assume left censor and impute #imputation is really slow
+    )
+    #attributes(estR0)
+    estR0
+    r_R0_list[[q]] <- data.frame(country=temp$country[1],state=temp$state[1], r_ml=round(estR0$R,2), pop=pop, R2= round(estR0$Rsquared,2))
+  })
+}
+r_R0_df <- bind_rows(r_R0_list)
+
+```
+
+
+
+```{r, echo=F, message=FALSE, results = F, warning=FALSE}
+#Quantiles of R0 across locations downweighting multiple observations from countries that are dissagregated arbitarily by the data source. A median of R0=2.56 .
+
+weights <- table(r_R0_df$country)
+weights <- weights[r_R0_df$country]
+weights <- 1/(weights/max(weights))
+
+library(spatstat) #install.packages('spatstat')
+print(results_R0 <- r_R0_df %>% filter(!is.na(pop)) %>% pull(r_ml) %>% weighted.quantile(w=weights)) #weight by country, exclude obs with no population data.
+
+```
+
+
+```{r, echo=T, message=FALSE, results = FALSE, warning=FALSE}
+
+#Distribution of R0 across locations.
+
+r_estimates_all <- r_log_linear_df %>% full_join(r_R0_df)
+
+r_estimates_all %>% 
+        filter(!is.na(pop)) %>% 
+        ggplot() + 
+        geom_density(aes(x=r_log_linear), col="lightblue") +
+        geom_vline(xintercept = results_log_linear[3], stat = 'vline', linetype = "dashed", col="blue") + 
+        geom_density(aes(x=r_ml), col="pink") +
+        geom_vline(xintercept = results_R0[3], stat = 'vline', linetype = "dashed", col="red") + 
+        ggtitle("Distribution R0 Estimates Across Countries") + 
+        theme_bw() +
+        scale_x_continuous(breaks=seq(0, 30, by = 1)) + 
+        annotate("text", x = 7, y = .75, label = "Median R0_log_linear = 1.64", color="blue") +
+        annotate("text", x = 7, y = .5, label = "Median R0_ML = 2.56", color="red") +
+        xlab("R0 (maximum likelihood estimate)")
+
+```
+
+```{r, echo=F, message=FALSE, results =F, warning=FALSE}
+
+#https://stackoverflow.com/questions/14563989/force-r-to-stop-plotting-abbreviated-axis-labels-e-g-1e00-in-ggplot2
+#https://cran.r-project.org/web/packages/gghighlight/vignettes/gghighlight.html
+require(scales)
+library(gghighlight); #install.packages('gghighlight')
+options(gghighlight_max_labels=1000)
+p1 <- all_long %>% 
+     filter(days_since_100_confirmed>0) %>% ggplot() + 
+     geom_line(aes(x=days_since_100_confirmed, y=confirmed, color=country )) + 
+     scale_y_log10(labels = comma_format(), limits = c(100,max(all_long$confirmed))) + 
+     gghighlight(country %in% c("Korea, South","US","China","Italy"), #confirmed_max > 1000
+                 label_params = list(size = 3, segment.alpha=0)) + theme_bw() + 
+     xlab("Days Since 100 Confirmed")  + ylab("Deaths")
+
+
+p2 <- all_long %>% 
+     filter(days_since_100_confirmed>0) %>% ggplot() + 
+     geom_line(aes(x=days_since_100_confirmed, y=round(deaths), color=country )) + 
+     scale_y_log10(labels = comma_format(), limits = c(1,max(all_long$deaths))) + 
+     gghighlight(country %in% c("Korea, South","US","China","Italy"), #confirmed_max > 1000
+                 label_params = list(size = 3, segment.alpha=0)) + theme_bw() + 
+     xlab("Days Since 100 Confirmed") + ylab("Deaths")
+
+```
+
+```{r, echo=F, message=FALSE, results =F, warning=FALSE, fig.width=12, fig.height=8}
+
+patchwork <- (p2) 
+patchwork + plot_annotation(
+  title = 'Deaths',
+  subtitle = ''#,
+  #caption = ''
+)
+
+```
+
+Move to r0
+https://www.pagepress.org/journals/index.php/idr/article/view/8516/8184
+
+
+> The first point is to target interventions where needed, toward high-risk populations, including older people and other people with health conditions that render them more susceptible to disease.
