@@ -420,7 +420,7 @@ plot(fit)
 
 Thanks to the growing revolution in Open Science and preprint outlets like medrxiv.org and arxiv.org, the barrier to performing a decent review of recent COVID-19 research is membership in an academic institution with Google Scholar access, like Starbucks, Southwest Airlines, or your bathroom.
 
-**Don't use straw men to represent the state of the art**
+**Don't use straw men to represent the state of the art.**
 
 The piece begins with an incorrect and on face unlikely summary of the current state of the art
 
@@ -434,25 +434,25 @@ Only two citations are provided. The [first](https://web.archive.org/web/2020031
 
 The [second](https://web.archive.org/web/20200319202026/https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca) is a medium blog post, by an MBA/engineer who runs an education website, and collects a number of plots and infographics on COVID-19 from around the web.
 
-If these two examples are representative of something other than the scientific consensus, e.g. media commentary, then they should be cited specifically in that context and then followed by the long list of actual state of the art academic research that ought to be in the popular discourse. Instead, these two sources are presented as straw men to justify opining an alternative view.
+If these two examples are representative of something other than the scientific consensus, e.g. media commentary, then they should be cited specifically in that context and then followed by the long list of actual state of the art academic research that ought to be in the popular discourse. Instead, these two sources are presented as straw men.
 
-**Don't claim the state of the art ignores factors that it actually takes into account**
+**Don't claim the state of the art ignores factors that it actually takes into account.**
 
-Epstein's central criticism is that the epidimiological models at the heart of the scientific consensus share an absurd and incorrect assumption that R0 remains constant over time. He thinks that the R0 at the start of the crisis, is held constant for the entire time, and that's why estimated infection and casualty rates are so high.
+Epstein's central criticism is that the epidemiological models at the heart of the scientific consensus share an absurd and incorrect assumption that R0 remains constant over time. He thinks that the R0 at the start of the crisis, is held constant for the entire time, and that's why estimated infection and casualty rates are so high.
 
 Plainly, no. That's completely and obviously wrong. The models at the heart of the scientific consensus around COVID-19 take into account a decline in R0 over time.
 
-The easiest way to tell is to simply think through what a time constant R0 implies, the disease's progression never stops, the entire population of 330 million Americans catches it, with a fatality rate of 1% producing 3.3 million fatalities.
+The easiest way to tell that that interpretation is completely wrong is to simply think through what a time constant R0 implies, the disease's progression never stops, the entire population of 330 million Americans catches it, with a fatality rate of 1% producing 3.3 million fatalities.
 
-The NYT's infographic he cites gives a infected rate of 100 million, and 1 million dead. So R0 mechanically must not remain constant, it must decline from it's initial values (initial R0=2.3 in that model).
+The NYT's infographic he cites suggests 100 million infected and 1 million dead. So R0 mechanically must not remain constant, it must decline from the initial value (R0=2.3 in that model).
 
-The second easiest way to tell that's completely wrong is to actually read the article where it directly specifies a schedule of R0 reduction based on "mild intervention"
+The second easiest way to tell that that interpretation is completely wrong is to actually read the article where it directly specifies a schedule of R0 reduction based on "mild intervention"
 
 > The mild intervention as modeled here is where we are now in the United States: It is a status quo in which some gatherings are canceled and there is promotion of social distancing and work from home, but with inadequate testing and unaddressed supply shortages.
 
-The third easiest way to tell that's completely wrong, is to look at literally any of the models available online or in published research and see how they handle R0 over time.
+The third easiest way to tell that that interpretation is completely wrong, is to look at any of the COVID-19 pandemic models available online or in published research and see how they handle R0 over time.
 
-So for example [COVID-19 Scenarios](https://neherlab.org/covid19/) out of the University of Basel allows you to choose between strong, moderate, weak, none, or a user customizable schedule rate of R0 decline. Epidemic Envisioner in development at MIT has 7 different possible decay functions for R0 to choose from. The [Epidemic Calculator](http://gabgoh.github.io/COVID/index.html) allows you to vary the timing of an intervention and its effect on R0. The [Swiss-epidemic-model](https://ispmbern.github.io/covid-19/swiss-epidemic-model/) explicitly compares the effect of reducing transmission rates starting today over a range of values from 0 to 100%.
+For example [COVID-19 Scenarios](https://neherlab.org/covid19/) out of the University of Basel allows you to choose between strong, moderate, weak, none, or a user customizable schedule rate of R0 decline. Epidemic Envisioner in development at MIT has 7 different possible decay functions for R0 to choose from. The [Epidemic Calculator](http://gabgoh.github.io/COVID/index.html) allows you to vary the timing of an intervention and its effect on R0. The [Swiss-epidemic-model](https://ispmbern.github.io/covid-19/swiss-epidemic-model/) explicitly compares the effect of reducing transmission rates starting today over a range of values from 0 to 100%.
 
 The agent based model behind the [Imperial College study](https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf) examines many different adaptive non-government strategies including case isolation in the home after individual symptoms, voluntary home quarantine if anyone has symptoms, social distancing for those over 70, and social distancing for the entire population, still producing 81% infection rates and 2.2 million deaths. The [Framework for Reconstructing Epidemiological Dynamics (FRED)](https://www.post-gazette.com/news/health/2020/03/27/COVID-19-coronavirus-University-Pittsburgh-hospitalization-FRED-pandemic-model-case-study/stories/202003230067) out of the University of Pittsburgh is also an agent based that takes into acount adaptive response that drive R0 down over time. Or this [stochastic transmission model](https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30144-4/fulltext) fit to data from Wuhan and has a time varying R0. Prem et al. [2020](https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(20)30073-6/fulltext) simulate lifting the control measures in Wuhan, with a fixed R0, but transmission modeled directly by intergenerational mixing as restrictions are lifted again over time. 
 
@@ -460,40 +460,31 @@ In general, COVID-19 models, certainly models in production, take into account c
 
 **Don't Get basic facts wrong**
 
-The piece repeats twice the incorrect fact that COVID-19 has a "relatively short (two-week) incubation period." [Even](https://www.sciencedirect.com/science/article/pii/S1201971220301193) , [a](https://www.medrxiv.org/content/10.1101/2020.02.21.20026559v1) , [cursory](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3539694) , [search](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4) would point to estimates of an incubation period of about 5 days, and an even shorter serial interval of about 4.5 days.
+The piece repeats twice the incorrect fact that COVID-19 has a "relatively short (two-week) incubation period." [Even](https://www.sciencedirect.com/science/article/pii/S1201971220301193)  a  [cursory](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3539694) search [would](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4) point [to](https://www.medrxiv.org/content/10.1101/2020.02.21.20026559v1) estimates of an incubation period of about 5 days, and an even shorter serial interval of about 4.5 days.
 
 Better yet, when starting research on a new area, reading one of the many existing [literature reviews](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30567-5/fulltext) for lay audiences would explain the difference between a serial interval and an incubation period, the time until infectious and the time until symptomatic, and that COVID-19 is particularly dangerous precisely because many people can pass on the disease prior to knowing they have it.
 
 **Don't cherry pick data**
 
-Epstein (2020) chooses to report the Case Fatality Rate of South Korea because of its relatively low estimate of 0.92% but ostensibly because its more comprehensive testing makes it more accurate.
+Epstein (2020) chooses to focus on the Case Fatality Rate of South Korea, ostensibly not because its relatively low estimate of 0.92% fits his story, but because its more comprehensive testing makes it more accurate.
 
 > It is instructive to see how this analysis fares by taking into account the Korean data, which is more complete than the American data. South Korea has been dealing with the coronavirus since January 20. Since that time, the Korean government has administered a total of 261,335 tests to its citizens. In press releases updated every day, the Korean CDC is reporting (as of March 15) 8,162 total infections against 75 deaths for an overall mortality rate of 0.92 percent. 
 
-Selecting on data quality is problematic because South Korea's draconian testing regime is part of its success in combating COVID-19 and its low CFR. Looking for your car keys under the streetlight not because that's where they are but that's where you can see is a universally problematic approach to scientific inquirry, especially so where measurement, governance, and disaster all are strongly related. There are [heroic attempts](https://www.medrxiv.org/content/medrxiv/early/2020/03/06/2020.03.04.20031104.full.pdf) to combine several different kinds of data taking into account [undercounting](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4707560/) in other relevant cases like China which are finding CFR's still north of 1% at 1.6%. 
+Selecting on data quality is problematic because South Korea's draconian testing regime is part of its success in combating COVID-19 and its low CFR. Looking for your car keys under the streetlight not because that's where they are but that's where you can see is a universally problematic approach to scientific inquiry, especially so where measurement, governance, and disaster all are strongly related. 
 
 Cherry picking a case with good data and good news also misrepresents certainty over the measure. Estimating the Case Fatality Ratio CFR is difficult and can change in [either direction](https://www.rand.org/blog/2020/03/estimates-of-covid-19s-fatality-rate-might-change-and.html) over time as data come in. The CFR may not be knowable [for months](https://www.hindawi.com/journals/cmmm/2012/978901/).  
 
-Because of this actual CFR estimates for COVID-19 [vary wildly across countries](https://www.cebm.net/global-covid-19-case-fatality-rates/). 
+Because of this actual CFR estimates for COVID-19 [vary wildly across countries](https://www.cebm.net/global-covid-19-case-fatality-rates/). There are [heroic attempts](https://www.medrxiv.org/content/medrxiv/early/2020/03/06/2020.03.04.20031104.full.pdf) to combine several different kinds of data taking into account [undercounting](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4707560/) in other relevant cases like China which are finding CFR's still north of 1% at 1.6%. 
 
+**Take the consensus explanation seriously**
 
-**Establish Underlying Mechanisms**
+There are at least two types of fatalities from COVID-19. The first are persons who receive adequate medical care but die anyway. The second are persons who would have survived but received insufficient or degraded medical care.
 
-There are at least two types of fatalities. The first are persons who receive adequate medical care but still die anyway. The second are persons who would have lived but received insufficient or degraded medical care.
+There is a vein of research on why COVID-19 actually kills you, which in addition to age finds specific vulnerabilities like hypertension, heart disease, diabetes, [cerebrovascular disease](https://www.medrxiv.org/content/10.1101/2020.02.24.20027268v1), cancer, chronic respiratory disease, and [kidney impairment](https://www.medrxiv.org/content/10.1101/2020.02.18.20023242v1). The mechanism by which COVID-19 kills includes pneumonia as well as [myocarial](https://www.medrxiv.org/content/10.1101/2020.02.26.20028589v1) [injury](https://www.nature.com/articles/s41569-020-0360-5). It may also [damage the liver](https://www.thelancet.com/journals/langas/article/PIIS2468-1253(20)30057-1/fulltext).
 
-There is a vein of research on why COVID-19 actually kills you, which in addition to age finds specific vulnerabilities like hypertension, heart disease, diabetes, [cerebrovascular disease](https://www.medrxiv.org/content/10.1101/2020.02.24.20027268v1), cancer, chronic respiratory disease, and [kidney impairment](https://www.medrxiv.org/content/10.1101/2020.02.18.20023242v1). 
+Stress on the lungs necessitates oxygen, ventilation, and even intabation which places an enormous strain on healthcare resources. Hospitilization rates were a quarter of known cases in early U.S. CDC data of [25%](https://www.independent.co.uk/news/world/americas/coronavirus-new-york-hospital-cases-today-map-decrease-covid-19-a9425111.html), and are currently [12% in New York](https://www.independent.co.uk/news/world/americas/coronavirus-new-york-hospital-cases-today-map-decrease-covid-19-a9425111.html). A proper literature review would find [growing](https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30068-1/fulltext#fig1) , [evidence](https://www.medrxiv.org/content/10.1101/2020.02.26.20028472v3) for a relationship between available health resources and mortality. Including that Italy took the start of the disease [quite seriously](https://jamanetwork.com/journals/jama/fullarticle/2763188). [Early U.S. data](https://www.cdc.gov/mmwr/volumes/69/wr/mm6912e2.htm) show older than 65 accounting for 80% of deaths but only 45% of hospitalizations and 53% of ICU admissions.
 
-This is in turn because, the mechanism by which COVID-19 kills includes pneumonia as well as [myocarial](https://www.medrxiv.org/content/10.1101/2020.02.26.20028589v1) [injury](https://www.nature.com/articles/s41569-020-0360-5). It may also [damage the liver](https://www.thelancet.com/journals/langas/article/PIIS2468-1253(20)30057-1/fulltext).
-
-Damage to the lungs necessitates oxygen, ventilation, and even intabation which places an enormous strain on healthcare resources. 
-
-Hospitilization rates were a quarter of known cases in early U.S. CDC data of [25%](https://www.independent.co.uk/news/world/americas/coronavirus-new-york-hospital-cases-today-map-decrease-covid-19-a9425111.html), and are currently [12% in New York](https://www.independent.co.uk/news/world/americas/coronavirus-new-york-hospital-cases-today-map-decrease-covid-19-a9425111.html)
-
-A proper literature review would find [growing](https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30068-1/fulltext#fig1) , [evidence](https://www.medrxiv.org/content/10.1101/2020.02.26.20028472v3) for a relationship between available health resources and mortality. Including that Italy took the start of the disease [quite seriously](https://jamanetwork.com/journals/jama/fullarticle/2763188).
-
-[Early U.S. data](https://www.cdc.gov/mmwr/volumes/69/wr/mm6912e2.htm) show older than 65 accounted for 80% of deaths but only accounted for 45% of hospitalizations and 53% of ICU admissions. 
-
-All together, this would point out that the proposed policy of sheltering in place only older Americans  wouldn't even remove half of the current burden on the healthcare system, much less when most adults under 60 are contracting the disease together 10% of them are all headed to the hospital at roughly the same time.
+This is the cause for the sudden spike in mortality reported in the scientific consensus. It's why the alternative proposal of sheltering in place only older Americans wouldn't work. Doing so wouldn't even remove half of the current burden on the healthcare system, and would instead greatly add to it when most adults under 60 contract the disease together at about the same time, and 10% of them are all head to the hospital at about the same time. 
 
 # Lesson 5: Don't form strong prior beliefs based on cherry picked data
 
@@ -503,7 +494,11 @@ For example, Epstein sets up this small comparison between early U.S. death rate
 
 > What, then, does all of this portend for the future of COVID-19 in the United States? Good news is more likely than bad, notwithstanding the models that predict otherwise. The deaths in Washington have risen only slowly, even as the number of infections mount. 
 
-We should instead phrase this as a question, how does the U.S.'s growth rate in COVID-19 deaths compare to elsewhere? Is early data from one or more states likely to be representative of the U.S. average rate? To answer this question, we compare each country and each U.S. state side by side, aligning their episodes by the first date each crossed 100 confirmed cases. We fit a linear trend line to the cumulative count of deaths in each country (log transformed). From the slope of that line we can calculate the day over day average percent change in deaths in each location.
+We should instead phrase this as a question, how does the U.S.'s growth rate in COVID-19 deaths compare to elsewhere? Is early data from one or more states likely to be representative of the U.S. average rate? 
+
+To answer this question, we compare each country and each U.S. state side by side, aligning their episodes by the first date each crossed 100 confirmed cases. We fit a linear trend line to the cumulative count of deaths in each country (log transformed). From the slope of that line we can calculate the day over day average percent change in deaths in each location.
+
+Here are the raw data for countries with more than 100 cases, with coloring and trend lines fit to the 4 suggested case comparisons, Italy, China, Washington State, and the U.S. as a whole. 
 
 ```{r, echo=F, message=FALSE, results =F, warning=FALSE}
 
@@ -603,25 +598,37 @@ p2 <- us_and_us_states_first30 %>%
 ```
 
 
-```{r, echo=F, message=FALSE, results =T, warning=FALSE, fig.width=12, fig.height=10}
+```{r, echo=F, message=FALSE, results =T, warning=FALSE, fig.width=6, fig.height=6}
 
 library(patchwork) ; #install.packages("patchwork")
-patchwork <- p1 +  p_slopes_countries_and_us_states_first30
+patchwork <- p1 
 patchwork + plot_annotation(
-  title = 'National Growth Rate in COVID-19 Deaths',
+  title = 'Growth Rate in COVID-19 Deaths',
   subtitle = ""#,
   #caption = ''
 )
 
 ```
 
-The plot on the left shows the raw data for countries with more than 100 cases, with coloring and trend lines fit to the 4 suggested case comparisons, Italy, China, Washington State, and the U.S. as a whole. The plot on the right shows the calculated average percentage daily change in deaths for the same.
 
-On the first question, U.S. growth rate in deaths is 21.6% which is nearly exactly the median across countries 20.8%. The U.S. rate is below either Italy (29.32%) or China (29.58%), but just below.
+And here is the distribution of average growth rates in deaths in the first 30 days across countries and U.S. states.
 
-On the second point, Washington State was and continues to be an example of lower growth in death rates (11.7%), which at half of the average U.S. rate is not representative of the country as a whole.^[Some of these states entered their episode after the article was posted on March 16th. Where possible I will try to give leeway in that regard, but on the other hand one of the immediate consequences of cherry picking early data from one state is that you'll be shown immediately wrong when a few more days of data come in.]
+```{r, echo=F, message=FALSE, results =T, warning=FALSE, fig.width=6, fig.height=10}
 
-The piece goes on to say
+library(patchwork) ; #install.packages("patchwork")
+patchwork <- p_slopes_countries_and_us_states_first30
+patchwork + plot_annotation(
+  title = 'National Growth Rate in COVID-19 Deaths',
+  subtitle = ""#,
+  #caption = ''
+)
+```
+
+In answer to the first question, the U.S. growth rate in deaths is 21.6% which is nearly exactly the median across countries 20.8%. The U.S. rate is below Italy (29.32%) and China (29.58%), but just below.
+
+In answer to the second question, Washington State was and continues to be an example of lower growth in death rates (11.7%), which at half of the average U.S. rate is not representative of the country as a whole.^[Some of these states entered their episode after the article was posted on March 16th. Where possible I will try to give leeway in that regard, but on the other hand one of the immediate consequences of cherry picking early data from one state is that you'll be shown immediately wrong when a few more days of data come in.]
+
+The Epstein piece goes on to say
 
 > The New York cases have been identified for long enough that they should have produced more deaths if the coronavirus was as dangerous as is commonly believed.
 
@@ -659,9 +666,7 @@ patchwork + plot_annotation(
 
 To proceed further, we need to attempt to distill Richard Epstein's Model of Epidemiology and Disease (here after REMED). Getting REMED requires holding several simple but contradictory ideas at the same time.
 
-**Implied Variables**
-
-The first idea is that the one full cycle of COVID-19 spread and decline observed so far, China, is representative of future inflection points for other countries. Overlay the China curve, the China curve breaks, so another country's curve should break similarly too. (*CHINA_INFLECTION*)
+The first idea is that the one full cycle of COVID-19 spread and decline, China, is representative of future inflection points for other countries. Overlay the China curve, the China curve breaks, so another country's curve should break similarly too. (*CHINA_INFLECTION*)
 
 > Overlooked is the good news coming out of China, where the latest report shows 16 new cases and 14 new deaths, suggesting that the number of deaths in the currently unresolved group will be lower than the 5.3 percent conversion rate in the cases resolved to date. In my view, we will see a similar decline in Italy, for reasons that I shall outline in the remainder of this article.
 
@@ -675,41 +680,41 @@ Italy's death rate is also not representative, it's idiosyncratic and not what s
 
 > Moreover, it is unlikely that the healthcare system in the United States will be compromised in the same fashion as the Italian healthcare system in the wake of its quick viral spread.
 
-Third, China's heavy handed policy response is not why its growth curve in deaths broke, and presumably neither will Italy's heavy handed policy response be responsible when it breaks as well. The U.S. should not copy them. (*POLICY*)
+The third idea is that China's heavy-handed policy response is not why its growth curve in deaths broke, and presumably neither will Italy's heavy handed policy response be responsible when it breaks as well. Therefore he argues, the U.S. should not copy them. (*POLICY*)
 
 > As of March 16, the data from the United States falls short of justifying the draconian measures that are now being implemented. As of two days ago, 39 states have declared states of emergency, and they have been joined at the federal level with President Trump’s recent declaration to the same effect. These declarations are meant to endow governments with the power to impose quarantines and travel bans, close schools, restrict public gatherings, shut down major sporting events, stop public meetings, and close restaurants and bars. Private institutions are imposing similar restrictions. The one-two punch of public and private restrictions has caused a huge jolt to the economy.
 
 > The irony here is that even though self-help measures like avoiding crowded spaces make abundant sense, the massive public controls do not. In light of the available raw data, public officials have gone overboard. 
 
-But policy works
+Despite saying multiple times elsewhere policy does have an independent effect
 
 > Various institutional measures, both private and public, have also slowed down the transmission rate.
 
 > The amount of voluntary and forced separation in the United States has gotten very extensive very quickly, which should influence rates of infection sooner rather than later.
 
-Forth, the growth and decline curves of COVID-19 are a function of time, and naturally will burn itself out. Because of 
+The forth idea is the growth and decline curves of COVID-19 are a function of time, and naturally will burn itself out because of 
 
-Societal Response (*ADAPTATION*)
+A) Societal Response (*ADAPTATION*)
 
 > But once people are aware of the disease, they will start to make powerful adaptive responses, including washing their hands and keeping their distance from people known or likely to be carrying the infection. Various institutional measures, both private and public, have also slowed down the transmission rate.
 
-Seasonality (*SEASONALITY*)
+B) Seasonality (*SEASONALITY*)
 
 > And finally, the model explicitly ignores the possibility that the totals will decline as the weather gets warmer.
 
-Natural selection will breed weaker COVID-19 (*WEAKENING*)
+C) Natural selection will breed weaker COVID-19 (*WEAKENING*)^[I defer to actual epidemiologists to tackle this idea. My current understanding is that COVID-19 is asymptomatic in as many as 80% of cases, it's not killing those hosts before it spreads. It's also communicable up to a couple of days before symptoms do emerge in those who are symptomatic, it's spreading before killing those hosts as well. And the people who it is killing are heading to hospitals first, where it's being transmitted to healthcare workers at alarming rates. This strikes me as a basic lack of understanding about how fitness constraints encourage change in agents over time. Banking on it to occur in a timeline soon enough to avoid a peak in cases in the U.S., without citing a single empirical work, is willfully ignorant.]
 
 >At some tipping point, the most virulent viruses will be more likely to kill their hosts before the virus can spread. In contrast, the milder versions of the virus will wreak less damage to their host and thus will survive over the longer time span needed to spread from one person to another. Hence the rate of transmission will trend downward, as will the severity of the virus. It is a form of natural selection.
 
 > Given that the coronavirus can spread through droplets and contact, the consequences of selection should manifest themselves more quickly than they did for AIDS.
 
-Natural selection will remove weaker humans (*SUSCEPTIBLE*)
+D) Natural selection will remove weaker humans (*SUSCEPTIBLE*)
 
 > Nor does the model recognize that if the most vulnerable people are hit first, subsequent iterations will be slower because the remaining pool of individuals is more resistant to infection.
 
 **Summary**
 
-To get REMED means to believe that the one case, China, predicts future trends in COVID-19 cases in the U.S. and elsewhere, but neither China nor Italy predict future levels of deaths in the U.S. and elsewhere, and the mechanism behind the trend in China was more nature than policy and so the U.S. can avoid enacting those policies and still expect to see the same drop in cases.
+To get REMED means to believe that the one case, China, predicts future trends in COVID-19 cases in the U.S. and elsewhere, but neither China nor Italy predict future levels of deaths in the U.S. and elsewhere, and to simultaneously believe the mechanism behind the trend in China was more nature than policy and so the U.S. can avoid enacting those policies and still expect to see the same drop in cases.
 
 Let that sink in.
 
@@ -721,22 +726,22 @@ The rate of deaths at time t is a function of the distance before or after when 
 
 $\partial DEATHS_t =F(CHINAINFLECTION, ADAPTATION,WEAKENING,SUSCEPTIBLE,SEASONALITY, Time)$
 
-The total number of expected DEATHS however is just a function policy chosen, smoking population, pollution, and whether or not you're Italy.
+The total number of expected DEATHS however is just a function policy chosen, smoking population, pollution, and whether or not you are the country of Italy.
 
 $DEATHS=F(Policy, Smokers, Polution, Italy)$
 
-Almost all social sciences grad students will be forced to read [King, Keohane, and Verba (1997)](https://press.princeton.edu/books/paperback/9780691034713/designing-social-inquiry) or something similar in their first year which details how to do small n case selection with an eye toward having enough cases and the right cases to test your explanations. We can express this directly by coding the available cases and putting them into a table.
+Almost all social sciences grad students will be forced to read [King, Keohane, and Verba (1997)](https://press.princeton.edu/books/paperback/9780691034713/designing-social-inquiry) or something similar in their first year which details how to do small n case selection with an eye toward having enough cases and the right cases to test your explanations. We can express this directly by coding the available cases and putting them into a table.^[Smoking coded as cigarette consumption per person per year from Wikipedia, https://en.wikipedia.org/wiki/List_of_countries_by_cigarette_consumption_per_capita ]
 
-```{r, eval=F, echo=F, message=FALSE, results = F, warning=FALSE}
+```{r, eval=T, echo=F, message=FALSE, results = F, warning=FALSE}
 
 #install.packages('datapasta')
 library(datapasta)
 x <- data.frame(
-  country=c('China','Italy','U.S.'),
-  deaths=c('High','High','?'),
-  policy=c('Shelter in Place','Shelter in Place','Shelter in Place'),
-  pollution=c('High','Low','Low'),
-  smoking=c('2043','1493.3','1016.6'),
+  Country=c('China','Italy','U.S.'),
+  Deaths=c('3,296','9,134*','1,475*'),
+  Policy=c('Shelter in Place','Shelter in Place','Shelter in Place'),
+  Pollution=c('High','Low','Low'),
+  Smoking=c('2043','1493.3','1016.6'),
   Italy=c('No','Yes','No')
 )
 
@@ -752,21 +757,46 @@ x %>%
 
 ```
 
-A number of problems should become immediately apparent. First, the number of observations with known deaths is just 2, China and Italy. But the number of explanations we hope to test with them is 4. We don't have enough degrees of freedom to mathematically demonstrate a relationship between total deaths and every one of these explanations.
+A number of problems should become immediately apparent. First, the number of observations with a final episode count of deaths is just 1, China. Both Italy and the U.S. still show an increasing count. Further, the number of explanations we hope to test with them is 4. We don't have enough degrees of freedom to mathematically demonstrate a relationship between total deaths and every one of these explanations.
 
-Second, we don't have any variation on the dependent variable, both Italy and China have a high death tolls.^[What counts as low is a moving target because the original piece predicted only 500 for the U.S. and said it wasn't likely to reach the high numebr of China's because China had more smokers. Now Italy's high death count is the new high. But he forecasts 5,000 for the U.S. which would then make it the new high. But this is contrast to the NYT estimate of a million, so maybe these are all really low. In either case, there's still no variation on the dependent variable. ] The sample does not include any examples of low death toll countries for us to infer from.
+Second, we don't have any variation on the dependent variable, both Italy and China have a high death toll.^[What counts as low is a moving target because the original piece predicted only 500 for the U.S. and said it wasn't likely to reach the high number of China's because China had more smokers. Now Italy's high death count is the new high. But he forecasts 5,000 for the U.S. which would then make it the new high. But this is contrast to the NYT estimate of a million, so maybe these are all really low. In either case, there's still no variation on the dependent variable. ] The sample does not include any examples of low death toll countries for us to infer from.
 
-Third, we don't have variation on the independent variable of interest, policy, either. All three of these countries have shelter in place style policies of one form or another. What variation there is, both China's and Italy's are more extreme the U.S. so far.
+Third, we don't have variation on the independent variable of interest, policy, either. All three of these countries have shelter in place style policies of one form or another. And, both China's and Italy's are more extreme, not less, than the U.S. so far.
 
-A proposal for how to salvage this design is left here as an exercise for the reader. First, collapse smoking and pollution into a single lung health index. Second, replace the Italy dummy with an actual theoretical explanation for their healthcare system struggled but the U.S. for some reason won't. Third, expand the sample of cases to include variation on both the dependent AND independent variable. That is, we need examples of countries with low death totals. For example, Singapore, Hong Kong, and Taiwan. We also need examples of countries with weak policies, no shelter in place. After assembling a moderate number of examples, we could then see whether at least the correlation between policy and death totals is zero.
+We could start to improve on this. First, collapse smoking and pollution into a single lung health index, or for convenience choose just smoking. Second, drop the idiosyncratic explanation for Italy just being different somehow. Third, expand the sample of cases to include variation on both the dependent AND independent variable. That is, we need examples of countries with low death totals. We also need examples of countries with no shelter in place. Here's what that looks like for the set of countries that have made it to 30 days since 100 confirmed cases.
 
-Looking at those cases, we might desire to consider other measurements suggested by the literature review regarding the composition of the healthcare system, strategies other than shelter in place like aggressive testing and tracing, authoritarian proclamations that there is no disease and no deaths have been because of it, etc.
+```{r, eval=T, echo=F, message=FALSE, results = F, warning=FALSE}
 
-This would still not establish the causal relationships desired, but it would at least but mathematically possible to make the implied comparisons. As it stands now, the inferences are nonsensical.
+temp <- countries_long %>% dplyr::filter(!is.na(deaths) & !is.na(confirmed) ) %>% filter(days_since_100_confirmed==30)
 
-# Lesson 8: Convey uncertainty with specificity not doublespeak
+library(datapasta)
+x2 <- data.frame(
+  Country=c('U.S.', 'Italy', 'Iran','China', "South Korea","Japan"),
+  Deaths_at_30_Days=c('?', '6077','2234','1766','94','35'),
+  Shelter_In_Place=c('Yes','Yes','No','Yes','No','No'),
+  Smoking=c('1,016.6','1493.3','936.5',"2,043","1,667","1,583")
+)
 
-The piece presents itself as if its communicating confidence and uncertainty, e.g. using the words likely/unlikely/probable 8 times. There are mathematical ways of explicitly communicating uncertainty, and where that uncertainty lies in measurement, parameter, or prediction. There are even qualitative ways of communicating uncertainty to a qualitative audience, e.g. the CIA's [desperate mapping](https://www.cia.gov/library/center-for-the-study-of-intelligence/csi-publications/books-and-monographs/sherman-kent-and-the-board-of-national-estimates-collected-essays/6words.html) from probabilities to adjectives for lay policymakers. 
+```
+
+```{r, eval=T, echo=F, message=F, results = T, warning=FALSE}
+x2 %>%
+  kable() %>%
+  kable_styling()
+
+```
+
+Smoking no longer seems to explain China's high deaths, Iran has less smoking but a high death count, and South Korea and Japan both have high smoking but a low death count.
+
+Likewise, two of the high death rate countries, Italy and China, have a shelter in place policy, but the third Iran does not. Neither of the low death rate countries South Korea and Japan have a shelter in place policy. Japan's slow but increasing growth rate remains a mystery but might simply be on a delayed slope.
+
+This stresses the limits of this kind of simple pattern matching exercise. High death rates also cause shelter in place policies. South Korea which pursued early sophisticated containment was able to forgo the need to switch to a delay policy.
+
+Similarly, a simple cross-sectional comparison of countries isn't sufficient to tell us whether a shelter in place policy worked. Cross-nationally analogies are insufficient to answer this research question, fine grained time-series cross-sectional data and simulation are required to construct and estimate concrete counterfactuals for ought to have happened if not for an action taken at a particular time.
+
+# Lesson 8: Convey Uncertainty with Specificity not Doublespeak
+
+The Epstein piece presents itself as if its communicating confidence and uncertainty, e.g. using the words likely/unlikely/probable 8 times. There are mathematical ways of explicitly communicating uncertainty, and where that uncertainty lies in measurement, parameter, or prediction. There are even qualitative ways of communicating uncertainty to a qualitative audience, e.g. the CIA's [desperate mapping](https://www.cia.gov/library/center-for-the-study-of-intelligence/csi-publications/books-and-monographs/sherman-kent-and-the-board-of-national-estimates-collected-essays/6words.html) from probabilities to adjectives for lay policymakers. 
 
 There is also a wrong way to convey uncertainty which is to pepper your language with contradictory hedging and doublespeak that generates uncertainty in the reader's mind about what you actually mean. 
 
@@ -774,7 +804,7 @@ For example:
 
 > That estimate is ten times greater than the 500 number I erroneously put in the initial draft of the essay, and it, too, could prove somewhat optimistic. 
 
-My first guess was immediately wrong, here's a new guess that might also be immediately wrong.
+Epstein's first guess was immediately wrong, so here's a new guess that might also be immediately wrong.
 
 > Perhaps my analysis is all wrong, even deeply flawed. But the stakes are too high to continue on the current course without reexamining the data and the erroneous models that are predicting doom.
 
@@ -790,7 +820,7 @@ The challenge in reviewing analysis like these lies in their incurious and insin
 
 That is not a viable or preferred way to collectively learn about COVID-19. It is an [order of magnitude less effort](https://en.wikipedia.org/wiki/Gish_gallop) to spam poorly constructed hypotheticals than it is to deconstruct them. This review took a substantial amount of time, and in the meantime the original piece was poorly revised, several interviews and a podcast were released, and a second post trying to cover for the first went live.^[And the schema for the underlying COVID-19 data changed breaking a lot of code.] More will no doubt soon continue to move the goal posts and argument. In a world where actual life or death policy analysis is being treated like a high school debate round, the only strategic move is to step back, slow down, and draw methodological lessons for our students and colleagues that will apply to a broad set current and future analysis.
 
-Epstein (2020a,2020a2,2020b) and analysis like it shouldn't be rejected because the author is out of their lane. It should be rejected because it's bad work. I'm not a epidemiologist either, but even as just as a social scientist I can show lots of different specific ways that the analysis fails to meet basic standards of scientific inference. An epidemiologist would have even more detailed empirically relevant issues to point out. In this current time of crisis, we should resist the urge to gate-keep and instead encourage honesty, curiosity, high standards, and good work. Even blatantly incurious and bad work can serve as a pedagogical tool to train young researchers what not to do. We need to take these opportunities to learn so that we are all smarter and better prepared for the next crisis.
+Epstein (2020a,2020a2,2020b) and analysis like it shouldn't be rejected because the author is out of their lane. It should be rejected because it's bad work. I'm not an epidemiologist either, but even as just as a lowly social scientist, I can show lots of different specific ways that the analysis fails to meet basic standards of scientific inference. An epidemiologist would have even more detailed empirically relevant issues to point out. In this current time of crisis, we should resist the urge to gate-keep and instead encourage honesty, curiosity, high standards, and good work. Even blatantly incurious and bad work can serve as a pedagogical tool to train young researchers what not to do. We need to take these opportunities to learn so that we are all smarter and better prepared for the next crisis.
 
 
 
