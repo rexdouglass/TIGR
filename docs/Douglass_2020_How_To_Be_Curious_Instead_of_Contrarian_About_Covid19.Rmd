@@ -17,13 +17,17 @@ blockquote {
 }
 </style>
 
-**Rex W. Douglass PhD** ^[If you found this note useful, please consider donating a few minutes to contribute examples of government COVID-19 quarentine measures to the [TIGR Project](https://github.com/rexdouglass/TIGR)]
 
-[[@RexDouglass]](https://twitter.com/RexDouglass)
+**Rex W. Douglass PhD** ^[If you found this note useful, please consider donating a few minutes to contribute examples of government COVID-19 quarentine measures to the [TIGR Project](https://github.com/rexdouglass/TIGR)] 
+ ^[Director of the Machine Learning for Social Sience Lab, Center for Peace and Security Studies, University of California San Diego]
 
-**3/27/2020** ^[Acknowledgments: I thank a good chunk of the NYU Law Class of 2013 for suggesting the subject of this review.]
+[[@RexDouglass]](https://twitter.com/RexDouglass/status/1243723120382316550)
 
-[Working Draft. COMMENTS WELCOME!]
+**3/27/2020** 
+
+[Working Draft. COMMENTS WELCOME!]^[Acknowledgments: I thank a good chunk of the NYU Law Class of 2013 for suggesting the subject of this review, and am grateful for many helpful comments and corrections from friends and colleagues.]
+
+
 
 ```{r, echo=F, message=FALSE, results = FALSE, warning=FALSE}
 
