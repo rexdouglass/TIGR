@@ -490,7 +490,7 @@ Selecting on data quality is problematic because South Korea's draconian testing
 
 Cherry picking a case with good data and good news also misrepresents certainty over the measure. Estimating the Case Fatality Ratio CFR is difficult and can change in [either direction](https://www.rand.org/blog/2020/03/estimates-of-covid-19s-fatality-rate-might-change-and.html) over time as data come in. The CFR may not be knowable [for months](https://www.hindawi.com/journals/cmmm/2012/978901/).  
 
-Because of this actual CFR estimates for COVID-19 [vary wildly across countries](https://www.cebm.net/global-covid-19-case-fatality-rates/). There are [heroic attempts](https://www.medrxiv.org/content/medrxiv/early/2020/03/06/2020.03.04.20031104.full.pdf) to combine several different kinds of data taking into account [undercounting](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4707560/) to estimate the CFR for cases we care about like China, and they still finding CFR's north of 1% (1.6%). 
+Because of this actual CFR estimates for COVID-19 [vary wildly across countries](https://www.cebm.net/global-covid-19-case-fatality-rates/). There are [heroic attempts](https://www.medrxiv.org/content/medrxiv/early/2020/03/06/2020.03.04.20031104.full.pdf) to combine several different kinds of data taking into account [undercounting](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4707560/) to estimate the CFR for cases we care about like China, and they are still finding CFR's north of 1% (1.6%). 
 
 **Take the consensus explanation seriously**
 
