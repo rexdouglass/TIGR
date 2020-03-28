@@ -383,7 +383,7 @@ patchwork + plot_annotation(
 )
 
 ```
-These forecasts in light of the actual data trajectory should immediately give you pause. For the United States, it would require a very soon departure from the current exponential trend which isn't visible yet in either the confirmed or death trends. The U.S. trend in deaths is actually ticking up slightly here.
+These forecasts in light of the actual data trajectory should immediately give you pause. For the United States, it would require a very soon departure from the current exponential trend which isn't visible yet in either the confirmed or death trends. The U.S. trend in deaths is actually accelerating slightly here.
 
 ```{r, echo=F, message=FALSE, results = T, warning=FALSE, fig.width=6, fig.height=6}
 
