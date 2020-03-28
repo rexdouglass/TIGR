@@ -368,12 +368,12 @@ p2 <- world_long %>% filter(days_since_100_confirmed>0) %>% ggplot() +
 
 ```
 
-```{r, echo=F, message=FALSE, results = T, warning=FALSE, fig.width=12, fig.height=6}
+```{r, echo=F, message=FALSE, results = T, warning=FALSE, fig.width=6, fig.height=6}
 
 library(patchwork) ; #install.packages("patchwork")
-patchwork <- (p1 + p2) 
+patchwork <- (p1 ) 
 patchwork + plot_annotation(
-  title = 'United States and Global Covid-19 Deaths',
+  title = 'United States Covid-19 Cases (red) and Deaths (black)',
   subtitle = "Epstein's Predicted Maximum Total Deaths (March 16 and then updated on March 24)",
   #caption = ''
 )
@@ -381,6 +381,17 @@ patchwork + plot_annotation(
 ```
 These forecasts in light of the actual data trajectory should immediately give you pause. For the United States, it would require a very soon departure from the current exponential trend which isn't visible yet in either the confirmed or death trends. The U.S. trend in deaths is actually ticking up slightly here.
 
+```{r, echo=F, message=FALSE, results = T, warning=FALSE, fig.width=6, fig.height=6}
+
+library(patchwork) ; #install.packages("patchwork")
+patchwork <- (p2 ) 
+patchwork + plot_annotation(
+  title = 'Global Covid-19 Cases (red) and Deaths (black)',
+  subtitle = "Epstein's Predicted Maximum Total Deaths (March 16)",
+  #caption = ''
+)
+
+```
 For the world, growth starts off exponential, levels off, and then goes exponential again as it reaches a new part of the world. For Epstein's 50k estimate to be true, the trend in Europe and the U.S. would have to start leveling off now, and there would have to not be an exponential growth when the disease fully hits Latin America, Africa, and South East Asia. As of this writing the world is already half way to that prediction of a million confirmed cases. It's not that these outcomes aren't possible, it's that it's unclear what in the time trend up until now or in the theory suggests that's what is about to happen.
 
 ```{r, eval=F,echo=F, message=FALSE, results = FALSE, warning=FALSE}
