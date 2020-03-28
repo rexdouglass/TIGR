@@ -459,7 +459,7 @@ The agent based model behind the [Imperial College study](https://www.imperial.a
 
 In general, COVID-19 models, certainly models in production, take into account changes in R0 over time. More precisely, the high end models simulate the direct behaviors that lead to transmissions, of which R0 is a summary statistic. Default parameters are usually set to current levels of mitigation. The completely unmitigated case is no longer a relevant counterfactual, as the world now knows about the disease, and the relevant policy choices are between greater and lesser degrees of mitigation.
 
-**Don't Get basic facts wrong**
+**Don't get basic facts wrong**
 
 The piece repeats twice the incorrect fact that COVID-19 has a "relatively short (two-week) incubation period." [Even](https://www.sciencedirect.com/science/article/pii/S1201971220301193)  a  [cursory](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3539694) search [would](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4) point [to](https://www.medrxiv.org/content/10.1101/2020.02.21.20026559v1) estimates of an incubation period of about 5 days, and an even shorter serial interval of about 4.5 days.
 
