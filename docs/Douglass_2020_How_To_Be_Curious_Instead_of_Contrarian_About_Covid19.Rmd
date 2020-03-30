@@ -474,13 +474,13 @@ The agent based model behind the [Imperial College study](https://www.imperial.a
 
 In general, COVID-19 models, certainly models in production, take into account changes in R0 over time. More precisely, the high end models simulate the direct behaviors that lead to transmissions, of which R0 is a summary statistic. Default parameters are usually set to current levels of mitigation. The completely unmitigated case is no longer a relevant counterfactual, as the world now knows about the disease, and the relevant policy choices are between greater and lesser degrees of mitigation.
 
-**Don't get basic facts wrong**
+**Don't get basic facts wrong.**
 
 The piece repeats twice the incorrect fact that COVID-19 has a "relatively short (two-week) incubation period." [Even](https://www.sciencedirect.com/science/article/pii/S1201971220301193)  a  [cursory](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3539694) search [would](https://www.medrxiv.org/content/10.1101/2020.02.19.20025452v4) point [to](https://www.medrxiv.org/content/10.1101/2020.02.21.20026559v1) estimates of an incubation period of about 5 days, and an even shorter serial interval of about 4.5 days.
 
 Better yet, when starting research on a new area, reading one of the many existing [literature reviews](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30567-5/fulltext) for lay audiences would explain the difference between a serial interval and an incubation period, the time until infectious and the time until symptomatic, and that COVID-19 is particularly dangerous precisely because many people can pass on the disease prior to knowing they have it.
 
-**Don't cherry pick data**
+**Don't cherry pick data.**
 
 Epstein (2020) chooses to focus on the Case Fatality Rate of South Korea, ostensibly not because its relatively low estimate of 0.92% fits his story, but because its more comprehensive testing makes it more accurate.
 
@@ -492,7 +492,7 @@ Cherry picking a case with good data and good news also misrepresents certainty 
 
 Because of this actual CFR estimates for COVID-19 [vary wildly across countries](https://www.cebm.net/global-covid-19-case-fatality-rates/). There are [heroic attempts](https://www.medrxiv.org/content/medrxiv/early/2020/03/06/2020.03.04.20031104.full.pdf) to combine several different kinds of data taking into account [undercounting](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4707560/) to estimate the CFR for cases we care about like China, and they are still finding CFRs north of 1% (1.6%). 
 
-**Take the consensus explanation seriously**
+**Take the consensus explanation seriously.**
 
 There are at least two types of fatalities from COVID-19. The first are persons who receive adequate medical care but die anyway. The second are persons who would have survived but received insufficient or degraded medical care.
 
