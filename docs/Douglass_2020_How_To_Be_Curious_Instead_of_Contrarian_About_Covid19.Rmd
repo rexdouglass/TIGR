@@ -23,7 +23,7 @@ blockquote {
 
 [[@RexDouglass]](https://twitter.com/RexDouglass/status/1243723120382316550)
 
-**3/27/2020** 
+**3/30/2020** 
 
 [Working Draft. COMMENTS WELCOME!]^[Acknowledgments: I thank a good chunk of the NYU Law Class of 2013 for suggesting the subject of this review, and am grateful for many helpful comments and corrections from friends and colleagues.]
 
@@ -358,8 +358,8 @@ p1 <- countries_long %>% filter(country %in% "US") %>% filter(days_since_100_con
           geom_hline(yintercept = 500, stat = 'hline', linetype = "dashed", col="black") +
           geom_hline(yintercept = 5000, stat = 'hline', linetype = "dashed", col="black") +
           ggtitle("United States") + 
-          annotate("text", x = 80, y = 700, label = "March 16 Prediction", color="black", size=2.5)  + 
-          annotate("text", x = 80, y = 7000, label = "March 24 Prediction", color="black", size=2.5) + ylab("")
+          annotate("text", x = 80, y = 700, label = "Prediction made on March 16", color="black", size=2.5)  + 
+          annotate("text", x = 80, y = 7000, label = "Prediction made on March 24", color="black", size=2.5) + ylab("")
 
 p2 <- world_long %>% filter(days_since_100_confirmed>0) %>% ggplot() +
           geom_point(aes(x=days_since_100_confirmed, y=confirmed), color="red") + 
@@ -367,7 +367,7 @@ p2 <- world_long %>% filter(days_since_100_confirmed>0) %>% ggplot() +
           xlab("Days Since 100 Confirmed") + theme_bw() + scale_y_log10(labels = comma) + xlim(0,100) +
           geom_hline(yintercept = 50000, stat = 'hline', linetype = "dashed", col="black") +
           ggtitle("World") + 
-          annotate("text", x = 80, y = 65000, label = "March 16 Prediction", color="black", size=2.5)  + ylab("")
+          annotate("text", x = 80, y = 65000, label = "Prediction made on March 16 and March 24", color="black", size=2.5)  + ylab("")
 
 
 ```
@@ -396,7 +396,7 @@ patchwork + plot_annotation(
 )
 
 ```
-For the world, growth starts off exponential, levels off, and then goes exponential again as it reaches a new part of the world. For Epstein's 50k estimate to be true, the trend in Europe and the U.S. would have to start leveling off now, and there would have to not be an exponential growth when the disease fully hits Latin America, Africa, and South East Asia. As of this writing the world is already half way to that prediction of a million confirmed cases. It's not that these outcomes aren't possible, it's that it's unclear what in the time trend up until now or in the theory suggests that's what is about to happen.
+For the world, growth starts off exponential, levels off, and then goes exponential again as it reaches a new part of the world. For Epstein's 50k estimate to be true, the trend in Europe and the U.S. would have to start leveling off now, and there would have to not be an exponential growth when the disease fully hits Latin America, Africa, and South East Asia. As of this writing the world is already three quarters to that prediction of a million confirmed cases. It's not that these outcomes aren't possible, it's that it's unclear what in the time trend up until now or in the theory suggests that's what is about to happen.
 
 ```{r, eval=F,echo=F, message=FALSE, results = FALSE, warning=FALSE}
 
@@ -648,7 +648,7 @@ The Epstein piece goes on to say
 
 > The New York cases have been identified for long enough that they should have produced more deaths if the coronavirus was as dangerous as is commonly believed.
 
-I don't entirely know what this sentence is supposed to mean, but New York's day on day growth in fatalities is the third highest in the world in these data, just behind Massachusetts and Venezuela, at 52.28%.
+I don't entirely know what this sentence is supposed to mean, but New York's day on day growth in fatalities is the third highest in the world in these data, just behind Massachusetts at 52.28%.
 
 The lesson here being that intentionally looking for early "good news" means necessarily ignoring actual news relevant to the research question.^[ Left as an exercise to the reader to see how hard exactly you have to squint before you see "good news" from these data.]
 
