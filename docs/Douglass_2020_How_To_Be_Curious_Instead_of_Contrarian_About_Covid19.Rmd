@@ -18,8 +18,8 @@ blockquote {
 </style>
 
 
-**Rex W. Douglass PhD** ^[If you found this note useful, please consider donating a few minutes to contribute examples of government COVID-19 quarentine measures to the [TIGR Project](https://github.com/rexdouglass/TIGR)] 
- ^[Director of the Machine Learning for Social Sience Lab, Center for Peace and Security Studies, University of California San Diego]
+**Rex W. Douglass PhD** ^[If you found this note useful, please consider donating a few minutes to contribute examples of government COVID-19 quarantine measures to the [TIGR Project](https://github.com/rexdouglass/TIGR)] 
+ ^[Director of the Machine Learning for Social Science Lab, Center for Peace and Security Studies, University of California San Diego]
 
 [[@RexDouglass]](https://twitter.com/RexDouglass/status/1243723120382316550)
 
@@ -383,7 +383,7 @@ patchwork + plot_annotation(
 )
 
 ```
-These forecasts in light of the actual data trajectory should immediately give you pause. For the United States, it would require a very soon departure from the current exponential trend which isn't visible yet in either the confirmed or death trends. The U.S. trend in deaths is actually accelerating slightly here.
+These forecasts in light of the actual data trajectory should immediately give you pause. For the United States, it would require a very soon departure from the current exponential trend which wasn't visible yet in either the confirmed or death trends. The U.S. trend in deaths was actually accelerating slightly here.
 
 ```{r, echo=F, message=FALSE, results = T, warning=FALSE, fig.width=6, fig.height=6}
 
