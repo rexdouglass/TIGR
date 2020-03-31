@@ -244,7 +244,7 @@ As a producer of analysis, the struggle is how to think about and do science alo
 
 # Lesson 2: Pose a Question and Propose a Research Design that Can Answer It
 
-Instead of an assertion, we should present Epstein's idea as a concrete research question: What will the number of deaths from COVID-19 in the United States be by say September 1? To be concrete, here are our outcomes, confirmed COVID-19 confirmed cases (red) and deaths (black) compiled by [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19).
+Instead of an assertion, we should present Epstein's idea as a concrete research question: What will the number of deaths from COVID-19 in the United States be by say September 1? To be concrete, here are our outcomes, confirmed COVID-19 cases (red) and deaths (black) compiled by [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19).
 
 ```{r, echo=F, message=FALSE, results = F, warning=FALSE}
 
@@ -629,7 +629,7 @@ patchwork + plot_annotation(
 
 And here is the distribution of average growth rates in deaths in the first 30 days across countries and U.S. states.
 
-```{r, echo=F, message=FALSE, results =T, warning=FALSE, fig.width=6, fig.height=10}
+```{r, echo=F, message=FALSE, results =T, warning=FALSE, fig.width=6, fig.height=12}
 
 library(patchwork) ; #install.packages("patchwork")
 patchwork <- p_slopes_countries_and_us_states_first30
