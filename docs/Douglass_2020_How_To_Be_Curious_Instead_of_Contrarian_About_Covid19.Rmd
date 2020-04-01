@@ -629,7 +629,7 @@ patchwork + plot_annotation(
 
 And here is the distribution of average growth rates in deaths in the first 30 days across countries and U.S. states.
 
-```{r, echo=F, message=FALSE, results =T, warning=FALSE, fig.width=6, fig.height=12}
+```{r, echo=F, message=FALSE, results =T, warning=FALSE, fig.width=6, fig.height=13}
 
 library(patchwork) ; #install.packages("patchwork")
 patchwork <- p_slopes_countries_and_us_states_first30
