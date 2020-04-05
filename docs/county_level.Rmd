@@ -214,6 +214,11 @@ summary(temp_df$t_slope_percent_change[temp_df$confirmed>=10])
 
 temp_df_15 <- temp_df %>% filter(confirmed_max>10) %>% filter(days_since_15_confirmed>=1)
 
+temp_df_15 %>% 
+  ggplot(aes(x=days_since_15_confirmed , y=t_slope_percent_change)) +
+  geom_point() +
+  geom_smooth() + ylim(0,50)
+
 ```
 
 
