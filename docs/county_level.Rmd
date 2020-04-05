@@ -1,6 +1,8 @@
 ---
 title: "R Notebook"
 output: html_notebook
+editor_options: 
+  chunk_output_type: inline
 ---
 
 
@@ -8,7 +10,7 @@ output: html_notebook
 
 library(lubridate)
 library(tidyverse)
-library(R0)  # consider moving all library commands to top -- this one was in a loop below
+#library(R0)  # consider moving all library commands to top -- this one was in a loop below
 #Until the U.S. states one goes live have to pull it from here
 #Codebook
 #https://github.com/JieYingWu/COVID-19_US_County-level_Summaries/blob/master/data/list_of_columns.md
@@ -40,6 +42,7 @@ nytimes_long <- nytimes %>%
             mutate(confirmed_cummax=cummax(confirmed)) %>%
             mutate(days_since_1_confirmed=cumsum(confirmed_cummax>0)) %>%
             mutate(days_since_10_confirmed=cumsum(confirmed_cummax>10)) %>%
+            mutate(days_since_15_confirmed=cumsum(confirmed_cummax>15)) %>%
             mutate(days_since_50_confirmed=cumsum(confirmed_cummax>50)) %>%
             mutate(days_since_100_confirmed=cumsum(confirmed_cummax>100)) %>%
             mutate(days_since_500_confirmed=cumsum(confirmed_cummax>500)) %>%
@@ -69,6 +72,149 @@ table(temp$confirmed_max) #936 have 10 or more cases , 1412 don't
 
 ```
 
+
+```{r}
+
+#has new york city as a single entitiy but not the constituent counties which is frustrating
+
+library(strucchange) ; #install.packages('strucchange')
+temp <- nytimes_long %>% arrange(date_asdate) %>% filter(county %in% "Bexar") %>% 
+        mutate(confirmed_log=log(confirmed+1)) %>%
+        mutate(date_rank= rank(date_asdate))  
+bp <- breakpoints(confirmed_log ~ 1, data=temp)
+bp <- breakpoints(confirmed_log ~ 1 + date_rank, data=temp)
+temp %>% ggplot() + geom_point(aes(x=rank(date_asdate), y=confirmed_log)) + geom_vline(xintercept=bp$breakpoints)
+coef(bp)
+
+
+temp <- nytimes_long %>% arrange(date_asdate) %>% filter(county %in% "New York City") %>% 
+        mutate(confirmed_log=log(confirmed+1)) %>%
+        mutate(t= rank(date_asdate))  
+bp <- breakpoints(confirmed_log ~ 1, data=temp)
+bp <- breakpoints(confirmed_log ~ 1 + t, data=temp)
+
+tmin <- min(temp$t)
+tmax <- max(temp$t)
+c(tmin, bp$breakpoints, tmax)
+
+
+cdf <- data.frame(
+                  t= c(1,bp$breakpoints), 
+                  t_slope= coef(bp)[,2]
+                  )
+
+temp <- temp %>% 
+        mutate(y_hat = fitted.values(bp)) %>%
+        left_join(cdf) %>% 
+        fill(t_slope) %>%
+        mutate(t_slope_percent_change = round((exp(t_slope)-1)*100,2))
+
+temp %>% ggplot() +
+         geom_point(aes(x=rank(date_asdate), y=confirmed_log)) + 
+         geom_line(aes(x=rank(date_asdate), y=y_hat)) + 
+         geom_vline(xintercept=bp$breakpoints)
+
+temp_list <- list()
+for(q in na.omit(unique(nytimes_long$fips))  ){
+  print(q)
+  temp <- nytimes_long %>% arrange(date_asdate) %>% 
+          filter(fips %in% q) %>% 
+          mutate(confirmed_log=log(confirmed+1)) %>%
+          mutate(t= rank(date_asdate))  
+  #bp <- breakpoints(confirmed_log ~ 1, data=temp)
+  bp <- NULL
+  lm1 <- NULL
+  y_hat <- NA
+  cdf <- NULL
+  try({
+        #if it fails fall back to just a lm
+    lm1 <- lm(confirmed_log ~ 1 + t, data=temp)
+
+    cdf <- data.frame(
+                      t= 1, 
+                      t_slope= coef(lm1)[2],
+                      t_slope_break=0
+                      )
+    y_hat=fitted.values(lm1)
+  })
+  
+  try({
+    bp <- breakpoints(confirmed_log ~ 1 + t, data=temp)
+    
+    cdf <- data.frame(
+                      t= c(1,bp$breakpoints), 
+                      t_slope= coef(bp)[,2],
+                      t_slope_break=1
+                      )
+    y_hat=fitted.values(bp)
+  })
+  
+  temp <- temp %>% 
+          mutate(y_hat = y_hat) %>%
+          left_join(cdf) %>% 
+          fill(t_slope) %>%
+          mutate(t_slope_percent_change = round((exp(t_slope)-1)*100,2))
+  
+  temp_list[[as.character(q)]] <- temp
+
+  if( is.na( temp_list[[as.character(q)]]$y_hat) ) {print("error"); break}
+}
+#"13055"
+temp_df <- bind_rows(temp_list)
+dim(temp_df)
+
+```{r}
+temp_df_max <- temp_df %>% group_by(fips) %>% filter(date_asdate==max(date_asdate)) %>% ungroup()
+
+hist(temp_df_max$t_slope_percent_change, breaks=50)
+
+temp_df_max %>% ggplot() + geom_density(aes(x=t_slope_percent_change))
+```
+
+```{r}
+temp_df %>% 
+  head(1000) %>%
+  ggplot() +
+  geom_line(aes(x=date_asdate,
+                y=t_slope_percent_change,
+                color=fips))  + theme(legend.position = "none")
+
+```
+temp_df %>%
+  filter(county %in% "New York City")  %>% 
+  mutate(date_asdate_rank=rank(date_asdate)) %>%
+  ggplot() +
+  geom_boxplot(aes(x=t_slope_percent_change,y=t_slope_percent_change))
+  
+temp_df %>%
+  filter(county %in% "Bexar") %>%
+  ggplot() +
+  geom_point(aes(x=date_asdate, y=confirmed_log)) +
+  geom_line(aes(x=date_asdate, y=y_hat)) 
+  
+
+```{r}
+#what should the cuttoff be?
+temp_df %>% filter(confirmed<100) %>%
+  ggplot() +
+  geom_point(aes(x=confirmed, y=t_slope_percent_change)) 
+
+#Where should we put the cutoff
+temp_df %>% filter(confirmed<100) %>%
+  ggplot(aes(x=confirmed , y=t_slope_percent_change)) +
+  geom_point() +
+  geom_smooth()
+
+summary(temp_df$t_slope_percent_change[temp_df$confirmed>=10])
+
+  
+```
+
+```{r}
+
+temp_df_15 <- temp_df %>% filter(confirmed_max>10) %>% filter(days_since_15_confirmed>=1)
+
+```
 
 
 ```{r, eval=F}

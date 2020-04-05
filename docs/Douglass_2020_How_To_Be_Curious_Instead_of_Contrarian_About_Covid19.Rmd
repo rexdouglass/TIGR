@@ -6,6 +6,8 @@ output:
 date: 
 author: 
 affiliation: Director, Machine Learning for Social Science Lab, Center for Peace and Security Studies, University of California San Diego
+editor_options: 
+  chunk_output_type: inline
 ---
 
 <style type="text/css">
