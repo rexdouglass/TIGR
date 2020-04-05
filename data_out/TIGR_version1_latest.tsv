@@ -214,6 +214,11 @@ Italy	V%C3%B2	Personal Mobility	b	02-22
 Italy	V%C3%B2	Restaurants	d	02-22
 Nigeria	Abuja	International Flights	c	03-23
 Nigeria	Lagos	International Flights	c	03-23
+Philippines	Luzon	Entertainment Industry	c	03-16
+Philippines	Luzon	International Flights	c	03-16
+Philippines	Luzon	Personal Mobility	c	03-16
+Philippines	Luzon	Restaurants	d	03-16
+Philippines	Luzon	Suspension of Government Services	a	03-16
 Philippines	Manila	Domestic Flights	a	03-15
 Philippines	Manila	Domestic Ground Travel	a	03-15
 Philippines	Manila	Entertainment Industry	c	03-15
@@ -271,6 +276,8 @@ United_States	Diego	Entertainment Industry	c	03-19
 United_States	Diego	Gatherings	e	03-19
 United_States	Florida	Entertainment Industry	c	03-17
 United_States	Florida	Gatherings	e	03-17
+United_States	Florida	Gatherings	f	04-02
+United_States	Florida	Personal Mobility	a	04-02
 United_States	Florida	Restaurants	b	03-17
 United_States	Houston	Entertainment Industry	c	03-17
 United_States	Houston	Restaurants	c	03-17

@@ -1,0 +1,93 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+
+library(lubridate)
+library(tidyverse)
+library(R0)  # consider moving all library commands to top -- this one was in a loop below
+#Until the U.S. states one goes live have to pull it from here
+#Codebook
+#https://github.com/JieYingWu/COVID-19_US_County-level_Summaries/blob/master/data/list_of_columns.md
+counties <- read_csv(url("https://raw.githubusercontent.com/JieYingWu/COVID-19_US_County-level_Summaries/master/data/counties.csv")) #using the archived copy from today because they haven't posted the 
+counties_t <- t(counties)
+
+#The data contain the u.s. and the states too
+#FIPS the first two digits are the state
+#All 0 is the U.S.
+#
+#https://covidtracking.com/api
+covidtracking <- read_csv(url("https://covidtracking.com/api/states/daily.csv")) #
+dim(covidtracking) #1653   25
+covidtracking_t <- t(covidtracking)
+
+
+#https://github.com/nytimes/covid-19-data
+nytimes <- read_csv(url("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")) #
+
+```
+
+```{r}
+
+nytimes_long <- nytimes %>%
+                mutate(date_asdate = ymd(date)) %>% 
+                rename(confirmed=cases) %>%
+
+          group_by(fips) %>%
+            mutate(confirmed_cummax=cummax(confirmed)) %>%
+            mutate(days_since_1_confirmed=cumsum(confirmed_cummax>0)) %>%
+            mutate(days_since_10_confirmed=cumsum(confirmed_cummax>10)) %>%
+            mutate(days_since_50_confirmed=cumsum(confirmed_cummax>50)) %>%
+            mutate(days_since_100_confirmed=cumsum(confirmed_cummax>100)) %>%
+            mutate(days_since_500_confirmed=cumsum(confirmed_cummax>500)) %>%
+
+            mutate(deaths_cummax=cummax(deaths)) %>%        
+            mutate(days_since_1_deaths=cumsum(deaths_cummax>0)) %>%
+            mutate(days_since_10_deaths=cumsum(deaths_cummax>10)) %>%
+            mutate(days_since_50_deaths=cumsum(deaths_cummax>50)) %>%
+            mutate(days_since_100_deaths=cumsum(deaths_cummax>100)) %>%
+            mutate(days_since_500_deaths=cumsum(deaths_cummax>500)) %>%
+
+            mutate(confirmed_fd=confirmed-lag(confirmed)) %>%
+            mutate(deaths_fd=deaths-lag(deaths)) %>%
+          ungroup() %>%
+          arrange(fips, date_asdate) %>%
+
+          #filter(days_since_1_confirmed>0) %>%
+          group_by(fips) %>%
+            mutate(confirmed_max=max(confirmed)) %>%
+          ungroup() %>%
+
+          mutate(deaths=ifelse(deaths==0, NA,deaths)) %>%
+          mutate(confirmed=ifelse(confirmed==0, NA,confirmed))
+
+
+```
+
+
+
+```{r, eval=F}
+
+library(WikidataR)
+
+
+places <- all_long %>% dplyr::select(country,state) %>% distinct() %>% mutate(search=paste0(state,", ", country ))  %>% mutate(search= ifelse(is.na(state) | state=="none", country, state ) )
+library(WikidataR)
+wiki_searches <- list()
+for(q in places$search){
+  print(q)
+  try({
+    #wiki <- find_item("Bexas County")
+    wiki <- find_item(q)
+    temp <- as.data.frame(wiki[[1]])
+    temp$search <- q
+    wiki_searches[[q]] <- temp
+  })
+}
+wiki_searches_df <- bind_rows(wiki_searches)
+  
+  
+```
