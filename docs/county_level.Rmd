@@ -64,6 +64,8 @@ nytimes_long <- nytimes %>%
           mutate(deaths=ifelse(deaths==0, NA,deaths)) %>%
           mutate(confirmed=ifelse(confirmed==0, NA,confirmed))
 
+temp <- nytimes_long %>% dplyr::select(fips, confirmed_max) %>% distinct()
+table(temp$confirmed_max) #936 have 10 or more cases , 1412 don't
 
 ```
 
