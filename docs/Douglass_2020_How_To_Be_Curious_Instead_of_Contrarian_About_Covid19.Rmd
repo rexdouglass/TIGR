@@ -268,7 +268,7 @@ p_combined <- countries_long %>% filter(country %in% "US") %>%
       geom_point(aes(x=date_asdate, y=deaths), color="black") +
       xlab("Date") + theme_bw() + scale_y_continuous(labels =  comma_format()) +
       geom_vline(xintercept=ymd("2020-09-01") , linetype = "dashed", col="black") +
-      annotate("text", x = ymd("2020-09-01")-4, y = 70000, label = "Value at this date is what we want to know", color="black", size=5, angle=90) +
+      annotate("text", x = ymd("2020-09-01")-4, y = 150000, label = "Value at this date is what we want to know", color="black", size=5, angle=90) +
       scale_x_date(labels = date_format("%m-%d"), breaks='months') + ylab("Count")
 
 
