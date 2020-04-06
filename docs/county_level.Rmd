@@ -40,19 +40,21 @@ nytimes_long <- nytimes %>%
                 mutate(place=paste0(state,"_",county,"_",fips)) %>%
           group_by(place) %>%
             mutate(confirmed_cummax=cummax(confirmed)) %>%
-            mutate(days_since_1_confirmed=cumsum(confirmed_cummax>0)) %>%
-            mutate(days_since_10_confirmed=cumsum(confirmed_cummax>10)) %>%
-            mutate(days_since_15_confirmed=cumsum(confirmed_cummax>15)) %>%
-            mutate(days_since_50_confirmed=cumsum(confirmed_cummax>50)) %>%
-            mutate(days_since_100_confirmed=cumsum(confirmed_cummax>100)) %>%
-            mutate(days_since_500_confirmed=cumsum(confirmed_cummax>500)) %>%
+            mutate(days_since_1_confirmed=cumsum(confirmed_cummax>=1)) %>%
+            mutate(days_since_10_confirmed=cumsum(confirmed_cummax>=10)) %>%
+            mutate(days_since_15_confirmed=cumsum(confirmed_cummax>=15)) %>%
+            mutate(days_since_20_confirmed=cumsum(confirmed_cummax>=20)) %>%
+  
+            mutate(days_since_50_confirmed=cumsum(confirmed_cummax>=50)) %>%
+            mutate(days_since_100_confirmed=cumsum(confirmed_cummax>=100)) %>%
+            mutate(days_since_500_confirmed=cumsum(confirmed_cummax>=500)) %>%
 
             mutate(deaths_cummax=cummax(deaths)) %>%        
-            mutate(days_since_1_deaths=cumsum(deaths_cummax>0)) %>%
-            mutate(days_since_10_deaths=cumsum(deaths_cummax>10)) %>%
-            mutate(days_since_50_deaths=cumsum(deaths_cummax>50)) %>%
-            mutate(days_since_100_deaths=cumsum(deaths_cummax>100)) %>%
-            mutate(days_since_500_deaths=cumsum(deaths_cummax>500)) %>%
+            mutate(days_since_1_deaths=cumsum(deaths_cummax>=1)) %>%
+            mutate(days_since_10_deaths=cumsum(deaths_cummax>=10)) %>%
+            mutate(days_since_50_deaths=cumsum(deaths_cummax>=50)) %>%
+            mutate(days_since_100_deaths=cumsum(deaths_cummax>=100)) %>%
+            mutate(days_since_500_deaths=cumsum(deaths_cummax>=500)) %>%
 
             mutate(confirmed_fd=confirmed-lag(confirmed)) %>%
             mutate(deaths_fd=deaths-lag(deaths)) %>%
@@ -116,16 +118,21 @@ temp %>% ggplot() +
          geom_point(aes(x=rank(date_asdate), y=confirmed_log)) + 
          geom_line(aes(x=rank(date_asdate), y=y_hat)) + 
          geom_vline(xintercept=bp$breakpoints)
+```
 
+```{r}
 
 temp_list <- list()
 for(q in places$place){
   print(q)
+  temp <- NULL
   temp <- nytimes_long %>% 
           arrange(date_asdate) %>% 
           filter(place %in% q) %>% 
           mutate(confirmed_log=log(confirmed+1)) %>%
           mutate(t= rank(date_asdate))  
+  if( nrow(temp)==0 ) {print("error"); break}
+
   #bp <- breakpoints(confirmed_log ~ 1, data=temp)
   bp <- NULL
   lm1 <- NULL
@@ -154,19 +161,23 @@ for(q in places$place){
     y_hat=fitted.values(bp)
   })
   
-  temp <- temp %>% 
-          mutate(y_hat = y_hat) %>%
-          left_join(cdf) %>% 
-          fill(t_slope) %>%
-          mutate(t_slope_percent_change = round((exp(t_slope)-1)*100,2))
-  
-  temp_list[[as.character(q)]] <- temp
-
-  if( is.na( temp_list[[as.character(q)]]$y_hat) ) {print("error"); break}
+  try({
+    temp <- temp %>% 
+            mutate(y_hat = y_hat) %>%
+            left_join(cdf) %>% 
+            fill(t_slope) %>%
+            mutate(t_slope_percent_change = round((exp(t_slope)-1)*100,2))
+    
+    temp_list[[as.character(q)]] <- temp
+  })
+  #if( is.na( temp_list[[as.character(q)]]$y_hat) ) {print("error"); break}
 }
 #"13055"
 temp_df <- bind_rows(temp_list)
 dim(temp_df)
+
+temp_list[["New York_New York City_NA"]]
+
 
 ```
 
@@ -192,12 +203,135 @@ temp_df %>%
 
 ```{r}
 temp_df %>%
-  filter(county %in% "New York City")  %>% 
+  filter(place %in% "New York_New York City_NA")  %>% 
   mutate(date_asdate_rank=rank(date_asdate)) %>%
   ggplot() +
   geom_point(aes(x=date_asdate,y=t_slope_percent_change))
+
+
+temp_df %>%
+  filter(place %in% "New York_New York City_NA")  %>% 
+  ggplot() +
+  geom_point(aes(x=date_asdate,y=confirmed_log)) +
+  geom_line(aes(x=date_asdate,y=y_hat)) +
+  #geom_point(aes(x=date_asdate,y=t_slope_percent_change))
+
+temp_df %>%
+  filter(place %in% "Texas_Bexar_48029")  %>% 
+  ggplot() +
+  geom_point(aes(x=date_asdate,y=confirmed_log)) +
+  geom_line(aes(x=date_asdate,y=y_hat))
+
+library(gghighlight)
+temp_df %>%
+  filter(place %in% c("New York_New York City_NA","Texas_Bexar_48029","California_San Diego_06073","Florida_St. Lucie_12111") ) %>% 
+  ggplot(aes(x=date_asdate, color=place)) +
+  geom_point(aes(y=confirmed_log)) +
+  geom_line(aes(y=y_hat)) +
+  gghighlight(#prefered_label %in% c("Washington, US","Italy","China") , #"New York, US" #, "US"
+                    label_params =
+                      list(
+                     size = 3,
+                     segment.alpha=0)
+              ) +
+  theme_bw()
+
+library(gghighlight)
+temp_df %>%
+  filter(t_slope_percent_change>1 & confirmed>20 ) %>% 
+  mutate(y_hat_exp=exp(y_hat) ) %>% 
+  
+  ggplot(aes(x=date_asdate, color=place)) +
+  geom_point(aes(y=confirmed_log)) +
+  geom_line(aes(y=y_hat)) +
+  gghighlight(place %in% c("New York_New York City_NA","Texas_Bexar_48029","California_San Diego_06073","Florida_St. Lucie_12111") , 
+                    label_params =
+                      list(
+                     size = 3,
+                     segment.alpha=0)
+              ) +
+  theme_bw() + ylim(3,11.5)
+
+library(scales)
+library(gghighlight)
+temp_df %>%
+  filter(t_slope_percent_change>1 & confirmed>20 ) %>% 
+  mutate(y_hat_exp=exp(y_hat) ) %>% 
+  
+  ggplot(aes(x=date_asdate, color=place)) +
+  geom_point(aes(y=confirmed)) +
+  geom_line(aes(y=y_hat_exp)) +
+  gghighlight(place %in% c("New York_New York City_NA","Texas_Bexar_48029","California_San Diego_06073","Florida_St. Lucie_12111") , 
+                    label_params =
+                      list(
+                     size = 3,
+                     segment.alpha=0)
+              ) +
+  theme_bw() + scale_y_log10(labels = comma_format()) #+ ylim(10, 100000)
+
+
+temp_df %>%
+  filter(t_slope_percent_change>1 & confirmed>=20 ) %>% 
+  mutate(y_hat_exp=exp(y_hat) ) %>% 
+  
+  ggplot(aes(x=days_since_20_confirmed, color=place)) +
+  geom_point(aes(y=confirmed)) +
+  geom_line(aes(y=y_hat_exp)) +
+  gghighlight(place %in% c("New York_New York City_NA","Texas_Bexar_48029","California_San Diego_06073","Florida_St. Lucie_12111") , 
+                    label_params =
+                      list(
+                     size = 3,
+                     segment.alpha=0)
+              ) +
+  theme_bw() + scale_y_log10(labels = comma_format()) #+ ylim(10, 100000)
+
+
+
   
 ```
+
+Ok so we put slope at days since 20 confirmed on the left hand side, and put other covariates on the rhs
+
+```{r}
+
+lhs_20 <- temp_df %>% 
+            filter(t_slope_percent_change>1 & confirmed>=20 ) %>% 
+            mutate(y_hat_exp=exp(y_hat) ) %>%
+            left_join( state_codes %>% select(state=state_name, state_abbr ) )
+dim(lhs_20)
+
+dim(covidtracking)
+
+library(USAboundaries) ; #install.packages('USAboundaries')
+
+data(state_codes)
+
+rhs_covidtracking <- covidtracking %>%
+                     mutate(date_asdate = ymd(date)) %>% 
+                     select(date_asdate, state_abbr=state, state_test_positive=positive, state_test_negative=negative) %>%
+                     mutate( state_test = state_test_positive + state_test_negative) 
+
+
+
+rhs_counties <- counties %>% select(fips=FIPS, TOT_MALE, TOT_FEMALE,
+                                    doctors_per_cap=`Active Physicians per 100000 Population 2018 (AAMC)`,
+                                    popdensity=`Density per square mile of land area - Population`
+                                    ) %>% 
+                mutate(pop=TOT_MALE+TOT_FEMALE) %>% mutate(pop_perc_male = TOT_MALE/pop)
+
+xy_all <- lhs_20 %>% mutate(date_rank=rank(date_asdate)) %>% left_join(rhs_covidtracking)  %>% left_join(rhs_counties) 
+dim(xy_all)
+
+library(randomForestSRC); #install.packages('randomForestSRC')
+rf <- rfsrc(t_slope_percent_change ~ days_since_20_confirmed + date_rank + state_test + pop + pop_perc_male +
+              doctors_per_cap + popdensity,
+            ntree = 200 , data=xy_all %>% as.data.frame()) #
+rf #% variance explained: 19.6
+vp <- vimp(rf)
+plot(vp)
+
+```
+
 
 ```{r}  
 temp_df %>%
