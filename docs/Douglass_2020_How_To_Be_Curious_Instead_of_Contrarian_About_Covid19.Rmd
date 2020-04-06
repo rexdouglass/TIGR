@@ -650,7 +650,7 @@ The Epstein piece goes on to say
 
 > The New York cases have been identified for long enough that they should have produced more deaths if the coronavirus was as dangerous as is commonly believed.
 
-I don't entirely know what this sentence is supposed to mean, but New York's day on day growth in fatalities is the third highest in the world in these data, just behind Massachusetts at 52.28%.
+I don't entirely know what this sentence is supposed to mean, but New York's day on day growth in fatalities is the second highest in the world in these data, just behind Massachusetts at 52.28%.
 
 The lesson here being that intentionally looking for early "good news" means necessarily ignoring actual news relevant to the research question.^[ Left as an exercise to the reader to see how hard exactly you have to squint before you see "good news" from these data.]
 
