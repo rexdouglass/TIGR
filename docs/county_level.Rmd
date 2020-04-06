@@ -37,8 +37,8 @@ nytimes <- read_csv(url("https://raw.githubusercontent.com/nytimes/covid-19-data
 nytimes_long <- nytimes %>%
                 mutate(date_asdate = ymd(date)) %>% 
                 rename(confirmed=cases) %>%
-
-          group_by(fips) %>%
+                mutate(place=paste0(state,"_",county,"_",fips)) %>%
+          group_by(place) %>%
             mutate(confirmed_cummax=cummax(confirmed)) %>%
             mutate(days_since_1_confirmed=cumsum(confirmed_cummax>0)) %>%
             mutate(days_since_10_confirmed=cumsum(confirmed_cummax>10)) %>%
@@ -60,12 +60,15 @@ nytimes_long <- nytimes %>%
           arrange(fips, date_asdate) %>%
 
           #filter(days_since_1_confirmed>0) %>%
-          group_by(fips) %>%
+          group_by(place) %>%
             mutate(confirmed_max=max(confirmed)) %>%
           ungroup() %>%
 
           mutate(deaths=ifelse(deaths==0, NA,deaths)) %>%
           mutate(confirmed=ifelse(confirmed==0, NA,confirmed))
+
+places <- nytimes_long %>% dplyr::select(state, county, fips, place) %>% distinct()
+
 
 temp <- nytimes_long %>% dplyr::select(fips, confirmed_max) %>% distinct()
 table(temp$confirmed_max) #936 have 10 or more cases , 1412 don't
@@ -114,11 +117,13 @@ temp %>% ggplot() +
          geom_line(aes(x=rank(date_asdate), y=y_hat)) + 
          geom_vline(xintercept=bp$breakpoints)
 
+
 temp_list <- list()
-for(q in na.omit(unique(nytimes_long$fips))  ){
+for(q in places$place){
   print(q)
-  temp <- nytimes_long %>% arrange(date_asdate) %>% 
-          filter(fips %in% q) %>% 
+  temp <- nytimes_long %>% 
+          arrange(date_asdate) %>% 
+          filter(place %in% q) %>% 
           mutate(confirmed_log=log(confirmed+1)) %>%
           mutate(t= rank(date_asdate))  
   #bp <- breakpoints(confirmed_log ~ 1, data=temp)
@@ -163,12 +168,16 @@ for(q in na.omit(unique(nytimes_long$fips))  ){
 temp_df <- bind_rows(temp_list)
 dim(temp_df)
 
+```
+
 ```{r}
 temp_df_max <- temp_df %>% group_by(fips) %>% filter(date_asdate==max(date_asdate)) %>% ungroup()
+
 
 hist(temp_df_max$t_slope_percent_change, breaks=50)
 
 temp_df_max %>% ggplot() + geom_density(aes(x=t_slope_percent_change))
+
 ```
 
 ```{r}
@@ -180,18 +189,24 @@ temp_df %>%
                 color=fips))  + theme(legend.position = "none")
 
 ```
+
+```{r}
 temp_df %>%
   filter(county %in% "New York City")  %>% 
   mutate(date_asdate_rank=rank(date_asdate)) %>%
   ggplot() +
-  geom_boxplot(aes(x=t_slope_percent_change,y=t_slope_percent_change))
+  geom_point(aes(x=date_asdate,y=t_slope_percent_change))
   
+```
+
+```{r}  
 temp_df %>%
   filter(county %in% "Bexar") %>%
   ggplot() +
   geom_point(aes(x=date_asdate, y=confirmed_log)) +
   geom_line(aes(x=date_asdate, y=y_hat)) 
   
+```
 
 ```{r}
 #what should the cuttoff be?
